@@ -68,9 +68,9 @@ type DiscoveryProtocol {
 !!! failure "_h.0.1_ When device online/updated events for N devices are received by the device monitor, all of them should be retrievable through the device monitor and their status should be online"
 !!! failure "_h.0.2_ When device offline events for N devices are received by the device monitor, all of them should be retrievable through the service monitor and their status should be offline"
 !!! failure "_h.0.3_ When device offline events are received for devices that were previously known, the status for all the devices it attains to should be offline"
-!!! failure "_h.0.4_ When N device events from installation A and M device events from installation B are received, all N devices should be retrievable by using installation A's id and all M devices should be retrievable by using installation B's id"
+!!! failure "_h.0.4_ When N device events from installation A and M device events from installation B are received, all N devices should be retrievable by using installation A's id (and not by installation B's) and all M devices should be retrievable by using installation B's id (and not by installation A's)"
 !!! failure "_h.0.5_ When the same device is detected by multiple installations, that device should be retrievable by using the id of any installation and it should be online"
-!!! failure "_h.0.6_ When the same device is detected by multiple installations and a device offline event is received from some but not all installations, the service should still be online"
+!!! failure "_h.0.6_ When the same device is detected by multiple installations and a device offline event is received from some but not all installations, the device should still be online"
 !!! failure "_h.0.6_ When the same device is detected by multiple installations and a device offline event is received from all installations, the device should be offline"
 
 TODO: service merging (information can be different across installations, or even within the same installation, that can change over time)
