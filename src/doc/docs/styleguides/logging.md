@@ -5,7 +5,7 @@ A logger for your component can be obtained through reference of the LoggerFacto
 @Component
 public final class foo
   @Activate
-  public foo(@Reference(service= LoggerFactory.class) final Logger logger){
+  public foo(@Reference(service=LoggerFactory.class) final Logger logger){
     // ...
     logger.info("Foo started!")
   }
@@ -18,7 +18,7 @@ The OGSi Logger interface provides 2 main ways to log messages:
   `logger.info("The statement will always be evaluated");`
 
 2. Log message with lambda:<br>
-  `logger.info(l -> l.info("This statement will only be evaluated if the log level is set at or below 'INFO'"));`
+  `logger.info((Logger l) -> l.info("This statement will only be evaluated if the log level is set at or below 'INFO'"));`
 
 The second approach is generally recommended, as it is beneficial for performance on higher log levels.
 For simple log statements, the first approach can still be used.
@@ -30,7 +30,7 @@ logger.info("Use {} if you want to put information in your {}.", "curly braces",
 
 toString() is automatically called on objects you pass through to the logger.
 ```java
-Map<> someMap = new HashMap<String,String>();
+Map<String, String> someMap = new HashMap<>();
 logger.info("Content of someMap: {}", someMap);
 ```
 
