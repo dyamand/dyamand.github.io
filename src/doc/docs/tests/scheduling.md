@@ -20,3 +20,7 @@
 !!! success "_a.1.1_ When invoking external code that fails, the error should be available"
 !!! success "_a.1.2_ When invoking external code that blocks, the caller should not be blocked"
 !!! success "_a.1.3_ When invoking external code that blocks, the handler should be called after a certain timeout"
+
+## Disposal
+
+!!! success "_a.2.0_ When multiple external code executions are created and disposed, there should be no more resources (threads) as before"
