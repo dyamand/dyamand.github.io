@@ -237,8 +237,9 @@ scalar Timestamp
 
 ### Overview page
 
-!!! success "_c.9.1_ If the backend has n installations, there should be n cards on the dashboard"
-!!! success "_c.9.2_ Given the ID of an installation, there should be a card containing all other data related to that specific installation (name, status, health check status aggregations, lastSeen)"
+!!! success "_c.9.1_ After getting all new installation events, the number of cards and table rows should be equal to the number of new installations"
+!!! success "_c.9.2_ All information of a specific installation match the card and row containing its ID"
+!!! success "_c.9.3_ If n installations get an installation changed event, the amount of total installations should not change and all changes of that installation should be found on the specific installation card or in the specific installation row"
 
 ### Details page
 
