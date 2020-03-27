@@ -54,3 +54,7 @@ Eventing is used within DYAMAND to synchronize information across all components
 !!! success "_b.5.7_ Building an event with whatever input provided, should generate an event (non-null)"
 !!! success "_b.5.8_ When creating an event, invoking publish should publish the created event"
 !!! success "_b.5.9_ When creating an event, the created event should contain the names the installation information component provides"
+
+## Listener disposal
+
+!!! success "_b.6.0_ Creating and disposing N listeners, should not leave any non-disposed ExternalCodeExecution instances"
