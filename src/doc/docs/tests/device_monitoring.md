@@ -9,16 +9,22 @@ extend type Query {
 type Device {
 	# id of the device
 	id: ID!
+	# Names of the device.
+	names: Names!
+	# When was the device last seen
+	lastSeen: Timestamp!
+	# status of the device
+	status: Status!
 	# supported discovery protocols
 	supportedDiscoveryProtocol: [DiscoveryProtocol!]!
 	# addresses the device has been discovered at
 	discoveredAt: [String!]!
-	# Child services
-	services: [Service!]!
-	# status of the device
-	status: Status!
-	# When was the device last seen
-	lastSeen: Timestamp!
+}
+
+# An installation can contain devices.
+extend type Installation {
+	# All discovered devices for this installation.
+	devices: [Device!]!
 }
 
 # Service which got discovered by an installation.
@@ -37,12 +43,6 @@ type Service {
 	services: [Service!]!
 }
 
-# An installation is any instance of DYAMAND that is running somewhere.
-extend type Installation {
-	# All discovered services for this installation.
-	services: [Service!]!
-}
-
 # Discovery protocol
 type DiscoveryProtocol {
 	# id of the protocol
@@ -50,7 +50,7 @@ type DiscoveryProtocol {
 	# symbolic name of the plugin that registered the protocol
 	pluginName: String!
 	# version of the plugin that registered the protocol
-	pluginVersion: String!
+	pluginVersion: Version!
 }
 ```
 
