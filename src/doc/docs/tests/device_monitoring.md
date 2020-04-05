@@ -16,7 +16,7 @@ type Device {
 	# status of the device
 	status: Status!
 	# supported discovery protocols
-	supportedDiscoveryProtocol: [DiscoveryProtocol!]!
+	supportedDiscoveryProtocols: [DiscoveryProtocol!]!
 	# addresses the device has been discovered at
 	discoveredAt: [String!]!
 }
@@ -76,7 +76,8 @@ type DiscoveryProtocol {
 !!! success "_h.1.0_ When the exact same device is detected by multiple installations, that device should be retrievable by using the id of any installation and it should be online"
 !!! success "_h.1.1_ When the exact same device is detected by multiple installations and a device offline event is received from some but not all installations, the device should still be online"
 !!! success "_h.1.2_ When the exact same device is detected by multiple installations and a device offline event is received from all installations, the device should be offline"
-!!! failure "_h.1.3_ When multiple installations detect the same device (not necessarily containing the same services, but having at least 1 service in common), the monitored device should contain the combined information of the devices discovered at each of the installations (addresses, discovery protocols, services)"
+!!! success "_h.1.3_ When a device is detected multiple times by the same installation, 1 monitored device should be available containing the information the last event contains"
+!!! failure "_h.1.4_ When multiple installations detect the same device (not necessarily containing the same services, but having at least 1 service in common), the monitored device should contain the combined information of the devices discovered at each of the installations (addresses, discovery protocols, services)"
 
 TODO: service merging (information can be different across installations, or even within the same installation, that can change over time)
 
