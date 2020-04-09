@@ -19,9 +19,9 @@
 !!! success "_1.1.5_ If N services have been discovered at potentially different addresses (but with at least one address in common), there should only be N services and 1 device containing all addresses. Additionally, N online events should have been sent among for the services and 1 online event should have been sent for the device, additionally N-1 device updated events should have been sent about the only device (because services were added to it)"
 !!! success "_1.1.6_ If N services have been discovered, all at different addresses but with unique identifiers, there should be N devices each containing 1 service, N service online events and N device online events should have been sent"
 
-TODO Adding service with ID that already exists but different content --> merge?
+!!! failure "TODO Adding service with ID that already exists but different content --> merge?"
 
-TODO Merging services previously part of different service
+!!! failure "TODO Merging services previously part of different service"
 
 ## Service going offline
 

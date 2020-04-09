@@ -79,7 +79,15 @@ type DiscoveryProtocol {
 !!! success "_h.1.3_ When a device is detected multiple times by the same installation, 1 monitored device should be available containing the information the last event contains"
 !!! failure "_h.1.4_ When multiple installations detect the same device (not necessarily containing the same services, but having at least 1 service in common), the monitored device should contain the combined information of the devices discovered at each of the installations (addresses, discovery protocols, services)"
 
-TODO: service merging (information can be different across installations, or even within the same installation, that can change over time)
+### Keeping information about devices across power cycle
+
+!!! failure "_h.2.0_ When any service discovered by a discovery protocol with a global identification scheme is discovered, the monitored device should have a unique name equal to the service id as specified by the discovery protocol and when the device comes back online after going offline, the same monitored device should be used for this installation device"
+!!! success "_h.2.1_ When any service discovered by a discovery protocol with a per-protocol identification scheme is discovered, the monitored device should have a unique name equal to the service id prefixed by the protocol id and when the device comes back online after going offline, the same monitored device should be used for this installation device"
+!!! failure "_h.2.2_ When any service discovered by a discovery protocol with a per-installation identification scheme is discovered, the monitored device should have a machine generated name equal to the id of the service and when the device comes back online after going offline (on the same installation), the same monitored device should be used"
+!!! failure "_h.2.3_ When any service discovered by a discovery protocol with a per-installation identification scheme goes offline on one installation and comes online on another installation, another monitored device should be used"
+!!! failure "_h.2.4_ When any service discovered by a discovery protocol with a per-session identification scheme is discovered, the monitored device should have a machine generated name equal to the service id and when the service goes offline and comes back online on any installation, another monitored device should be used"
+
+!!! failure "TODO: service merging (information can be different across installations, or even within the same installation, that can change over time)"
 
 ## Backend events
 
