@@ -186,7 +186,7 @@ type Metric {
 !!! success "_c.9.1_ After getting all new installation events, the number of cards and table rows should be equal to the number of new installations"
 !!! success "_c.9.2_ All information of a specific installation match the card and row containing its ID"
 !!! success "_c.9.3_ If n installations get an installation changed event, the amount of total installations should not change and all changes of that installation should be found on the specific installation card or in the specific installation row"
-!!! failure "_c.9.4_ If n installations get added and subsequently removed, no installations should be displayed"
+!!! success "_c.9.4_ If n installations get added and subsequently removed, no installations should be displayed"
 
 ### Details page
 
