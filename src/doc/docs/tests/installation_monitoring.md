@@ -154,6 +154,7 @@ type Metric {
 !!! success "_c.4.12_ If there is an event that is not a stopping event for an installation that is not in the system, the installation monitor should send an 'installation online' event containing the installation information (currently only the unique names)"
 !!! success "_c.4.13_ If no new events are received for an installation that is currently online, the status should be changed to 'lost communication' and the installation monitor should send an 'installation lost communication' event containing the installation information (currently only the unique names)"
 !!! success "_c.4.14_ If any number of installations are discovered and subsequently removed, there should be no remaining installations and there should have been an 'installation removed' event for each installation"
+!!! success "_c.4.15_ If any number of installations are discovered and a listener for 'new installation' events is registered, it should received an event for all discovered installations"
 
 ### Installation info
 
