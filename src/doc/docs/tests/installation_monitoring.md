@@ -13,6 +13,8 @@ extend type Subscription {
 	newInstallation: Installation!
 	# Subscription for changes in installations
 	installationChanged: Installation!
+	# Subscription for removed installations
+	installationRemoved: Installation!
 }
 
 extend type Mutation {
@@ -28,6 +30,11 @@ extend type Mutation {
 		id: String!,
 		# friendly name to remove
 		friendlyName: String!): Installation!
+	# Remove an installation, returns true if installations was actually removed, false if installation did not exist
+	removeInstallation(
+		# id of the installation
+		id: String!
+	): Boolean!
 }
 
 # An installation is any instance of DYAMAND that is running somewhere.
@@ -146,6 +153,7 @@ type Metric {
 !!! success "_c.4.11_ If there is a stopping event for an installation that is not in the system, the installation monitor should send an 'installation offline' event containing the installation information (currently only the unique names)"
 !!! success "_c.4.12_ If there is an event that is not a stopping event for an installation that is not in the system, the installation monitor should send an 'installation online' event containing the installation information (currently only the unique names)"
 !!! success "_c.4.13_ If no new events are received for an installation that is currently online, the status should be changed to 'lost communication' and the installation monitor should send an 'installation lost communication' event containing the installation information (currently only the unique names)"
+!!! success "_c.4.14_ If any number of installations are discovered and subsequently removed, there should be no remaining installations and there should have been an 'installation removed' event for each installation"
 
 ### Installation info
 
