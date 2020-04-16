@@ -113,4 +113,4 @@ type DiscoveryProtocol {
 !!! failure "_h.6.6_ Given a specific device service, all states of that specific device should match"
 !!! failure "_h.6.7_ Given a specific device service, all attributes of that specific device should match"
 !!! failure "_h.6.8_ Given a specific device, all addresses where the device got discovered should match"
-!!! failure "_h.6.9_ Given a specific device, all discovery protocols should match"
+!!! success "_h.6.9_ Given a specific device, all discovery protocols should match"
