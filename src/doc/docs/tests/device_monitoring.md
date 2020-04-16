@@ -3,6 +3,8 @@
 extend type Query {
 	# Query all devices
 	devices: [Device!]!
+	# Query device based on its id
+	device(id: String!): Device
 }
 
 # Device
