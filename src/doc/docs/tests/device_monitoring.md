@@ -105,12 +105,12 @@ type DiscoveryProtocol {
 
 ### Details page
 
-!!! failure "_h.6.1_ Given a specific service, the status and lastSeen should match"
+!!! success "_h.6.1_ Given a specific device, the status and lastSeen should match"
 !!! failure "_h.6.2_ If there are n health checks, there are n health checks shown on the health check card"
 !!! failure "_h.6.3_ Given a specific health check id, all information related to the health check should match"
-!!! failure "_h.6.4_ Given a specific service, all service names should match"
-!!! failure "_h.6.5_ Given a specific service, all installations which discovers that specific service should match"
-!!! failure "_h.6.6_ Given a specific service, all states of that specific service should match"
-!!! failure "_h.6.7_ Given a specific service, all attributes of that specific service should match"
-!!! failure "_h.6.8_ Given a specific service, all addresses where the service got discovered should match"
-!!! failure "_h.6.9_ Given a specific service, the discovery protocol should match"
+!!! success "_h.6.4_ Given a specific device, all device names should match"
+!!! failure "_h.6.5_ Given a specific device, all installations which discovers that specific device should match"
+!!! failure "_h.6.6_ Given a specific device service, all states of that specific device should match"
+!!! failure "_h.6.7_ Given a specific device service, all attributes of that specific device should match"
+!!! failure "_h.6.8_ Given a specific device, all addresses where the device got discovered should match"
+!!! failure "_h.6.9_ Given a specific device, all discovery protocols should match"
