@@ -83,7 +83,7 @@ type DiscoveryProtocol {
 
 ### Keeping information about devices across power cycle
 
-!!! failure "_h.2.0_ When any service discovered by a discovery protocol with a global identification scheme is discovered, the monitored device should have a unique name equal to the service id as specified by the discovery protocol and when the device comes back online after going offline, the same monitored device should be used for this installation device"
+!!! success "_h.2.0_ When any service discovered by a discovery protocol with a global identification scheme is discovered, the monitored device should have a unique name equal to the service id as specified by the discovery protocol and when the device comes back online after going offline, the same monitored device should be used for this installation device"
 !!! success "_h.2.1_ When any service discovered by a discovery protocol with a per-protocol identification scheme is discovered, the monitored device should have a unique name equal to the service id prefixed by the protocol id and when the device comes back online after going offline, the same monitored device should be used for this installation device"
 !!! failure "_h.2.2_ When any service discovered by a discovery protocol with a per-installation identification scheme is discovered, the monitored device should have a machine generated name equal to the id of the service and when the device comes back online after going offline (on the same installation), the same monitored device should be used"
 !!! failure "_h.2.3_ When any service discovered by a discovery protocol with a per-installation identification scheme goes offline on one installation and comes online on another installation, another monitored device should be used"
