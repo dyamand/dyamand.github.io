@@ -93,7 +93,7 @@ type DiscoveryProtocol {
 
 ## Backend events
 
-!!! failure "_h.4.0_ When a new device is detected by the device monitor (by receiving any device event), it should send an event indication there is a new device"
+!!! success "_h.4.0_ When a new device is detected by the device monitor (by receiving any device event), it should send an event indication there is a new device"
 !!! failure "_h.4.1_ When the status of a previously detected device changed, the device monitor should send an event indicating the device changed"
 !!! failure "_h.4.2_ Whenever the information on a previously detected device changes, an event should be sent indicating this change"
 	!!! failure "_a_ Service has been detected by another installation as well"
