@@ -7,6 +7,13 @@ extend type Query {
 	device(id: String!): Device
 }
 
+extend type Subscription {
+	# Subscription for new devices
+	newDevice(installation: String): Device!
+	# Subscription for device changes
+	deviceChanged(installation: String): Device!
+}
+
 # Device
 type Device {
 	# id of the device
@@ -94,10 +101,11 @@ type DiscoveryProtocol {
 ## Backend events
 
 !!! success "_h.4.0_ When a new device is detected by the device monitor (by receiving any device event), it should send an event indication there is a new device"
-!!! failure "_h.4.1_ When the status of a previously detected device changed, the device monitor should send an event indicating the device changed"
+!!! success "_h.4.1_ When the status of a previously detected device changed, the device monitor should send an event indicating the device changed"
 !!! failure "_h.4.2_ Whenever the information on a previously detected device changes, an event should be sent indicating this change"
 	!!! failure "_a_ Service has been detected by another installation as well"
 	!!! failure "_b_ Child service have been added"
+!!! success "_h.4.3_ If any number of devices are discovered and a listener for 'new device' events is registered, it should received an event for all discovered devices"
 
 ## Dashboard
 
