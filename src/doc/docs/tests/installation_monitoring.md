@@ -163,7 +163,7 @@ type Metric {
 !!! success "_c.5.3_ If an event arrives, the lastTimestamp of the corresponding installation should match the timestamp of that event"
 !!! success "_c.5.4_ If the installation monitor receives an event which includes metrics or provides new information about known metrics, these metrics should be available in the installation monitor"
 !!! success "_c.5.5_ If the installation monitor receives an event which includes metrics, older, unchanged metrics should still be available in the installation monitor"
-!!! success "_c.5.6_ If the installation monitor receives an 'installation offline' event, the metrics of the corresponding installation should be cleared"
+!!! success "_c.5.6_ If the installation monitor receives an 'installation offline' event, the metrics of the corresponding installation should still be available"
 !!! success "_c.5.7_ If the installation monitor receives an installation alive event with snapshot set to true, the health checks and metrics should be set to the information in the event"
 
 ### Installation merging
@@ -177,7 +177,7 @@ type Metric {
 !!! success "_c.8.1_ If the installation monitor receives an event which includes health checks or provides new information about known health checks, these health checks should be available in the installation monitor"
 !!! success "_c.8.2_ If the installation monitor receives an event which includes health checks, older, unchanged health checks should still be available in the installation monitor"
 !!! success "_c.8.3_ If the installation monitor gets the same health check information multiple times, the duplicates should be ignored"
-!!! success "_c.8.4_ If the installation monitor gets an 'installation offline' event, the health checks of the corresponding installation should be cleared"
+!!! success "_c.8.4_ If the installation monitor gets an 'installation offline' event, the health checks of the corresponding installation should still be available"
 
 ## Dashboard
 
