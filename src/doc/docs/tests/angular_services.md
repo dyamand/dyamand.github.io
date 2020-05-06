@@ -47,4 +47,4 @@
 ## Error handling Service
 
 !!! success "_i.7.0_ Adding n errors and getting all errors should result in n error updates where the size of the errors gets incremented by 1 with each update and the last update should contain all n errors which got added to the service"
-!!! failure "_i.7.1_ After adding and removing n errors, getting all errors should return an empty array"	
+!!! success "_i.7.1_ After adding and removing n errors, getting all errors should return an empty array"	
