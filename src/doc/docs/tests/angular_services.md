@@ -43,3 +43,7 @@
 
 !!! success "_i.6.0_ Setting different page information and getting it should return the information which got set last"
 !!! success "_i.6.1_ Calling the removeInformation method and getting the page information should remove any set page information"
+
+## Error handling Service
+
+!!! failure "_i.7.0_ Adding n errors and getting all errors should return all added errors correctly"
