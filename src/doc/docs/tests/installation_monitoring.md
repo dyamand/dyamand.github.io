@@ -183,7 +183,7 @@ type Metric {
 
 ### Overview page
 
-!!! success "_c.9.1_ After getting all new installation events, the number of cards and table rows should be equal to the number of new installations"
+!!! success "_c.9.1_ After getting all new installation events, the number of cards and table rows should be equal to the number of new installations + all installations with issues"
 !!! success "_c.9.2_ All information of a specific installation match the card and row containing its ID"
 !!! success "_c.9.3_ If n installations get an installation changed event, the amount of total installations should not change and all changes of that installation should be found on the specific installation card or in the specific installation row"
 !!! success "_c.9.4_ If n installations get added and subsequently removed, no installations should be displayed"
@@ -193,7 +193,6 @@ type Metric {
 !!! success "_c.10.1_ Given a specific installation, the status and lastSeen should match"
 !!! success "_c.10.2_ If there are n health checks, there are n health checks shown on the health check card"
 !!! success "_c.10.3_ Given a specific health check id, all information related to the health check should match"
-!!! success "_c.10.4_ Given a specific installation, all detected services should match"
 !!! success "_c.10.5_ Given a specific installation, all installation names should match"
 !!! warning "_c.10.6_ Given a specific metric name, the value should match"
 	!!! success "_a_ All information regarding memory resource should be displayed correctly"
