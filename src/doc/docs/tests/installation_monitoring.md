@@ -136,7 +136,6 @@ type Metric {
 !!! success "_c.3.12_ The user generated friendly names should still be available if a new event arrives"
 !!! success "_c.3.13_ No matter how many events arrive for a particular installation, its ID can never change"
 !!! success "_c.3.14_ No matter how many events arrive, the amount of different IDs should be exactly equal to the amount of detected installations"
-!!! success "_c.3.15_ If the memory health check is executed while all memory usage thresholds are set to 1, it should return an errorEvents that are received by the installation monitor that have no unique names, should be ignored"
 
 ### Status events
 
