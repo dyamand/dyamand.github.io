@@ -72,6 +72,7 @@ type DiscoveryProtocol {
 !!! success "_h.0.1_ When device online/updated events for N devices are received by the device monitor, all of them should be retrievable through the device monitor and their status should be online"
 !!! success "_h.0.2_ When device offline events for N devices are received by the device monitor, all of them should be retrievable through the service monitor and their status should be offline"
 !!! success "_h.0.3_ When N device events from installation A and M device events from installation B are received, all N devices should be retrievable by using installation A's id (and not by installation B's) and all M devices should be retrievable by using installation B's id (and not by installation A's)"
+!!! success "_h.0.4_ When N devices have been discovered by installation A and installation A goes offline, all devices discovered by installation A should be offline"
 
 ### Detecting the same device at different installations
 
