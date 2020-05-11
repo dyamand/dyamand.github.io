@@ -198,3 +198,4 @@ type Metric {
 	!!! success "_b_ All information regarding system CPU load should be displayed correctly"
 	!!! success "_c_ All information regarding hardware uptime should be displayed correctly"
 	!!! failure "_d_ All information regarding DYAMAND uptime should be displayed correctly"
+!!! success "_c.10.7_ Given a specific installation, all supported technologies should match"
