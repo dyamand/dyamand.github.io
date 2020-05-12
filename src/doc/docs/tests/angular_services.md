@@ -51,4 +51,4 @@
 
 ## Logging service
 
-!!! failure "_i.8.0_ Getting all logs and log an entry should result in a next of the logged entry"
+!!! success "_i.8.0_ Getting all logs and log n entries should result in n nexts of the logged entries"
