@@ -70,5 +70,6 @@ nav:
         - I. Angular Services: tests/angular_services.md
         - J. Serialization: tests/serialization.md
         - K. Configuration: tests/configuration.md
+        - L. Authorization: tests/authorization.md
       - Use cases:
         - 1. Prototypes: tests/prototypes.md
