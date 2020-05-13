@@ -64,7 +64,7 @@ type Metric {
 
 ## System tests
 
-!!! success "_c.S.0_ When the installation monitor is started, there should be 0 detected installations"
+!!! success "_c.S.0_ When the backend is started, there should be 0 detected installations"
 !!! success "_c.S.1_ When a local installation is started, the amount of detected installations should be 1, that installation should be online"
 !!! success "_c.S.2_ The online installation should contain at least 1 health check, 1 metric, 1 unique name and 1 machine generated friendly name"
 !!! success "_c.S.3_ When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline and the health checks and metrics should be empty"
