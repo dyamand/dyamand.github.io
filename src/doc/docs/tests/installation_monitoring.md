@@ -65,9 +65,9 @@ type Metric {
 ## System tests
 
 !!! success "_c.S.0_ When the backend is started, there should be 0 detected installations"
-!!! success "_c.S.1_ When a local installation is started, the amount of detected installations should be 1, that installation should be online"
+!!! success "_c.S.1_ When a local installation is started, the amount of detected installations should be 1 and that installation should be online"
 !!! success "_c.S.2_ The online installation should contain at least 1 health check, 1 metric, 1 unique name and 1 machine generated friendly name"
-!!! success "_c.S.3_ When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline and the health checks and metrics should be empty"
+!!! success "_c.S.3_ When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline and there should still be health checks and metrics"
 !!! success "_c.S.4_ As long as an installation is active and sending regular heartbeats (for example when running for 100 seconds), the status of the installation on the backend should still be online"
 !!! success "_c.S.5_ When the local installations stops sending heartbeats and 2 heartbeats or more are missed (waiting at least 90 seconds), the amount of detected installations should still be 1 but the status should be lost communication"
 !!! success "_c.S.6_ When the backend is restarted, the installation detected in the previous tests, should still be present and equal to the previous installation"
