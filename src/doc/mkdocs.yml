@@ -15,6 +15,8 @@ copyright: 'Copyright &copy; 2019 DYAMAND'
 
 # Meterial theme
 theme: 'material'
+extra_css: 
+  - extra.css
 #extra:
 #  palette:
 #    primary: 'indigo'
@@ -55,7 +57,9 @@ nav:
   - Writing an application:
       - Service lifecycle: applications/services.md
   - Add technology support:
-      - Discovering new services: plugins/discovery.md
+      - Discovering a new service: plugins/discovery.md
+      - Adding new state and service prototypes: plugins/prototypes.md
+      - Describing a service: plugins/description.md
   - Tests:
       - 1. Discovering new services: tests/discovery.md
       - Internal functionality:

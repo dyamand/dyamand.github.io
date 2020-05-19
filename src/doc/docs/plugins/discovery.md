@@ -58,3 +58,4 @@ As soon as the service is no longer online, the plugin should call ```dispose```
 // service with identifier id disappeared
 this.protocol.service(id).ifPresent(Service::dispose);
 ```
+
