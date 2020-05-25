@@ -29,7 +29,7 @@ builder.build((AsyncResult<Service> addService) -> {
 If services are not created based on a service prototype, states can be added based on state prototypes. From a client perspective, the only thing that changes is that the ```newService``` method is invoked without a service prototype.
 
 ```java
-this.protocol.newService(id).withState(ExampleState.class).build((AsyncResult<Service> addService) -> {
+this.protocol.newService(id).withState(ExampleState.class).and().build((AsyncResult<Service> addService) -> {
     if (addService.succeeded()) {
         // handle successfully adding the service
         // save the ServiceProxy from addService.result() for future reference

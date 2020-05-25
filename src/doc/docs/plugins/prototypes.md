@@ -6,7 +6,7 @@ DYAMAND uses the ```Prototype``` design pattern to be able to describe services 
 
 State prototypes are blueprints for actual states in a service. Conceptually, there are two different types of states, states that are generic and will be used by general applications and states that will be used by a particular technology. By convention, generic states should be registered by type plugins and technology-specific states should not.
 
-A state prototype is an instance of ```State```. Below you can find an example of a generic state that has a ```Boolean``` value and supports two units, opposites of one another. The ```Unit``` is responsible to convert between different units.
+A state prototype is an instance of ```State```. Below you can find an example of a generic state that has a ```Boolean``` value and supports two units, opposites of one another. The ```State``` is responsible to convert between different units.
 
 ```java
 public final enum ExampleGenericStateUnit implements Unit<ExampleGenericState> {
