@@ -26,11 +26,10 @@
 ## Authentication Service
 
 !!! success "_i.4.0_ If user is logged in or logged out, calling getLoginStatus should return true or false respectively"
-!!! success "_i.4.1.a_ If user is logged in, calling getTokenInformation should invoke the getKeycloakInstance().token of the Keycloak service and parse and return the Token object correctly"
-!!! success "_i.4.1.b_ If user is not logged in, calling getTokenInformation should not invoke the getKeycloakInstance().token of the Keycloak service"
-!!! success "_i.4.2_ If the user is not logged in, calling the loginOrLogout method should invoke the login method of the keycloak service and vice versa"
-!!! success "_i.4.3.a_ Calling the updateTokenInformation method should invoke the updateToken method of the Keycloak service"
-!!! success "_i.4.3.b_ If updateTokenInformation fails (due to session timeout), the clearToken method of the Keycloak service should have been invoked"
+!!! success "_i.4.1.a_ If user is logged in, calling updateTokenInformation should return the parsed Token object correctly"
+!!! success "_i.4.1.b_ If user is not logged in, calling updateTokenInformation should not return the parsed token"
+!!! success "_i.4.2_ If the user is not logged in, calling the loginOrLogout method and then getting the login status should return the correct login status"
+!!! success "_i.4.3.b_ If updateTokenInformation fails (due to session timeout), no token should be returned"
 
 ## Message Service
 
