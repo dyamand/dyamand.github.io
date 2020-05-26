@@ -62,6 +62,7 @@ nav:
       - Describing a service: plugins/description.md
   - Tests:
       - 1. Discovering new services: tests/discovery.md
+      - 2. Describing services: tests/description.md
       - Internal functionality:
         - A. Task scheduling: tests/scheduling.md
         - B. Eventing: tests/eventing.md
@@ -75,5 +76,3 @@ nav:
         - J. Serialization: tests/serialization.md
         - K. Configuration: tests/configuration.md
         - L. Authorization: tests/authorization.md
-      - Use cases:
-        - 1. Prototypes: tests/prototypes.md
