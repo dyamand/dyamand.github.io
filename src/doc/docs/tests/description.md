@@ -34,6 +34,7 @@ Services can be described at discovery time by using state and service prototype
 
 ## Describing a service using service prototypes
 
-!!! failure "_2.4.0_ When a service is described by a service prototype, the service should contain all non-optional states"
-!!! failure "_2.4.1_ When a service is described by a service prototype and is extended by using state prototypes, both the mandatory states and the added states should be present"
+!!! success "_2.4.0_ When a service is described by a service prototype, the created service should be of the same type as the prototype and it should contain all non-optional states"
+!!! success "_2.4.1_ When a service is described by a service prototype and is extended by using named state prototypes, both the mandatory states and the added states should be present"
+!!! success "_2.4.2_ When a service described by a service prototype and an unnamed state prototype is added that already was present in the service prototype, an IllegalStateException should be thrown"
 
