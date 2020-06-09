@@ -4,3 +4,4 @@
 !!! success "_j.0.3_ Recording a type adapter for a type that already has a type adapter, should result in an IllegalStateException"
 !!! success "_j.0.4_ When serializing N objects "at the same time", they all should get serialized"
 !!! success "_j.0.5_ When deserializing N objects "at the same time", they all should get deserialized correctly"
+!!! success "_j.0.6_ When a transformation is registered for an adapter, that transformation method should be called whenever an object is deserialized"

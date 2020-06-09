@@ -38,3 +38,12 @@ Services can be described at discovery time by using state and service prototype
 !!! success "_2.4.1_ When a service is described by a service prototype and is extended by using named state prototypes, both the mandatory states and the added states should be present"
 !!! success "_2.4.2_ When a service described by a service prototype and an unnamed state prototype is added that already was present in the service prototype, an IllegalStateException should be thrown"
 
+# Serialization with prototypes
+
+Serialization (and in particular deserialization) becomes hard once particular classes come into play. Serializing state prototypes and service prototypes and states or services based on those prototypes need additional testing to make sure deserialization is done properly. Deserialization depends on the context in which it is performed, if deserialization is done in a context where the prototype is not available (backend), deserialization still should create an object that is equal in content to the object that was serialized. However, if deserialization is done in a context where the prototype is available, the deserialized object should be at least of the same class as the object that was serialized. For prototypes, the deserialized object should even be the exact same object.
+
+!!! success "_2.5.0_ Deserializing a known state prototype, should result in exactly the same object"
+!!! success "_2.5.1_ Deserializing a state based on a known state prototype, should result in an object that is content equal AND of the same type as the state prototype"
+!!! success "_2.5.2_ Deserializing a known service prototype, should result in exactly the same object"
+!!! success "_2.5.3_ Deserializing a service based on a known service prototype, should result in an object that is content equal AND of the same type as the service prototype"
+
