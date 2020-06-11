@@ -51,16 +51,6 @@ type Service {
 	# Child services
 	services: [Service!]!
 }
-
-# Discovery protocol
-type DiscoveryProtocol {
-	# id of the protocol
-	id: ID!
-	# symbolic name of the plugin that registered the protocol
-	pluginName: String!
-	# version of the plugin that registered the protocol
-	pluginVersion: Version!
-}
 ```
 
 ## System tests

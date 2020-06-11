@@ -51,6 +51,8 @@ type Installation {
 	health: Health!
 	# Current metrics of the installations. A metric is any parameter that can be measured.
 	metrics: [Metric!]!
+	# Currently supported discovery protocols
+	supportedDiscoveryPrototocol: [DiscoveryProtocol!]!
 }
 
 # Metric that is being measured by the installation.
