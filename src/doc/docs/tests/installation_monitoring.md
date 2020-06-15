@@ -16,7 +16,7 @@ extend type Subscription {
 	# Subscription for removed installations
 	installationRemoved: Installation!
 	# Subscription for a particular installation
-	installation(id: String!) Installation!
+	installation(id: String!): Installation!
 }
 
 extend type Mutation {
@@ -54,7 +54,7 @@ type Installation {
 	# Current metrics of the installations. A metric is any parameter that can be measured.
 	metrics: [Metric!]!
 	# Currently supported discovery protocols
-	supportedDiscoveryPrototocols: [DiscoveryProtocol!]!
+	supportedDiscoveryProtocols: [DiscoveryProtocol!]!
 }
 
 # Metric that is being measured by the installation.
