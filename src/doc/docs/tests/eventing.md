@@ -25,8 +25,8 @@ Eventing is used within DYAMAND to synchronize information across all components
 !!! success "_b.2.4_ When a listener interceptor is registered for listener removal and it sends random events, the listener should receive them"
 !!! success "_b.2.5_ A listener that is not interested in a certain topic, should not receive an event of that topic during historical event publishing"
 !!! success "_b.2.6_ A listener that is not interested in a certain topic, should not receive an event of that topic during historical event publishing that is created and published using the ListenerContextObject"
-!!! failure "_b.2.7_ When a historical event publisher publishes an event and 2 listeners are registered, each interested in different topic (topic of event and another one), 1 listener should have received 1 event, the other should have received 0"
-!!! failure "_b.2.8_ When a historical event publisher publishes an event that was created and published using the ListenerContextObject and 2 listeners are registered, each interested in different topic (topic of event and another one), 1 listener should have received 1 event, the other should have received 0"
+!!! success "_b.2.7_ When a historical event publisher publishes an event and 2 listeners are registered, each interested in different topic (topic of event and another one), 1 listener should have received 1 event, the other should have received 0"
+!!! success "_b.2.8_ When a historical event publisher publishes an event that was created and published using the ListenerContextObject and 2 listeners are registered, each interested in different topic (topic of event and another one), 1 listener should have received 1 event, the other should have received 0"
 
 ## Asynchronicity
 
