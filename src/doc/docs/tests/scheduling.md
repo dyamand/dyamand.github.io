@@ -24,3 +24,5 @@
 ## Disposal
 
 !!! success "_a.2.0_ When multiple external code executions are created and disposed, there should be no more resources (threads) as before"
+!!! failure "_a.2.1_ When an external code execution is created and disposed, executing something should result in an IllegalStateException"
+!!! failure "_a.2.2_ When code gets executed N times at the same time while also disposing the external code execution, all instances should either be successfully executed or have resulted in an IllegalStateException"

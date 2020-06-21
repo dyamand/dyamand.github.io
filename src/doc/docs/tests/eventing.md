@@ -62,3 +62,4 @@ Eventing is used within DYAMAND to synchronize information across all components
 ## Listener disposal
 
 !!! success "_b.6.0_ Creating and disposing N listeners, should not leave any non-disposed ExternalCodeExecution instances"
+!!! failure "_b.6.1_ Creating and disposing N listeners while sending events should not result in any failure"
