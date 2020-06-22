@@ -85,9 +85,11 @@ type Service {
 
 !!! success "_h.2.0_ When any service discovered by a discovery protocol with a global identification scheme is discovered, the monitored device should have a unique name equal to the service id as specified by the discovery protocol and when the device comes back online after going offline, the same monitored device should be used for this installation device"
 !!! success "_h.2.1_ When any service discovered by a discovery protocol with a per-protocol identification scheme is discovered, the monitored device should have a unique name equal to the service id prefixed by the protocol id and when the device comes back online after going offline, the same monitored device should be used for this installation device"
-!!! failure "_h.2.2_ When any service discovered by a discovery protocol with a per-installation identification scheme is discovered, the monitored device should have a machine generated name equal to the id of the service and when the device comes back online after going offline (on the same installation), the same monitored device should be used"
-!!! failure "_h.2.3_ When any service discovered by a discovery protocol with a per-installation identification scheme goes offline on one installation and comes online on another installation, another monitored device should be used"
+!!! success "_h.2.2_ When any service discovered by a discovery protocol with a per-installation identification scheme is discovered, the monitored device should have a machine generated name equal to the id of the service and when the device comes back online after going offline (on the same installation), the same monitored device should be used"
+!!! success "_h.2.3_ When any service discovered by a discovery protocol with a per-installation identification scheme goes offline on one installation and comes online on another installation, another monitored device should be used"
 !!! success "_h.2.4_ When any service discovered by a discovery protocol with a per-session identification scheme is discovered, the monitored device should have a machine generated name equal to the service id and when the service goes offline and comes back online on any installation, another monitored device should be used"
+!!! success "_h.2.5_ When an installation puts online any number of random services, only offline devices should be present when it goes offline"
+!!! success "_h.2.6_ When an installation puts online only per-session services, no devices should be present when it goes offline and a 'device removed' event per device should have been sent"
 
 !!! failure "TODO: service merging (information can be different across installations, or even within the same installation, that can change over time)"
 
@@ -99,6 +101,7 @@ type Service {
 	!!! failure "_a_ Service has been detected by another installation as well"
 	!!! failure "_b_ Child service have been added"
 !!! success "_h.4.3_ If any number of devices are discovered and a listener for 'new device' events is registered, it should received an event for all discovered devices"
+!!! success "_h.4.4_ When any service discovered by a discovery protocol with a per-session identification scheme is discovered and it goes offline subsequently, a 'device removed' events should be sent"
 
 ## Dashboard
 
