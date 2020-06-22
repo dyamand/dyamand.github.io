@@ -54,12 +54,10 @@ Eventing is used within DYAMAND to synchronize information across all components
 !!! success "_b.5.3_ Building an event and specifying a timestamp, should create an event with that specific timestamp"
 !!! success "_b.5.4_ Building an event without properties should result in Optional.empty() when getting any property"
 !!! success "_b.5.5_ Building an event with any number of properties, should result in those properties being present and no other properties can be present"
-!!! success "_b.5.6_ Building an event, the installation names should never be empty or null"
 !!! success "_b.5.7_ Building an event with whatever input provided, should generate an event (non-null)"
 !!! success "_b.5.8_ When creating an event, invoking publish should publish the created event"
-!!! success "_b.5.9_ When creating an event, the created event should contain the names the installation information component provides"
 
 ## Listener disposal
 
 !!! success "_b.6.0_ Creating and disposing N listeners, should not leave any non-disposed ExternalCodeExecution instances"
-!!! failure "_b.6.1_ Creating and disposing N listeners while sending events should not result in any failure"
+!!! success "_b.6.1_ Disposing a listener while sending events should successfully publish all events (with optional errors in the EventPublicationResult, but limited to IllegalStateException)"
