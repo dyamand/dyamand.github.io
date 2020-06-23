@@ -12,6 +12,8 @@ extend type Subscription {
 	newDevice(installation: String): Device!
 	# Subscription for device changes
 	deviceChanged(installation: String): Device!
+	# Subscription when device is removed
+	deviceRemoved(installation: String): Device!
 	# Subscription for a particular device
 	device(id: String!): Device!
 }
