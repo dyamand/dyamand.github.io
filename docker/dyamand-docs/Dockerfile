@@ -11,7 +11,7 @@ RUN sed -i '/^user/d' /etc/nginx/nginx.conf && \
     rm paths.txt
 
 # Add files to serve
-COPY build/mkdocs/unspecified /app
-RUN chmod -R 777 /app
+COPY build/mkdocs/unspecified /documentation
+RUN chmod -R 777 /documentation
 
 ENTRYPOINT ["nginx","-g","daemon off;"]
