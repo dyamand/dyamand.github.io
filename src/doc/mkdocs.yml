@@ -60,6 +60,8 @@ nav:
       - Discovering a new service: plugins/discovery.md
       - Adding new state and service prototypes: plugins/prototypes.md
       - Describing a service: plugins/description.md
+  - Style guidelines:
+      - Logging: styleguides/logging.md
   - Tests:
       - 1. Discovering new services: tests/discovery.md
       - 2. Describing services: tests/description.md
