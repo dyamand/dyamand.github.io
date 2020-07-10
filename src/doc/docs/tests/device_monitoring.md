@@ -139,5 +139,5 @@ type State {
 
 ### Device states service
 
-!!! failure "_h.7.1_ Adding a state to a service and retrieving it should return the added service"
+!!! failure "_h.7.1_ Adding a state to a service and retrieving it should return the added state"
 !!! failure "_h.7.2_ Changing an existing state of a service and retrieving it should return the state with the modified information"
