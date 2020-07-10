@@ -64,6 +64,8 @@ type State {
 	name: String!
 	# Type of a state
 	type: String!
+	# Value of a state
+	value: String
 }
 ```
 
