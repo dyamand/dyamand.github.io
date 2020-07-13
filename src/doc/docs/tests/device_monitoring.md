@@ -60,12 +60,14 @@ type Service {
 
 # State of a service.
 type State {
-	# Name of a state
-	name: String!
+	# ID of a state
+	id: ID!
 	# Type of a state
 	type: String!
-	# Value of a state
-	value: String
+	# Collection of supported units
+	supportedUnits: [String!]!
+	# Value for all of the supported units
+	value: [String!]
 }
 ```
 
