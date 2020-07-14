@@ -36,6 +36,7 @@
 !!! success "_i.5.0_ Calling the addMessage method sets the message with the indicated information and calling getMessages returns all messages of the message service"
 !!! success "_i.5.1.a_ Calling removeMessages without any parameters will remove all messages of the message service"
 !!! success "_i.5.1.b_ Calling removeMessages with messages indicated will remove the messages passed to that method"
+!!! success "_i.5.1.c_ Removing the same message twice should only remove it once"
 
 ## Page information Service
 
