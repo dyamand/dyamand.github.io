@@ -66,8 +66,16 @@ type State {
 	type: String!
 	# Collection of supported units
 	supportedUnits: [String!]!
-	# Value for all of the supported units
-	value: [String!]
+	# Values of the state
+	values: [Value]
+}
+
+# Value of a state.
+type Value {
+	# Unit of the value
+	unit: String!
+	# Value
+	value: String!
 }
 ```
 
@@ -139,7 +147,7 @@ type State {
 !!! failure "_h.6.8_ Given a specific device, all addresses where the device got discovered should match"
 !!! success "_h.6.9_ Given a specific device, all discovery protocols should match"
 
-### Device states service
+### State prototype service
 
-!!! failure "_h.7.1_ Adding a state to a service and retrieving it should return the added state"
-!!! failure "_h.7.2_ Changing an existing state of a service and retrieving it should return the state with the modified information"
+!!! success "_h.7.1_ Adding a state prototype to a service and getting its icon based on its type should return the corresponding icon link"
+!!! success "_h.7.2_ Changing an existing icon link of a state prototype and retrieving it should return the newly modified link"
