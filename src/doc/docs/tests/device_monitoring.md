@@ -28,10 +28,12 @@ type Device {
 	lastSeen: Timestamp!
 	# status of the device
 	status: Status!
-	# supported discovery protocols
+	# Supported discovery protocols
 	supportedDiscoveryProtocols: [DiscoveryProtocol!]!
-	# addresses the device has been discovered at
+	# Addresses the device has been discovered at
 	discoveredAt: [String!]!
+	# All states detected by the specific device
+	states: [State!]!
 }
 
 # An installation can contain devices.
@@ -150,4 +152,6 @@ type Value {
 ### State prototype service
 
 !!! success "_h.7.1_ Adding a state prototype to a service and getting its icon based on its type should return the corresponding icon link"
-!!! success "_h.7.2_ Changing an existing icon link of a state prototype and retrieving it should return the newly modified link"
+!!! failure "_h.7.2_ Adding n state prototypes and afterwards removing them all will return no state prototypes"
+!!! failure "_h.7.2_ Adding n state prototypes and afterwards removing them all will return no state prototypes"
+!!! failure "_h.7.3_ Querying for an unknown state prototype should return a default icon link"
