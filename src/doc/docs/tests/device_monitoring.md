@@ -67,7 +67,7 @@ type State {
 	# Collection of supported units
 	supportedUnits: [String!]!
 	# Values of the state
-	values: [Value]
+	values: [Value!]!
 }
 
 # Value of a state.
