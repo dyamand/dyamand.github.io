@@ -57,6 +57,7 @@ nav:
   - Writing an application:
       - Service lifecycle: applications/services.md
   - Add technology support:
+      - Structure: plugins/technologies.md
       - Discovering a new service: plugins/discovery.md
       - Adding new state and service prototypes: plugins/prototypes.md
       - Describing a service: plugins/description.md
