@@ -79,3 +79,4 @@ nav:
         - K. Configuration: tests/configuration.md
         - L. Authorization: tests/authorization.md
         - M. Dashboard error visualization: tests/dashboard_error_visualization.md
+        - N. Profiles: tests/profiles.md
