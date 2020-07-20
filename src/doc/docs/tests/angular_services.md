@@ -37,6 +37,7 @@
 !!! success "_i.5.1.a_ Calling removeMessages without any parameters will remove all messages of the message service"
 !!! success "_i.5.1.b_ Calling removeMessages with messages indicated will remove the messages passed to that method"
 !!! success "_i.5.1.c_ Removing the same message twice should result in one less message"
+!!! success "_i.5.2_ Adding the same message twice will only add it once to the service"
 
 ## Page information Service
 
