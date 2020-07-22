@@ -4,62 +4,17 @@ DYAMAND uses the ```Prototype``` design pattern to be able to describe services 
 
 ### State prototypes
 
-State prototypes are blueprints for actual states in a service. Conceptually, there are two different types of states, states that are generic and will be used by general applications and states that will be used by a particular technology. By convention, generic states should be registered by type plugins and technology-specific states should not.
+State prototypes are blueprints for actual states in a service. Conceptually, there are three different types of states.
 
-A state prototype is an instance of ```State```. Below you can find an example of a generic state that has a ```Boolean``` value and supports two units, opposites of one another. The ```State``` is responsible to convert between different units.
+1. **Measurement states** States that have values related to one or more units of measurement, e.g. Temperature has values that are related to Kelvin, degrees Celsius or degrees Fahrenheit. A special unit is the lack of a unit, also called a scalar or a quantity of dimension one.
+1. **Discrete states** States that have a finite collection of possible values, e.g. door open vs. closed.
+1. **Dimensionless states** States that do not have a dimension, just a value, e.g. a message that was sent by a technology
 
-```java
-public final enum ExampleGenericStateUnit implements Unit<ExampleGenericState> {
-	NORMAL("n"),
-	REVERSE("r");
-	private final String symbol;
-	
-	public ExampleGenericStateUnit (String symbol) {
-		this.symbol = symbol;
-	}
-	
-	@Override
-	public String symbol() {
-		return this.symbol;
-	}
-}
+State prototypes are both being used by general applications (generic states) as by technology-specific plugins (specific states). Translation plugins are responsible to translate specific states to generic states (TODO add link).
 
-public final class ExampleGenericState implements State<ExampleGenericState, ExampleGenericStateUnit, Boolean> {
-	private final boolean value;
-	private final ExampleGenericState unit;
-	
-	private ExampleGenericState (boolean value, ExampleGenericStateUnit unit) {
-		this.value = value;
-		this.unit = unit;
-	}
-	
-	@Override
-	public Class<ExampleGenericState> type() {
-		return ExampleGenericState.class;
-	}
-	
-	@Override
-	public Collection<Unit<ExampleGenericState>> supportedUnits() {
-		return ExampleGenericStateUnit.values();
-	}
-	
-	@Override
-	public Boolean value(ExampleGenericStateUnit unitToConvertTo) {
-		if (this.unit == unitToConvertTo) {
-			return this.value;
-		} else {
-			return !this.value;
-		}
-	}
-	
-	@Override
-	public StateBuilder<ExampleGenericState> create() {
-		// return state builder to start building a state based on the provided prototype
-	}
-}
-```
+A state prototype is an instance of ```State```. _org.dyamand.description.api_ provides a number of abstract classes to help you in implementing new states.
 
-Registering this state prototype can be done by getting a ```Description``` reference and registering it as in the example below.
+Registering a state prototype can be done by getting a ```Description``` reference and registering it as in the example below.
 ```java
 @Component(immediate = true)
 public final class ExampleTypePlugin {
