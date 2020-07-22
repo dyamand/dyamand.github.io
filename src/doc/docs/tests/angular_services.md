@@ -38,6 +38,7 @@
 !!! success "_i.5.1.b_ Calling removeMessages with messages indicated will remove the messages passed to that method"
 !!! success "_i.5.1.c_ Removing the same message twice should result in one less message"
 !!! success "_i.5.2_ Adding the same message twice will only add it once to the service"
+!!! success "_i.5.3_ Adding messages with the same content will only add one message to the service"
 
 ## Page information Service
 
