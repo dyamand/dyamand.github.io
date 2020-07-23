@@ -22,3 +22,58 @@
 !!! failure "_1.0.6_ When a user does not have ADD_USER permission for a given profile, adding permissions for an existing user within that profile fails"
 !!! failure "_1.0.7_ When a user does not have REMOVE_USER permission for a given profile, removing permissions for an existing user within that profile fails"
 >USER_UPDATE might be needed as a separate permission
+
+# Dashboard
+
+```
+extend type Query {
+	profile(name: String!): Profile
+	members(profile: String!): [User!]!
+}
+
+extend type Mutation {
+	newProfile(name: String!, description: String, installations: [Installation]): Profile!
+	removeProfile(id: ID!): Profile!
+	assignInstallation(installationId: ID!, profileId: ID!)
+	removeInstallationFromProfile(installationId: ID!, profileId: ID!)
+}
+
+extend type Installation {
+	assigned: String!
+}
+
+# Profile
+type Profile {
+	id: ID!
+	name: String!
+	description: String
+	installations: [Installation!]!
+	members: [User!]!
+}
+
+# User
+type User {
+	id: ID!
+	name: String!
+	email: String!
+	profiles: [Profile!]!
+	permissions: [Permission]!
+}
+
+# Permissions
+enum Permission {
+	ADD_USER
+	REMOVE_USER
+	VIEW_INSTALLATIONS
+	ADD_INSTALLATION
+	REMOVE_INSTALLATION
+	CREATE_PROFILE
+	REMOVE_PROFILE
+}
+```
+
+!!! failure "_l.1.0_ Retrieving the profile should display the correct information of that profile (members, assigned installations)"
+!!! failure "_l.1.1_ Adding n members/installations to the profile should display n additional members/installations"
+!!! failure "_l.1.2_ Modifying a permission of a member should display the modified permission state of that respective member"
+!!! failure "_l.1.3_ Removing a member from a profile should remove the member from the view"
+!!! failure "_l.1.4_ Removing a profile should not display any information regarding that profile anymore"
