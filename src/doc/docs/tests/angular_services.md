@@ -56,10 +56,4 @@
 
 ## Authorization service
 
-!!! failure "_i.9.0_ After creating a new profile, standard rights should be granted to the creator"
-!!! failure "_i.9.1_ After creating a new profile and getting a profile, the correct profile should be retrieved"
-!!! failure "_i.9.2_ After adding installations to the new profile, these installations should be retrievable through that profile and they should become assigned"
-!!! failure "_i.9.3_ After adding members with specific access rights to the profile, these members should be retrievable through that profile with the corresponding access rights"
-!!! failure "_i.9.4_ If user without removal rights tries to remove installations/members, it should fail"
-!!! failure "_i.9.5_ If user with removal rights removes installations/members, these installations/members should not be retrievable through that profile anymore"
-!!! failure "_i.9.6_ If profile gets changed, after retrieving the profile it should contain the latest changes"
+!!! failure "_i.9.0_ The service should return the correct profile sent by the mock backend"

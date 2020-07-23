@@ -28,52 +28,52 @@
 ```
 extend type Query {
 	profile(name: String!): Profile
-	members(profile: String!): [User!]!
 }
 
 extend type Mutation {
-	newProfile(name: String!, description: String, installations: [Installation]): Profile!
+	# Create a new profile
+	newProfile(name: String!, description: String, installations: [ID!]): Profile!
+	# Remove profile using its ID
 	removeProfile(id: ID!): Profile!
-	assignInstallation(installationId: ID!, profileId: ID!)
-	removeInstallationFromProfile(installationId: ID!, profileId: ID!)
+	# Assign installations to a certain profile
+	assignInstallations(profileId: ID!, installationIds: [ID!]!)
+	# Unassign installations from a certain profile
+	unassignInstallations(profileId: ID!, installationId: [ID!]!)
 }
 
 extend type Installation {
-	assigned: String!
+	# List of profiles the installation is assigned to
+	assigned: [Profile!]!
 }
 
-# Profile
+# Profile.
 type Profile {
 	id: ID!
 	name: String!
 	description: String
 	installations: [Installation!]!
-	members: [User!]!
+	permissions: [Permission!]!
 }
 
-# User
-type User {
-	id: ID!
-	name: String!
-	email: String!
-	profiles: [Profile!]!
-	permissions: [Permission]!
+# Permissions which can be granted to users
+type Permission {
+	system: SystemPermission
+	profile: ProfilePermission
 }
 
-# Permissions
-enum Permission {
-	ADD_USER
-	REMOVE_USER
+# System permissions which can be granted
+enum SystemPermission {
+	VIEW_ALL_PROFILES
+	VIEW_UNASSIGNED_INSTALLATIONS
+}
+
+# Profile permissions which can be granted
+enum ProfilePermission {
 	VIEW_INSTALLATIONS
-	ADD_INSTALLATION
-	REMOVE_INSTALLATION
-	CREATE_PROFILE
-	REMOVE_PROFILE
 }
 ```
 
 !!! failure "_l.1.0_ Retrieving the profile should display the correct information of that profile (members, assigned installations)"
-!!! failure "_l.1.1_ Adding n members/installations to the profile should display n additional members/installations"
-!!! failure "_l.1.2_ Modifying a permission of a member should display the modified permission state of that respective member"
-!!! failure "_l.1.3_ Removing a member from a profile should remove the member from the view"
-!!! failure "_l.1.4_ Removing a profile should not display any information regarding that profile anymore"
+!!! failure "_l.1.1_ Adding n installations to the profile should display n additional installations"
+!!! failure "_l.1.2_ Adding n installations and afterwards removing all should display no installations anymore"
+!!! failure "_l.1.3_ Removing a profile should not display any information regarding that profile anymore"
