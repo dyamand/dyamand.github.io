@@ -61,6 +61,7 @@ nav:
       - Adding new state and service prototypes: plugins/prototypes.md
       - Discovering a new service: plugins/discovery.md
       - Describing a service: plugins/description.md
+      - Detecting state changes: plugins/state_changes.md
   - Style guidelines:
       - Logging: styleguides/logging.md
   - Tests:
