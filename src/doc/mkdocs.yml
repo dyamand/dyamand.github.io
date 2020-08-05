@@ -68,6 +68,7 @@ nav:
       - 1. Discovering new services: tests/discovery.md
       - 2. Describing services: tests/description.md
       - 3. Detecting state changes: tests/state_changes.md
+      - 4. Translating services and state changes: tests/translation.md
       - Internal functionality:
         - A. Task scheduling: tests/scheduling.md
         - B. Eventing: tests/eventing.md
