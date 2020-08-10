@@ -52,19 +52,7 @@ type Profile {
 	name: String!
 	description: String
 	installations: [Installation!]!
-	permissions: [Permission!]!
-}
-
-# Permissions which can be granted to users
-type Permission {
-	system: SystemPermission
-	profile: ProfilePermission
-}
-
-# System permissions which can be granted
-enum SystemPermission {
-	VIEW_ALL_PROFILES
-	VIEW_UNASSIGNED_INSTALLATIONS
+	permissions: [ProfilePermission!]!
 }
 
 # Profile permissions which can be granted
