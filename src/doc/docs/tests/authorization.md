@@ -27,7 +27,7 @@
 
 ```
 extend type Query {
-	profile(name: String!): Profile
+	profile(id: ID!): Profile
 }
 
 extend type Mutation {
