@@ -28,15 +28,12 @@ Services can be described at discovery time by using state and service prototype
 ## Describing a service using state prototypes
 
 !!! success "_2.3.0_ When a service is described by using unnamed state prototypes, the resulting service should contain states for all state prototypes used and all states should contain unique names within the created service (the fully qualified type) and the states should be of the same type of the used prototypes"
-!!! success "_2.3.1_ When a service is described by using unnamed state prototypes and each state prototype is added twice, an IllegalStateException should be thrown"
-!!! success "_2.3.2_ When a service is described by using named state prototypes, the resulting service should contain states for all state prototypes with the specified names"
-!!! success "_2.3.3_ When a service is described by using named state prototypes and there are overlapping names for the states, an IllegalStateException should be thrown"
+!!! success "_2.3.1_ When a service is described by using named state prototypes, the resulting service should contain states for all state prototypes with the specified names"
 
 ## Describing a service using service prototypes
 
 !!! success "_2.4.0_ When a service is described by a service prototype, the created service should be of the same type as the prototype and it should contain all non-optional states"
 !!! success "_2.4.1_ When a service is described by a service prototype and is extended by using named state prototypes, both the mandatory states and the added states should be present"
-!!! success "_2.4.2_ When a service described by a service prototype and an unnamed state prototype is added that already was present in the service prototype, an IllegalStateException should be thrown"
 
 # Serialization with prototypes
 

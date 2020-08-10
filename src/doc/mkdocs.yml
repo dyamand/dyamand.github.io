@@ -61,11 +61,14 @@ nav:
       - Adding new state and service prototypes: plugins/prototypes.md
       - Discovering a new service: plugins/discovery.md
       - Describing a service: plugins/description.md
+      - Detecting state changes: plugins/state_changes.md
   - Style guidelines:
       - Logging: styleguides/logging.md
   - Tests:
       - 1. Discovering new services: tests/discovery.md
       - 2. Describing services: tests/description.md
+      - 3. Detecting state changes: tests/state_changes.md
+      - 4. Translating services and state changes: tests/translation.md
       - Internal functionality:
         - A. Task scheduling: tests/scheduling.md
         - B. Eventing: tests/eventing.md
