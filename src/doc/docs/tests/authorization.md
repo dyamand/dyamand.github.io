@@ -44,6 +44,12 @@ extend type Mutation {
 	unassignInstallations(profileId: ID!, installationId: [ID!]!): Profile!
 }
 
+extend type Subscription {
+	newProfile: Profile!
+	changedProfile: Profile!
+	removedProfile: Profile!
+}
+
 extend type Installation {
 	# List of profiles the installation is assigned to
 	assigned: [Profile!]!
