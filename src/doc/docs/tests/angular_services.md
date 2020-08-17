@@ -53,3 +53,11 @@
 ## Logging service
 
 !!! success "_i.8.0_ Getting all logs and log n entries should result in n nexts of the logged entries"
+
+## Profile service
+
+!!! failure "_i.9.0_ The service should return the correct profile sent by the mock backend"
+
+## Installation service
+
+!!! success "_i.10.0_ The service should return the correct installations sent by the mock backend"

@@ -22,3 +22,55 @@
 !!! failure "_1.0.6_ When a user does not have ADD_USER permission for a given profile, adding permissions for an existing user within that profile fails"
 !!! failure "_1.0.7_ When a user does not have REMOVE_USER permission for a given profile, removing permissions for an existing user within that profile fails"
 >USER_UPDATE might be needed as a separate permission
+
+# Dashboard
+
+```
+extend type Query {
+	# Query to return list of all profiles
+	profiles(): [Profile!]!
+	# Query to return a specific profile based on its ID
+	profile(id: ID!): Profile
+}
+
+extend type Mutation {
+	# Create a new profile
+	newProfile(name: String!, description: String, installations: [ID!]): Profile!
+	# Remove profile using its ID
+	removeProfile(id: ID!): Profile!
+	# Assign installations to a certain profile
+	assignInstallations(profileId: ID!, installationIds: [ID!]!): Profile!
+	# Unassign installations from a certain profile
+	unassignInstallations(profileId: ID!, installationId: [ID!]!): Profile!
+}
+
+extend type Installation {
+	# List of profiles the installation is assigned to
+	assigned: [Profile!]!
+}
+
+# Profiles provide a way to group installations and devices.
+type Profile {
+	# ID of the profile
+	id: ID!
+	# Name of the profile
+	name: String!
+	# Optional description of the profile
+	description: String
+	# Assigned installations to the profile
+	installations: [Installation!]!
+	# Permissions granted to the profile
+	permissions: [ProfilePermission!]!
+}
+
+# Profile permissions which can be granted
+enum ProfilePermission {
+	VIEW_INSTALLATIONS
+}
+```
+
+!!! success "_l.1.0_ Creating n profiles should display the correct information of all profiles"
+!!! failure "_l.1.1_ Adding n installations to the profile should display n additional installations"
+!!! failure "_l.1.2_ Adding n installations and afterwards removing all should display no installations anymore"
+!!! failure "_l.1.3_ Removing a profile should not display any information regarding that profile anymore"
+!!! failure "_l.1.4_ Assigning the same installation twice should only assign it once"
