@@ -27,7 +27,9 @@
 
 ```
 extend type Query {
+	# Query to return list of all profiles
 	profiles(): [Profile!]!
+	# Query to return a specific profile based on its ID
 	profile(id: ID!): Profile
 }
 
@@ -47,12 +49,17 @@ extend type Installation {
 	assigned: [Profile!]!
 }
 
-# Profile.
+# Profiles where permissions to users belonging to that specific profile can be set. Profiles can be created with a name and optionally with a description as well as assigned installations.
 type Profile {
+	# ID of the profile
 	id: ID!
+	# Name of the profile
 	name: String!
+	# Optional description of the profile
 	description: String
+	# Assigned installations to the profile
 	installations: [Installation!]!
+	# Permissions granted to the profile
 	permissions: [ProfilePermission!]!
 }
 

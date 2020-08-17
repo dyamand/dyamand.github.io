@@ -60,4 +60,4 @@
 
 ## Installation service
 
-!!! failure "_i.10.0_ The service should return the correct profiles sent by the mock backend"
+!!! success "_i.10.0_ The service should return the correct installations sent by the mock backend"
