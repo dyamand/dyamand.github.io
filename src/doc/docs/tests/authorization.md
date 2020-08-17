@@ -49,7 +49,7 @@ extend type Installation {
 	assigned: [Profile!]!
 }
 
-# Profiles where permissions to users belonging to that specific profile can be set. Profiles can be created with a name and optionally with a description as well as assigned installations.
+# Profiles provide a way to group installations and devices.
 type Profile {
 	# ID of the profile
 	id: ID!
