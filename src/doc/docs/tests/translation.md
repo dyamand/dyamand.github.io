@@ -4,10 +4,11 @@
 !!! success "_4.0.1_ If a translator is registered for a state and state change for another state is created, the translator should NOT be invoked"
 !!! success "_4.0.2_ If a state change is created and afterwards a translator is registered for that state, the translator should be invoked"
 !!! success "_4.0.3_ If a state change is created and afterwards a translator is registered for another state, the translator should NOT be invoked"
-!!! failure "_4.0.4_ If a translator translates a state change into a new state change, that state should be added to the service and the value change should be present in the existing state changed event if the translator was registered before the state change happened"
+!!! success "_4.0.4_ If a translator translates a state change into a new state change, that state should be added to the service and the value change should be present in the existing state changed event if the translator was registered before the state change happened"
 !!! failure "_4.0.5_ If a translator translates a state change into a new state change, that state should be added to the service and the value change should be present in a new state changed event if the translator was registered after the state change happened"
 
 TODO what if translator gets unregistered
+TODO test multiple translated states per translator + multiple translators with each 1 state
 
 ## Translating state changes into new services
 
