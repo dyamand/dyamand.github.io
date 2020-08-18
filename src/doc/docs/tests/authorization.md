@@ -81,5 +81,5 @@ enum ProfilePermission {
 !!! success "_l.1.0_ Creating n profiles should display the correct information of all profiles"
 !!! success "_l.1.1_ Adding n installations to the profile should display n additional installations"
 !!! success "_l.1.2_ Adding n installations and afterwards removing all should display no installations anymore"
-!!! failure "_l.1.3_ Removing a profile should not display any information regarding that profile anymore"
+!!! success "_l.1.3_ Creating and removing n profiles should not display any profiles anymore"
 !!! failure "_l.1.4_ Assigning the same installation twice should only assign it once"
