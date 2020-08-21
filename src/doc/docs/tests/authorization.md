@@ -78,7 +78,7 @@ enum ProfilePermission {
 }
 ```
 
-!!! success "_l.1.0_ Creating n profiles should invoke the service\'s new profile method n times and n profiles should have been added with the correct information"
+!!! success "_l.1.0_ Creating n profiles should invoke the service's new profile method n times and n profiles should have been added with the correct information"
 !!! success "_l.1.1_ Adding n installations to the profile should invoke the service's assignInstallations method and display n installations for the profile"
 !!! success "_l.1.2_ Adding n installations and afterwards removing all should display no installations anymore. Moreover the service's method should have been invoked n times"
 !!! success "_l.1.3_ Creating and removing n profiles should not display any profiles anymore and the service's remove profile method should have been called n times"
