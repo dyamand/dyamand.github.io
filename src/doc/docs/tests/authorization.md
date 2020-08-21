@@ -85,4 +85,4 @@ enum ProfilePermission {
 !!! success "_l.1.4_ Assigning the same installation twice should only assign it once"
 !!! failure "_l.1.5_ Upon receiving n new profile events n new profiles should be added with the correct information"
 !!! failure "_l.1.6_ Upon receiving n changed profile events n profiles should be changed with the correct changes"
-!!! failure "_l.1.5_ Upon receiving n new profile events and n profile removed events there should not be any profiles left"
+!!! failure "_l.1.7_ Upon receiving n new profile events and n profile removed events there should not be any profiles left"
