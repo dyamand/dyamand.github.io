@@ -78,8 +78,11 @@ enum ProfilePermission {
 }
 ```
 
-!!! success "_l.1.0_ Creating n profiles should display the correct information of all profiles"
-!!! success "_l.1.1_ Adding n installations to the profile should display n additional installations"
-!!! success "_l.1.2_ Adding n installations and afterwards removing all should display no installations anymore"
-!!! success "_l.1.3_ Creating and removing n profiles should not display any profiles anymore"
+!!! success "_l.1.0_ Creating n profiles should invoke the service's new profile method n times and n profiles should have been added with the correct information"
+!!! success "_l.1.1_ Adding n installations to the profile should invoke the service's assignInstallations method and display n installations for the profile"
+!!! success "_l.1.2_ Adding n installations and afterwards removing all should display no installations anymore. Moreover the service's method should have been invoked n times"
+!!! success "_l.1.3_ Creating and removing n profiles should not display any profiles anymore and the service's remove profile method should have been called n times"
 !!! success "_l.1.4_ Assigning the same installation twice should only assign it once"
+!!! success "_l.1.5_ Upon receiving a new profile events, a new profile should have been added with the correct information"
+!!! failure "_l.1.6_ Upon receiving a changed profile events, profile should be displayed"
+!!! failure "_l.1.7_ Upon receiving a new profile event and a profile removed event there should not be any profiles being displayed"
