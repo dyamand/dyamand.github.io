@@ -84,5 +84,5 @@ enum ProfilePermission {
 !!! success "_l.1.3_ Creating and removing n profiles should not display any profiles anymore and the service's remove profile method should have been called n times"
 !!! success "_l.1.4_ Assigning the same installation twice should only assign it once"
 !!! success "_l.1.5_ Upon receiving a new profile events, a new profile should have been added with the correct information"
-!!! failure "_l.1.6_ Upon receiving a changed profile events, profile should be displayed"
+!!! success "_l.1.6_ Upon receiving a changed profile event, the changed profile should be displayed correctly"
 !!! failure "_l.1.7_ Upon receiving a new profile event and a profile removed event there should not be any profiles being displayed"
