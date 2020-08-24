@@ -56,7 +56,7 @@
 
 ## Profile service
 
-!!! failure "_i.9.0_ Getting all profiles should invoke the GraphQLClientService's query method and return the gotten profiles"
+!!! success "_i.9.0_ Getting all profiles should invoke the GraphQLClientService's query method and return the gotten profiles"
 !!! failure "_i.9.1_ Invoking the service's getNewProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
 !!! failure "_i.9.2_ Invoking the service's getChangedProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
 !!! failure "_i.9.3_ Invoking the service's getRemovedProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
