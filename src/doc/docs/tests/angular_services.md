@@ -61,7 +61,7 @@
 !!! success "_i.9.2_ Invoking the service's getChangedProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
 !!! success "_i.9.3_ Invoking the service's getRemovedProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
 !!! success "_i.9.4_ Invoking the service's newProfile method should invoke the GraphQLClientService's mutation method with the passed parameters and return the created profile"
-!!! failure "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
+!!! success "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
 !!! failure "_i.9.6_ Invoking the service's assignInstallations method should invoke the GraphQLClientService's mutation method with the passed parameters and return the modified profile"
 !!! failure "_i.9.7_ Invoking the service's unassignInstallations method should invoke the GraphQLClientService's mutation method with the passed parameters and return the modified profile"
 
