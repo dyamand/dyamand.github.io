@@ -67,7 +67,7 @@
 
 ## Installation service
 
-!!! failure "_i.10.0_ Getting all installations should invoke the GraphQLClientService's query method and return the gotten installations"
+!!! success "_i.10.0_ Getting all installations should invoke the GraphQLClientService's query method and return the gotten installations"
 !!! failure "_i.10.1_ Invoking the service's getNewInstallationUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned installation"
 !!! failure "_i.10.2_ Invoking the service's getRemovedInstallationUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Installation"
 !!! failure "_i.10.3_ Invoking the service's getChangedInstallationUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Installation"
