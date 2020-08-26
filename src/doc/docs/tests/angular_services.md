@@ -63,7 +63,7 @@
 !!! success "_i.9.4_ Invoking the service's newProfile method should invoke the GraphQLClientService's mutation method with the passed parameters and return the created profile"
 !!! success "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
 !!! success "_i.9.6_ Invoking the service's assignInstallations method should invoke the GraphQLClientService's mutation method with the passed parameters and return the modified profile"
-!!! failure "_i.9.7_ Invoking the service's unassignInstallations method should invoke the GraphQLClientService's mutation method with the passed parameters and return the modified profile"
+!!! success "_i.9.7_ Invoking the service's assignInstallations and afterwards unassignInstallations method should invoke the GraphQLClientService's mutation method twice with the passed parameters and return the modified profile without any installations"
 
 ## Installation service
 
