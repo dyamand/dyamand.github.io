@@ -56,19 +56,23 @@
 
 ## Profile service
 
-!!! success "_i.9.0_ Getting all profiles should invoke the GraphQLClientService's query method and return the gotten profiles"
-!!! success "_i.9.1_ Invoking the service's getNewProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
-!!! success "_i.9.2_ Invoking the service's getChangedProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
-!!! success "_i.9.3_ Invoking the service's getRemovedProfileUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Profile"
-!!! success "_i.9.4_ Invoking the service's newProfile method should invoke the GraphQLClientService's mutation method with the passed parameters and return the created profile"
+!!! success "_i.9.0_ Getting all profiles should return the correct profiles"
+!!! success "_i.9.1_ After invoking the service's getNewProfileUpdates the Observable should be next with the correct Profile"
+!!! success "_i.9.2_ After invoking the service's getChangedProfileUpdates the Observable should be next with the correct Profile"
+!!! success "_i.9.3_ After invoking the service's getRemovedProfileUpdates the Observable should be next with the correct Profile"
+!!! success "_i.9.4_ After invoking the service's newProfile method the created profile is being returned correctly"
 !!! success "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
-!!! success "_i.9.6_ Invoking the service's assignInstallations method should invoke the GraphQLClientService's mutation method with the passed parameters and return the modified profile"
-!!! success "_i.9.7_ Invoking the service's assignInstallations and afterwards unassignInstallations method should invoke the GraphQLClientService's mutation method twice with the passed parameters and return the modified profile without any installations"
+!!! success "_i.9.6_ After invoking the service's assignInstallations method should return the modified profile correctly"
+!!! success "_i.9.7_ Invoking the service's assign installations and afterwards unassignInstallations method should return the modified profile without any installations"
 
 ## Installation service
 
-!!! success "_i.10.0_ Getting all installations should invoke the GraphQLClientService's query method and return the gotten installations"
-!!! success "_i.10.1_ Invoking the service's getNewInstallationUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned installation"
-!!! success "_i.10.2_ Invoking the service's getRemovedInstallationUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Installation"
-!!! success "_i.10.3_ Invoking the service's getChangedInstallationUpdates should invoke the GraphQLClientService's subscribe method and the Observable should be next with the returned Installation"
+!!! success "_i.10.0_ Getting all installations should return the correct installations"
+!!! success "_i.10.1_ After invoking the service's getNewInstallationUpdates the Observable should be next with the correct installation"
+!!! success "_i.10.2_ After invoking the service's getRemovedInstallationUpdates the Observable should be next with the correct Installation"
+!!! success "_i.10.3_ After invoking the service's getChangedInstallationUpdates the Observable should be next with the correct Installation"
 !!! success "_i.10.4_ Invoking the service's removeInstallation method should invoke the GraphQLClientService's mutation method with the passed parameters"
+!!! failure "_i.10.5_ After invoking the service's getInstallationUpdates method the Observable should be next with the correct installation"
+!!! failure "_i.10.6_ After invoking the service's getInstallationDetail method the correct installation information should be returned"
+!!! failure "_i.10.7_ After invoking the service's addFriendlyName method the Observable should next the installation with the added friendly name"
+!!! failure "_i.10.8_ After invoking the service's addFriendlyName and the removeFriendlyName methods for an installation without any friendly names the Observable should next the installation without any friendly names"
