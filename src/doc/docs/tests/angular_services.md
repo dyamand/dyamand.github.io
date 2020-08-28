@@ -72,7 +72,7 @@
 !!! success "_i.10.2_ After invoking the service's getRemovedInstallationUpdates the Observable should be next with the correct Installation"
 !!! success "_i.10.3_ After invoking the service's getChangedInstallationUpdates the Observable should be next with the correct Installation"
 !!! success "_i.10.4_ Invoking the service's removeInstallation method should invoke the GraphQLClientService's mutation method with the passed parameters"
-!!! failure "_i.10.5_ After invoking the service's getInstallationUpdates method the Observable should be next with the correct installation"
+!!! success "_i.10.5_ After invoking the service's getInstallationUpdates method the Observable should be next with the correct installation"
 !!! failure "_i.10.6_ After invoking the service's getInstallationDetail method the correct installation information should be returned"
 !!! failure "_i.10.7_ After invoking the service's addFriendlyName method the Observable should next the installation with the added friendly name"
 !!! failure "_i.10.8_ After invoking the service's addFriendlyName and the removeFriendlyName methods for an installation without any friendly names the Observable should next the installation without any friendly names"
