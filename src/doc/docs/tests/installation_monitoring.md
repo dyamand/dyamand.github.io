@@ -187,8 +187,8 @@ type Metric {
 
 ### Overview page
 
-!!! failure "_c.9.1_ Upon receiving installations events from the service, all n installations should be displayed correctly"
-!!! failure "_c.9.2_ If n installations get returned by the service and subsequently get removed by the component, no installations should be displayed anymore"
+!!! failure "_c.9.1_ Getting all installations updates from the service should display all returned n installations correctly"
+!!! failure "_c.9.2_ If n installations get returned by the service and subsequently get removed by the user, no installations should be displayed anymore"
 
 ### Details page
 
