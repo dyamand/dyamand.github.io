@@ -188,7 +188,8 @@ type Metric {
 ### Overview page
 
 !!! failure "_c.9.1_ Getting all installations updates from the service should display all returned n installations correctly"
-!!! failure "_c.9.2_ If n installations get returned by the service and subsequently get removed by the user, no installations should be displayed anymore"
+!!! failure "_c.9.2_ If n installations get removed by the user and the removal was successful, no installations should be displayed anymore"
+!!! failure "_c.9.3_ If n installations get removed by the user and the removal failed, n installations should still be displayed"
 
 ### Details page
 
