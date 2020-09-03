@@ -187,10 +187,9 @@ type Metric {
 
 ### Overview page
 
-!!! success "_c.9.1_ After getting all new installation events, the number of cards and table rows should be equal to the number of new installations + all installations with issues"
-!!! success "_c.9.2_ All information of a specific installation match the card and row containing its ID"
-!!! success "_c.9.3_ If n installations get an installation changed event, the amount of total installations should not change and all changes of that installation should be found on the specific installation card or in the specific installation row"
-!!! success "_c.9.4_ If n installations get added and subsequently removed, no installations should be displayed"
+!!! failure "_c.9.1_ Getting all installations updates from the service should display all returned n installations correctly"
+!!! failure "_c.9.2_ If n installations get removed by the user and the removal was successful, no installations should be displayed anymore"
+!!! failure "_c.9.3_ If n installations get removed by the user and the removal failed, n installations should still be displayed"
 
 ### Details page
 
