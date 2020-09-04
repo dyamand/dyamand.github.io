@@ -1,9 +1,9 @@
 ## Internal scheduling
 
-!!! success "_a.0.0_ Submitting N tasks should result in N executions on the executor"
-!!! success "_a.0.1_ Submitting tasks should be done asynchronous with respect to its execution, i.e. submitting a task should take no more than 1 second even though individual execution of that task takes 10 seconds"
-!!! success "_a.0.2_ Submitting N tasks that execute successfully each with its own handler, should invoke each handler exactly once"
-!!! success "_a.0.3_ Submitting N tasks that fail to execute each with its own handler, should invoke each handler exactly once with the correct error information"
+!!! success "_a.0.0_ Executing N tasks should result in N executions on the executor"
+!!! success "_a.0.1_ Scheduling tasks should be done asynchronous with respect to its execution, i.e. submitting a task should take no more than 1 second even though individual execution of that task takes 10 seconds"
+!!! success "_a.0.2_ The futures of N successfully executed tasks, should be completed exactly once"
+!!! success "_a.0.3_ The futures of N failed tasks, should be failed with the correct error information"
 !!! success "_a.0.4_ Submitting N tasks can never result in a concurrent execution on the task executor"
 !!! success "_a.0.5_ When submitting N tasks each containing its start number as an argument, the number of execution should be the same as the start number"
 !!! success "_a.0.6_ When submitting N tasks, each task should be executed on a worker thread"
