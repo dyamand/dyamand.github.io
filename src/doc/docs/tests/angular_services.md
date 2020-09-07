@@ -75,5 +75,5 @@
 !!! success "_i.10.5_ After invoking the service's getInstallationsUpdates the Observable should be next with the correct installations"
 !!! success "_i.10.6_ After invoking the service's getInstallationUpdates method the Observable should be next with the correct installation"
 !!! success "_i.10.7_ After invoking the service's getInstallationDetail method the correct installation information should be returned"
-!!! failure "_i.10.8_ After invoking the service's addFriendlyName method the Observable should next the installation with the added friendly name"
-!!! failure "_i.10.9_ After invoking the service's addFriendlyName and the removeFriendlyName methods for an installation without any friendly names the Observable should next the installation without any friendly names"
+!!! success "_i.10.8_ After invoking the service's addFriendlyName method a promise containing the modified installation should be returned"
+!!! success "_i.10.9_ After invoking the service's addFriendlyName and the removeFriendlyName methods for an installation without any friendly names the method should return a promise containing the installation without any friendly names"
