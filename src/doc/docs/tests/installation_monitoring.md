@@ -193,13 +193,6 @@ type Metric {
 
 ### Details page
 
-!!! success "_c.10.1_ Given a specific installation, the status and lastSeen should match"
-!!! success "_c.10.2_ If there are n health checks, there are n health checks shown on the health check card"
-!!! success "_c.10.3_ Given a specific health check id, all information related to the health check should match"
-!!! success "_c.10.5_ Given a specific installation, all installation names should match"
-!!! warning "_c.10.6_ Given a specific metric name, the value should match"
-	!!! success "_a_ All information regarding memory resource should be displayed correctly"
-	!!! success "_b_ All information regarding system CPU load should be displayed correctly"
-	!!! success "_c_ All information regarding hardware uptime should be displayed correctly"
-	!!! failure "_d_ All information regarding DYAMAND uptime should be displayed correctly"
-!!! success "_c.10.7_ Given a specific installation, all supported technologies should match"
+!!! failure "_c.10.1_ Getting an update for an installation should display the installation correctly"
+!!! failure "_c.10.2_ If n user friendly names got added by the user, the added user friendly names should be displayed correctly"
+!!! failure "_c.10.3_ If n user friendly names got added by the user and subsequently get removed again, these names should not be displayed anymore"
