@@ -193,6 +193,8 @@ type Metric {
 
 ### Details page
 
-!!! failure "_c.10.1_ Getting an update for an installation should display the installation correctly"
-!!! failure "_c.10.2_ If n user friendly names got added by the user, the added user friendly names should be displayed correctly"
-!!! failure "_c.10.3_ If n user friendly names got added by the user and subsequently get removed again, these names should not be displayed anymore"
+!!! success "_c.10.1_ Getting an update for an installation should display the installation correctly"
+!!! success "_c.10.2_ If n user friendly names got added successfully by the user, the added user friendly names should be displayed correctly"
+!!! success "_c.10.3_ If n user friendly names got added by the user but adding the names failed, the added user friendly names should not be displayed"
+!!! success "_c.10.4_ If n user friendly names got added by the user and subsequently get removed again without any issues, these names should not be displayed anymore"
+!!! success "_c.10.5_ If n user friendly names got added by the user and subsequently get removed again but a failure occurred for removing the names, all added names should be displayed"
