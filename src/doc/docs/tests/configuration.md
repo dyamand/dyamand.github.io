@@ -9,6 +9,7 @@
 !!! success "_k.0.6_ If a component has published its configuration using the Metatype service and all required configuration values are present in the bndrun or the configuration directory, but the default configuration value is not present, the component should still be activated (using the default value for the parameter)"
 !!! success "_k.0.7_ If the bundle containing the component is stopped, its configuration should also be removed"
 !!! success "_k.0.8_ If a component has published its configuration using the Metatype service, all configuration values are present in bndrun and the component is started before configuration provider, the component should be activated with that configuration"
+!!! failure "_k.0.9_ If a component has published its configuration using the Metatype service, all configuration values are present, but the values are not convertible to the expected type, no configuration with the PID should be present and the component should not be activated"
 
 ## Configuration directory (assuming the component's configuration has not been published using the Metatype service)
 
