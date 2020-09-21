@@ -64,6 +64,7 @@
 !!! success "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
 !!! success "_i.9.6_ After invoking the service's assignInstallations method should return the modified profile correctly"
 !!! success "_i.9.7_ Invoking the service's assign installations and afterwards unassignInstallations method should return the modified profile without any installations"
+!!! failure "_i.9.8_ After invoking the service's getProfileUpdates method the Observable should be next with the correct profile"
 
 ## Installation service
 
