@@ -70,10 +70,10 @@ type Metric {
 
 !!! success "_c.S.0_ When the backend is started, there should be 0 detected installations"
 !!! success "_c.S.1_ When a local installation is started, the amount of detected installations should be 1 and that installation should be online"
-!!! success "_c.S.2_ The online installation should contain at least 1 health check, 1 metric, 1 unique name and 1 machine generated friendly name"
-!!! success "_c.S.3_ When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline and there should still be health checks and metrics"
-!!! success "_c.S.4_ As long as an installation is active and sending regular heartbeats (for example when running for 100 seconds), the status of the installation on the backend should still be online"
-!!! success "_c.S.5_ When the local installations stops sending heartbeats and 2 heartbeats or more are missed (waiting at least 90 seconds), the amount of detected installations should still be 1 but the status should be lost communication"
+!!! success "_c.S.2_ When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline"
+!!! success "_c.S.3_ As long as an installation is active and sending regular heartbeats (for example when running for 100 seconds), the status of the installation on the backend should still be online"
+!!! success "_c.S.4_ The online installation should contain at least 1 health check, 1 metric, 1 unique name and 1 machine generated friendly name"
+!!! success "_c.S.5_ When the local installations stops sending heartbeats and 2 heartbeats or more are missed (waiting at least 90 seconds), the amount of detected installations should still be 1 but the status should be lost communication, and the installation should still contain health checks and metrics"
 !!! success "_c.S.6_ When the backend is restarted, the installation detected in the previous tests, should still be present and equal to the previous installation"
 !!! success "_c.S.7_ When the backend is killed, it should revert to the latest snapshot it saved"
 
@@ -85,7 +85,7 @@ type Metric {
 !!! success "_c.0.2_ After n.5* heartbeat interval n+1 alive events should have been sent"
 !!! success "_c.0.3_ When the installation is shutting down, a stopping event should be sent"
 !!! success "_c.0.4_ An installation should only send a stopping event when it is actually stopping"
-!!! success "_c.0.5_ When a new listener is registered, a heartbeat should be sent to that new listener"
+!!! success "_c.0.5_ When a new listener is registered, a snapshot heartbeat should be sent to that new listener"
 !!! success "_c.0.6_ Every N heartbeats, there should be exactly 1 snapshot heartbeat (heartbeat that contains all information, no deltas)"
 
 ### Installation metrics
