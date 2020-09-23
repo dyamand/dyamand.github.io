@@ -54,8 +54,8 @@ extend type Subscription {
 }
 
 extend type Installation {
-	# List of profile IDs the installation is assigned to
-	assigned: [String!]!
+	# List of profiles the installation is assigned to
+	assigned: [Profile!]!
 }
 
 # Profiles provide a way to group installations and devices.
