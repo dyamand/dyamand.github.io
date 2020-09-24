@@ -58,7 +58,8 @@
 
 !!! success "_i.9.0_ Getting all profiles should return the correct profiles"
 !!! success "_i.9.1_ After invoking the service's getNewProfileUpdates the Observable should be next with the correct Profile"
-!!! success "_i.9.2_ After invoking the service's getChangedProfileUpdates the Observable should be next with the correct Profile"
+!!! success "_i.9.2.a_ After invoking the service's getChangedProfileUpdates the Observable should be next with the correct Profile"
+!!! success "_i.9.2.b_ After invoking the service's getChangedProfileUpdates the Observable for new and changed profiles should be next with the correct Profile if the profile does not exist within the service yet"
 !!! success "_i.9.3_ After invoking the service's getRemovedProfileUpdates the Observable should be next with the correct Profile"
 !!! success "_i.9.4_ After invoking the service's newProfile method the created profile is being returned correctly"
 !!! success "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
