@@ -65,11 +65,19 @@ type Profile {
 	# Name of the profile
 	name: String!
 	# Optional description of the profile
-	description: String
+	description: Description
 	# Assigned installations to the profile
 	installations: [Installation!]!
 	# Permissions granted to the profile
 	permissions: [ProfilePermission!]!
+}
+
+# Description of a profile can be stored as normal or rich text
+type Description {
+	# Plain string containing the profile description without any styling information
+	normal: String
+	# Profile description with styling information
+	rich: String
 }
 
 # Profile permissions which can be granted
