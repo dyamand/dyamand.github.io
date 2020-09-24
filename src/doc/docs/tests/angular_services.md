@@ -57,10 +57,11 @@
 ## Profile service
 
 !!! success "_i.9.0_ Getting all profiles should return the correct profiles"
-!!! success "_i.9.1_ After invoking the service's getNewProfileUpdates the Observable should be next with the correct Profile"
-!!! success "_i.9.2.a_ After invoking the service's getChangedProfileUpdates the Observable should be next with the correct Profile"
-!!! success "_i.9.2.b_ After invoking the service's getChangedProfileUpdates the Observable for new and changed profiles should be next with the correct Profile if the profile does not exist within the service yet"
-!!! success "_i.9.3_ After invoking the service's getRemovedProfileUpdates the Observable should be next with the correct Profile"
+!!! success "_i.9.1_ After invoking the service's getNewProfileUpdates the Observable should be next with the correct profile"
+!!! success "_i.9.2.a_ After invoking the service's getChangedProfileUpdates the Observable should be next with the correct profile"
+!!! success "_i.9.2.b_ After invoking the service's getChangedProfileUpdates the Observable for new and changed profiles should be next with the correct profile if the profile does not exist within the service yet"
+!!! success "_i.9.3.a_ If profile exists within the service, after invoking the service's getRemovedProfileUpdates the Observable should be next with the correct profile"
+!!! success "_i.9.3.b_ After invoking the service's getRemovedProfileUpdates the Observable should not be next with any profile if the profile does not exist within the service"
 !!! success "_i.9.4_ After invoking the service's newProfile method the created profile is being returned correctly"
 !!! success "_i.9.5_ Invoking the service's removeProfile method should invoke the GraphQLClientService's mutation method with the passed parameters"
 !!! success "_i.9.6_ After invoking the service's assignInstallations method should return the modified profile correctly"
@@ -72,8 +73,9 @@
 
 !!! success "_i.10.0_ Getting all installations should return the correct installations"
 !!! success "_i.10.1_ After invoking the service's getNewInstallationUpdates the Observable should be next with the correct installation"
-!!! success "_i.10.2_ After invoking the service's getRemovedInstallationUpdates the Observable should be next with the correct Installation"
-!!! success "_i.10.3_ After invoking the service's getChangedInstallationUpdates the Observable should be next with the correct Installation"
+!!! success "_i.10.2.a_ If installation exists within the service, after invoking the service's getRemovedInstallationUpdates the Observable should be next with the correct installation"
+!!! success "_i.10.2.b_ After invoking the service's getRemovedInstallationUpdates the Observable should not be next with any installation if the installation does not exist within the service"
+!!! success "_i.10.3_ After invoking the service's getChangedInstallationUpdates the Observable should be next with the correct installation"
 !!! success "_i.10.4_ Invoking the service's removeInstallation method should invoke the GraphQLClientService's mutation method with the passed parameters"
 !!! success "_i.10.5_ After invoking the service's getInstallationsUpdates the Observable should be next with the correct installations"
 !!! success "_i.10.6_ After invoking the service's getInstallationUpdates method the Observable should be next with the correct installation"
