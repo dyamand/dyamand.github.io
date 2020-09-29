@@ -75,7 +75,7 @@
 !!! success "_i.10.1_ After invoking the service's getNewInstallationUpdates the Observable should be next with the correct installation"
 !!! success "_i.10.2.a_ If installation exists within the service, after invoking the service's getRemovedInstallationUpdates the Observable should be next with the correct installation"
 !!! success "_i.10.2.b_ After invoking the service's getRemovedInstallationUpdates the Observable should not be next with any installation if the installation does not exist within the service"
-!!! success "_i.10.3.a_ After invoking the service's getChangedInstallationUpdates the Observable should be next with the correct Installation"
+!!! success "_i.10.3.a_ After invoking the service's getChangedInstallationUpdates the Observable should be next with the correct installation"
 !!! success "_i.10.3.b_ After invoking the service's getChangedInstallationUpdates the Observable for new and changed installations should be next with the correct Installation if the installation does not exist within the service yet"
 !!! success "_i.10.4_ Invoking the service's removeInstallation method should invoke the GraphQLClientService's mutation method with the passed parameters"
 !!! success "_i.10.5_ After invoking the service's getInstallationsUpdates the Observable should be next with the correct installations"
@@ -83,3 +83,16 @@
 !!! success "_i.10.7_ After invoking the service's getInstallationDetail method the correct installation information should be returned"
 !!! success "_i.10.8_ After invoking the service's addFriendlyName method a promise containing the modified installation should be returned"
 !!! success "_i.10.9_ After invoking the service's addFriendlyName and the removeFriendlyName methods for an installation without any friendly names the method should return a promise containing the installation without any friendly names"
+
+## Device service
+
+!!! failure "_i.11.0_ Getting all devices should return the correct devices"
+!!! failure "_i.11.1_ After invoking the service's getNewDeviceUpdates the Observable should be next with the correct device"
+!!! failure "_i.11.2.a_ If device exists within the service, after invoking the service's getRemovedDeviceUpdates the Observable should be next with the correct device"
+!!! failure "_i.11.2.b_ After invoking the service's getRemovedDeviceUpdates the Observable should not be next with any device if the device does not exist within the service"
+!!! failure "_i.11.3.a_ After invoking the service's getChangedDeviceUpdates the Observable should be next with the correct device"
+!!! failure "_i.11.3.b_ After invoking the service's getChangedDeviceUpdates the Observable for new and changed devices should be next with the correct device if the device does not exist within the service yet"
+!!! failure "_i.10.4_ After invoking the service's getDevicesUpdates the Observable should be next with the correct devices"
+!!! failure "_i.11.5_ After invoking the service's getDeviceUpdates method the Observable should be next with the correct device"
+!!! failure "_i.11.6_ After invoking the service's getDeviceDetail method the correct device information should be returned"
+
