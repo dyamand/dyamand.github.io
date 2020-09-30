@@ -36,7 +36,10 @@ Once you have acquired a reference to the ```Discovery``` service, you can build
 ```java
 @Activate
 public void start() {
-	this.protocol = this.discovery.withProtocol("newProtocol", IdentificationScheme.PROTOCOL).build();
+	this.discovery.withProtocol("newProtocol", IdentificationScheme.PROTOCOL).build().onSuccess((DiscoveryProtocolProxy createdProtocol) -> {
+		this.protocol = createdProtocol;
+		// start discovery process
+	});
 }
 ```
 
