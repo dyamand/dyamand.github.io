@@ -11,14 +11,14 @@ site_description:
 #edit_uri: edit/master/src/doc/docs/
 
 #Copyright (shown at the footer)
-copyright: 'Copyright &copy; 2019 DYAMAND'
+copyright: 'Copyright &copy; 2020 DYAMAND'
 
 # Meterial theme
 theme: 'material'
 extra_css: 
   - extra.css
 #extra:
-#  palette:
+# palette:
 #    primary: 'indigo'
 #    accent: 'indigo'
 
@@ -53,18 +53,23 @@ markdown_extensions:
   - pymdownx.tasklist
 
 nav:
-  - Home: index.md
+  - DYAMAND overview:
+      - Generic model: dyamand/model.md
+      - Plugins: dyamand/plugins.md
   - Writing an application:
       - Service lifecycle: applications/services.md
   - Add technology support:
-      - Structure: plugins/technologies.md
+      - Overview: plugins/overview.md
       - Adding new state and service prototypes: plugins/prototypes.md
+      - Structure: plugins/structure.md
       - Discovering a new service: plugins/discovery.md
       - Describing a service: plugins/description.md
       - Detecting state changes: plugins/state_changes.md
+      - Template for new technologies: technologies/template.md
   - Style guidelines:
       - Logging: styleguides/logging.md
   - Tests:
+      - 0. Tests for plugins: plugins/tests.md
       - 1. Discovering new services: tests/discovery.md
       - 2. Describing services: tests/description.md
       - 3. Detecting state changes: tests/state_changes.md
