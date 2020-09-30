@@ -26,12 +26,17 @@ public final class NewProtocolPlugin {
 }
 ```
 
-Once you have acquired a reference to the ```Discovery``` service, you can build a ```org.dyamand.discovery.DiscoveryProtocolProxy``` like below. Be sure to save the ```DiscoveryProtocolProxy``` instance as it will be used to indicate to DYAMAND that you discovered a new service.
+Once you have acquired a reference to the ```Discovery``` service, you can build a ```org.dyamand.discovery.DiscoveryProtocolProxy``` like below. Be sure to save the ```DiscoveryProtocolProxy``` instance as it will be used to indicate to DYAMAND that you discovered a new service. The second argument of the _withProtocol_ method is an ```IdentificationScheme```. It is important to provide the correct identification scheme for a protocol since the generation of IDs is based on the identification scheme provided when building the ```DiscoveryProtocolProxy```. There are four different identification schemes:
+
+- ```IdentificationScheme.GLOBAL``` indicates that the identifier provided by the protocol uniquely identifies the discovered service globally
+- ```IdentificationScheme.PROTOCOL``` indicates that the identifier provided by the protocol uniquely identifies the discovered service within the ecosystem of the protocol
+- ```IdentificationScheme.INSTALLATION``` indicates that the identifier provided by the protocol is only unique on the specific installation that discovered the service, i.e. a service that is discovered on a different installation by the same protocol and with the same identifier does not (necessarily) refer to the same service
+- ```IdentificationScheme.SESSION``` indicates that the identifier provided by the protocol is only unique for the current session, i.e. a service that is discovered later by the same protocol with the same identifier on the same installation does not (necessarily) refer to the same service
 
 ```java
 @Activate
 public void start() {
-	this.protocol = this.discovery.using("newProtocol").build();
+	this.protocol = this.discovery.withProtocol("newProtocol", IdentificationScheme.PROTOCOL).build();
 }
 ```
 
