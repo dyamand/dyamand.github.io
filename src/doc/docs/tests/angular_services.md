@@ -86,15 +86,15 @@
 
 ## Device service
 
-!!! failure "_i.11.0.a_ Getting all devices without any parameters should return all devices correctly"
-!!! failure "_i.11.0.b_ Getting all devices with a specific installation ID should return all devices discovered by that specific installation correctly"
-!!! failure "_i.11.1_ After invoking the service's getNewDeviceUpdates the Observable should be next with the correct device"
-!!! failure "_i.11.2.a_ If device exists within the service, after invoking the service's getRemovedDeviceUpdates the Observable should be next with the correct device"
-!!! failure "_i.11.2.b_ After invoking the service's getRemovedDeviceUpdates the Observable should not be next with any device if the device does not exist within the service"
-!!! failure "_i.11.3.a_ After invoking the service's getChangedDeviceUpdates the Observable should be next with the correct device"
-!!! failure "_i.11.3.b_ After invoking the service's getChangedDeviceUpdates the Observable for new and changed devices should be next with the correct device if the device does not exist within the service yet"
-!!! failure "_i.10.4.a_ After invoking the service's getDevicesUpdates without any parameter the Observable should be next with all devices correctly"
-!!! failure "_i.10.4.b_ After invoking the service's getDevicesUpdates with a specific installation ID the Observable should be next with all devices detected by that specific installation"
-!!! failure "_i.11.5_ After invoking the service's getDeviceUpdates method the Observable should be next with the correct device"
-!!! failure "_i.11.6_ After invoking the service's getDeviceDetail method the correct device information should be returned"
+!!! success "_i.11.0.a_ Getting all devices without any parameters should return all devices correctly"
+!!! success "_i.11.0.b_ Getting all devices with a specific installation ID should return all devices discovered by that specific installation correctly"
+!!! success "_i.11.1_ After invoking the service's getNewDeviceUpdates the Observable should be next with the correct device"
+!!! success "_i.11.2.a_ If device exists within the service, after invoking the service's getRemovedDeviceUpdates the Observable should be next with the correct device"
+!!! success "_i.11.2.b_ After invoking the service's getRemovedDeviceUpdates the Observable should not be next with any device if the device does not exist within the service"
+!!! success "_i.11.3.a_ After invoking the service's getChangedDeviceUpdates the Observable should be next with the correct device"
+!!! success "_i.11.3.b_ After invoking the service's getChangedDeviceUpdates the Observable for new and changed devices should be next with the correct device if the device does not exist within the service yet"
+!!! success "_i.11.4.a_ After invoking the service's getDevicesUpdates without any parameter the Observable should be next with all devices correctly"
+!!! success "_i.11.4.b_ After invoking the service's getDevicesUpdates with a specific installation ID the Observable should be next with all devices detected by that specific installation"
+!!! success "_i.11.5_ After invoking the service's getDeviceUpdates method the Observable should be next with the correct device"
+!!! success "_i.11.6_ After invoking the service's getDeviceDetail method the correct device information should be returned"
 
