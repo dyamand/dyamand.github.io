@@ -16,7 +16,7 @@ The test method _testStateChange_ provides a way to test whether or not a plugin
 
 State prototypes have an important role in abstracting the functionality of devices towards applications, this section specifies which tests are relevant for state prototypes and how to take advantage of them.
 
-All state prototypes can take advantage from the tests below. This can be done by extending ```AbstractStatePrototypeTest```.
+All state prototypes can take advantage of the tests below. This can be done by extending ```AbstractStatePrototypeTest```.
 
 !!! failure "_0.0.0_ When creating a state with a certain id and value from a state prototype, the created state should be of the same type as the state prototype, have the provided id and its value should be equal to the provided value"
 
