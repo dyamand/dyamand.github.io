@@ -18,8 +18,8 @@ State prototypes have an important role in abstracting the functionality of devi
 
 All state prototypes can take advantage of the tests below. This can be done by extending ```AbstractStatePrototypeTest```.
 
-!!! failure "_0.0.0_ When creating a state with a certain id and value from a state prototype, the created state should be of the same type as the state prototype, have the provided id and its value should be equal to the provided value"
+!!! success "_0.0.0_ When creating a state with a certain id and value from a state prototype, the created state should be of the same type as the state prototype, have the provided id and its value should be equal to the provided value"
 
 Additionally, measurement states can taken advantage of the tests below. This can be done by extending ```AbstractMeasurementStatePrototypeTest```.
 
-!!! failure "_0.1.0_ When a measurement state is created with a certain value and unit, creating a new state based on any other unit should result in the same value in the original unit"
+!!! success "_0.1.0_ When a measurement state is created with a certain value and unit, creating a new state based on any other unit should result in the same value in the original unit"
