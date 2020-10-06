@@ -133,9 +133,7 @@ type Value {
 
 ### Overview page
 
-!!! success "_h.5.1_ If the backend has N devices, all N devices should be displayed correctly"
-!!! success "_h.5.2_ If n devices get a changed event, the amount of total devices should not change and all changes of the devices should be found on the specific device card or in the specific device row"
-!!! success "_h.5.3_ f n devices get added and subsequently removed, no devices should be displayed"
+!!! success "_h.5.0_ Getting all devices updates from the service should display all returned n devices correctly"
 
 ### Details page
 
