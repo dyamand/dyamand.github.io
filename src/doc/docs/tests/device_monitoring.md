@@ -63,9 +63,9 @@ type Service {
 # State of a service.
 type State {
 	# States which do not have any unit restrictions
-	dimensionlessState: [DimensionlessState!]!
+	dimensionlessStates: [DimensionlessState!]!
 	# States which have a list of supported units
-	measurementState: [MeasurementState!]!
+	measurementStates: [MeasurementState!]!
 	# States which are discrete 
 	discreteStates: [DiscreteState!]!
 }
