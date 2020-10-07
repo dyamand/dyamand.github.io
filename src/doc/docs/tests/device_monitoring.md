@@ -148,7 +148,7 @@ type DiscreteState {
 ### Overview page
 
 !!! success "_h.5.0_ Getting all devices updates from the service should display all returned n devices correctly"
-	!!! failure "_a_ All supported state prototypes should be displayed correctly"
+	!!! failure "_a_ All supported states should be displayed correctly"
 
 ### Details page
 
@@ -161,7 +161,7 @@ type DiscreteState {
 !!! failure "_h.6.7_ Given a specific device service, all attributes of that specific device should match"
 !!! failure "_h.6.8_ Given a specific device, all addresses where the device got discovered should match"
 !!! success "_h.6.9_ Given a specific device, all discovery protocols should match"
-!!! success "_h.6.10_ Given a specific device, all states should match"
+!!! failure "_h.6.10_ Given a specific device, all states should match"
 
 ### State prototype service
 
