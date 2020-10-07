@@ -62,22 +62,36 @@ type Service {
 
 # State of a service.
 type State {
+	# States which do not have any unit restrictions
+	dimensionlessState: [DimensionlessState!]!
+	# States which have a list of supported units
+	measurementState: [MeasurementState!]!
+	# States which are discrete 
+	discreteStates: [DiscreteState!]!
+}
+
+# Dimensionless state.
+type DimensionlessState {
+	#ID of a state
+	id: ID!
+	# Type of a state
+	type: String!
+}
+
+# Measurement state.
+type DimensionlessState {
 	# ID of a state
 	id: ID!
 	# Type of a state
 	type: String!
-	# Collection of supported units
-	supportedUnits: [String!]!
-	# Values of the state
-	values: [Value!]!
 }
 
-# Value of a state.
-type Value {
-	# Unit of the value
-	unit: String!
-	# Value
-	value: String!
+# Discrete state.
+type DiscreteState {
+	# ID of a state
+	id: ID!
+	# Type of a state
+	type: String!
 }
 ```
 
@@ -134,6 +148,7 @@ type Value {
 ### Overview page
 
 !!! success "_h.5.0_ Getting all devices updates from the service should display all returned n devices correctly"
+	!!! failure "_a_ All supported state prototypes should be displayed correctly"
 
 ### Details page
 
@@ -146,6 +161,7 @@ type Value {
 !!! failure "_h.6.7_ Given a specific device service, all attributes of that specific device should match"
 !!! failure "_h.6.8_ Given a specific device, all addresses where the device got discovered should match"
 !!! success "_h.6.9_ Given a specific device, all discovery protocols should match"
+!!! success "_h.6.10_ Given a specific device, all states should match"
 
 ### State prototype service
 
