@@ -3,13 +3,15 @@
 !!! success "_l.S.1_ When a token is provided, but no permissions have been granted, no installations should be returned even when there is a detected installation"
 !!! success "_l.S.2_ When the token subsequently is granted the permission to view unassigned installations, but the installation is not unassigned, no installation should be returned"
 !!! success "_l.S.3_ When the detected installation is subsequently made unassigned, the installation should be returned"
-!!! success "_l.S.4_ When the installation subsequently is assigned to a profile, the installation should no longer be returned"
-!!! success "_l.S.5_ When the token subsequently gets granted the permission to view installations in the profile, the installation should be returned"
-!!! failure "_l.S.6_ When a user does not have the CREATE_PROFILE permission, creating a profile should fail"
-!!! failure "_l.S.7_ When a user does not have the REMOVE_PROFILE permission, removing a profile should fail"
-!!! failure "_l.S.8_ When a user does not have ADD_INSTALLATION permission for a given profile, adding an installation to that profile fails"
-!!! failure "_l.S.9_ When a user does not have REMOVE_INSTALLATION permission for a given profile, removing an installation for that profile fails"
-!!! failure "_l.S.10_ When a user does not have VIEW_INSTALLATIONS permission, retrieving installations for that profile fail"
+!!! success "_l.S.4_ When a profile is created, that profile should be retrievable"
+!!! success "_l.S.5_ When the installation subsequently is assigned to a profile, the installation should no longer be returned"
+!!! success "_l.S.6_ When the token subsequently gets granted the permission to view installations in the profile, the installation should be returned"
+!!! failure "_l.S.7_ When a user does not have the CREATE_PROFILE permission, creating a profile should fail"
+!!! failure "_l.S.8_ When a user has the CREATE_PROFILE permission, creating a profile should result in a new profile"
+!!! failure "_l.S.9_ When a user does not have ADD_INSTALLATION permission for a given profile, adding an installation to that profile fails"
+!!! failure "_l.S.10_ When a user does not have REMOVE_INSTALLATION permission for a given profile, removing an installation for that profile fails"
+!!! failure "_l.S.11_ When a user does not have VIEW_INSTALLATIONS permission, retrieving installations for that profile fail"
+!!! failure "_l.S.8_ When a user does not have the REMOVE_PROFILE permission, removing a profile should fail"
 > TODO add system tests for when the user DOES have the correct permissions
 
 # Profiles
