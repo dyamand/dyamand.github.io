@@ -62,33 +62,7 @@ type Service {
 
 # State of a service.
 type State {
-	# States which do not have any unit restrictions
-	dimensionlessStates: [DimensionlessState!]!
-	# States which have a list of supported units
-	measurementStates: [MeasurementState!]!
-	# States which are discrete 
-	discreteStates: [DiscreteState!]!
-}
-
-# Dimensionless state.
-type DimensionlessState {
 	#ID of a state
-	id: ID!
-	# Type of a state
-	type: String!
-}
-
-# Measurement state.
-type DimensionlessState {
-	# ID of a state
-	id: ID!
-	# Type of a state
-	type: String!
-}
-
-# Discrete state.
-type DiscreteState {
-	# ID of a state
 	id: ID!
 	# Type of a state
 	type: String!
