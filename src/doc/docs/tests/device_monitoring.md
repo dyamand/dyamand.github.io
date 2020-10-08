@@ -122,7 +122,7 @@ type State {
 ### Overview page
 
 !!! success "_h.5.0_ Getting all devices updates from the service should display all returned n devices correctly"
-	!!! failure "_a_ All supported states should be displayed correctly"
+	!!! success "_a_ All supported states should be displayed correctly - duplicate state types should only be displayed once"
 
 ### Details page
 
