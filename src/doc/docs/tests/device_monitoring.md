@@ -62,7 +62,7 @@ type Service {
 
 # State of a service.
 type State {
-	#ID of a state
+	# ID of a state
 	id: ID!
 	# Type of a state
 	type: String!
