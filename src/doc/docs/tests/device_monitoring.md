@@ -135,7 +135,7 @@ type State {
 !!! failure "_h.6.7_ Given a specific device service, all attributes of that specific device should match"
 !!! failure "_h.6.8_ Given a specific device, all addresses where the device got discovered should match"
 !!! success "_h.6.9_ Given a specific device, all discovery protocols should match"
-!!! warning "_h.6.10_ Given a specific device, all states should match"
+!!! success "_h.6.10_ Given a specific device, all states should match"
 
 ### State prototype service
 
