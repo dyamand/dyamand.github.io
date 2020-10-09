@@ -72,16 +72,8 @@ type State {
 	supportedUnits: [String!]
 	# Allowed values of a state
 	allowedValues: [String!]
-	# Measurements of a state
-	measurements(unit: String): [Measurement!]
-}
-
-# Measurement of a state
-type Measurement {
-	# Unit of the value
-	unit: String
-	# Value of the value
-	value: String!
+	# Value of a state
+	value(unit: String): String
 }
 ```
 
