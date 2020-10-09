@@ -20,7 +20,7 @@ extend type Subscription {
 
 # Device
 type Device {
-	# id of the device
+	# Id of the device
 	id: ID!
 	# Names of the device.
 	names: Names!
@@ -66,6 +66,22 @@ type State {
 	id: ID!
 	# Type of a state
 	type: String!
+	# Default unit of a state
+	defaultUnit: String
+	# Supported units
+	supportedUnits: [String!]
+	# Allowed values of a state
+	allowedValues: [String!]
+	# Measurements of a state
+	measurements(unit: String): [Measurement!]
+}
+
+# Measurement of a state
+type Measurement {
+	# Unit of the value
+	unit: String
+	# Value of the value
+	value: String!
 }
 ```
 
