@@ -23,3 +23,32 @@
 !!! success "_k.1.4_ If the contents of a file is modified, that configuration object should reflect the change"
 !!! success "_k.1.5_ If a multiline file is detected, each line should be considered a new entry in an array"
 
+## Configuration for loggers
+
+Logger configuration is quite complex ([Configuration Admin Integration](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.log.html#d0e2548)). Therefore, a separate mechanism specifically for logger configuration is devised. Different instances of ```LoggerContext``` can be configured, within a ```LoggerContext``` the configuration contains a map from logger names to a ```LogLevel```. There is a special context, called the root ```LoggerContext```, the default one for the system.
+
+Configuration can be provided using the PID **org.dyamand.logging** and the parameter name **config**. The value should be a String using the following pattern in ABNF.
+```
+config              = *(configLine CRLF) configLine
+configLine          = configLeft equals logLevel
+configLeft          = contextName configSeparator loggerName
+configSeparator     = "#"
+contextName         = "ROOT" | packageName
+loggerName          = packageName
+packageName         = *(packagePart packageSeparator) packagePart ; Java package names
+packagePart         = (ALPHA | "_") *(ALPHA | DIGIT | "_") ; package parts cannot start with a digit
+packageSeparator    = "."
+equals              = "="
+logLevel            = AUDIT / ERROR / WARN / INFO / DEBUG / TRACE ; possible log levels
+```
+
+Examples:
+**ROOT#name.of.logger=ERROR** sets the log level of logger _name.of.logger_ to ERROR in the root context.
+**name.of.context#name.of.logger=TRACE** sets the log level of logger _name.of.logger_ to ERROR in the logger context with name _name.of.context_.
+
+!!! failure "_k.2.0_ Providing the logger configuration in the bndrun (root and non-root context) should be applied to the ConfigurationAdmin"
+!!! failure "_k.2.1_ Providing the logger configuration in the configuration directory (root and non-root context) should be applied to the ConfigurationAdmin"
+!!! failure "_k.2.2_ When logger configuration is provided both in the bndrun and in the configuration directory but there are no conflicts, the applied configuration should be merged"
+!!! failure "_k.2.3_ When logger configuration is provided both in the bndrun and in the configuration directory and there are conflicts, the configuration in the configuration directory should override the configuration in the bndrun"
+
+
