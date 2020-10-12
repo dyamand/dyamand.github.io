@@ -31,9 +31,9 @@ Configuration can be provided using the PID **org.dyamand.logging** and the para
 ```
 config              = *(configLine CRLF) configLine
 configLine          = configLeft equals logLevel
-configLeft          = contextName configSeparator loggerName
+configLeft          = *1(contextName configSeparator) loggerName
 configSeparator     = "#"
-contextName         = "ROOT" | packageName
+contextName         = packageName
 loggerName          = packageName
 packageName         = *(packagePart packageSeparator) packagePart ; Java package names
 packagePart         = (ALPHA | "_") *(ALPHA | DIGIT | "_") ; package parts cannot start with a digit
@@ -43,7 +43,7 @@ logLevel            = AUDIT / ERROR / WARN / INFO / DEBUG / TRACE ; possible log
 ```
 
 Examples:
-**ROOT#name.of.logger=ERROR** sets the log level of logger _name.of.logger_ to ERROR in the root context.
+**name.of.logger=ERROR** sets the log level of logger _name.of.logger_ to ERROR in the root context.
 **name.of.context#name.of.logger=TRACE** sets the log level of logger _name.of.logger_ to ERROR in the logger context with name _name.of.context_.
 
 !!! success "_k.2.0_ Providing the logger configuration in the bndrun (root and non-root context) should be applied to the ConfigurationAdmin"
