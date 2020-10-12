@@ -46,9 +46,9 @@ Examples:
 **ROOT#name.of.logger=ERROR** sets the log level of logger _name.of.logger_ to ERROR in the root context.
 **name.of.context#name.of.logger=TRACE** sets the log level of logger _name.of.logger_ to ERROR in the logger context with name _name.of.context_.
 
-!!! failure "_k.2.0_ Providing the logger configuration in the bndrun (root and non-root context) should be applied to the ConfigurationAdmin"
-!!! failure "_k.2.1_ Providing the logger configuration in the configuration directory (root and non-root context) should be applied to the ConfigurationAdmin"
-!!! failure "_k.2.2_ When logger configuration is provided both in the bndrun and in the configuration directory but there are no conflicts, the applied configuration should be merged"
-!!! failure "_k.2.3_ When logger configuration is provided both in the bndrun and in the configuration directory and there are conflicts, the configuration in the configuration directory should override the configuration in the bndrun"
+!!! success "_k.2.0_ Providing the logger configuration in the bndrun (root and non-root context) should be applied to the ConfigurationAdmin"
+!!! success "_k.2.1_ Providing the logger configuration in the configuration directory (root and non-root context) should be applied to the ConfigurationAdmin"
+!!! success "_k.2.2_ When logger configuration is provided both in the bndrun and in the configuration directory but there are no conflicts, the applied configuration should be merged"
+!!! success "_k.2.3_ When logger configuration is provided both in the bndrun and in the configuration directory and there are conflicts, the configuration in the configuration directory should override the configuration in the bndrun"
 
 
