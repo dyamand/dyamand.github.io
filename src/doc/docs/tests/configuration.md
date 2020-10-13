@@ -44,7 +44,7 @@ logLevel            = AUDIT / ERROR / WARN / INFO / DEBUG / TRACE ; possible log
 
 Examples:
 **name.of.logger=ERROR** sets the log level of logger _name.of.logger_ to ERROR in the root context.
-**name.of.context#name.of.logger=TRACE** sets the log level of logger _name.of.logger_ to ERROR in the logger context with name _name.of.context_.
+**name.of.context#name.of.logger=TRACE** sets the log level of logger _name.of.logger_ to TRACE in the logger context with name _name.of.context_.
 
 !!! success "_k.2.0_ Providing the logger configuration in the bndrun (root and non-root context) should be applied to the ConfigurationAdmin"
 !!! success "_k.2.1_ Providing the logger configuration in the configuration directory (root and non-root context) should be applied to the ConfigurationAdmin"
