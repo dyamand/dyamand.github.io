@@ -67,7 +67,7 @@
 !!! success "_i.9.6_ After invoking the service's assignInstallations method should return the modified profile correctly"
 !!! success "_i.9.7_ Invoking the service's assign installations and afterwards unassignInstallations method should return the modified profile without any installations"
 !!! success "_i.9.8_ After invoking the service's getProfilesUpdates the Observable should be next with the correct profiles"
-!!! failure "_i.9.9_ After invoking the service's getProfileUpdates method the Observable should be next with the correct profile"
+!!! success "_i.9.9_ After invoking the service's getProfileUpdates method the Observable should be next with the correct profile"
 
 ## Installation service
 

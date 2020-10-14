@@ -12,9 +12,9 @@ extend type Subscription {
 	# Subscription for new installations
 	newInstallation: Installation!
 	# Subscription for changes in installations
-	installationChanged: Installation!
+	installationChanged(id: String): Installation!
 	# Subscription for removed installations
-	installationRemoved: Installation!
+	installationRemoved(id: String): Installation!
 	# Subscription for a particular installation
 	installation(id: String!): Installation!
 }
