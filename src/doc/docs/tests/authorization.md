@@ -48,9 +48,9 @@ extend type Subscription {
 	# Get updates about new profiles
 	newProfile: Profile!
 	# Get updates about changed profiles
-	profileChanged: Profile!
+	profileChanged(id: String): Profile!
 	# Get updates about removed profiles
-	profileRemoved: Profile!
+	profileRemoved(id: String): Profile!
 }
 
 extend type Installation {
