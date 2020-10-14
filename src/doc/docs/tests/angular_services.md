@@ -67,7 +67,8 @@
 !!! success "_i.9.6_ After invoking the service's assignInstallations method should return the modified profile correctly"
 !!! success "_i.9.7_ Invoking the service's assign installations and afterwards unassignInstallations method should return the modified profile without any installations"
 !!! success "_i.9.8_ After invoking the service's getProfilesUpdates the Observable should be next with the correct profiles"
-!!! failure "_i.9.9_ After invoking the service's getProfileUpdates method the Observable should be next with the correct profile"
+!!! success "_i.9.9_ After invoking the service's getProfileUpdates method the Observable should be next with the correct profile"
+!!! failure "_i.9.10_ Invoking the method subscribedToAll() should return true if service is subscribed to all installations, false otherwise"
 
 ## Installation service
 
@@ -83,6 +84,7 @@
 !!! success "_i.10.7_ After invoking the service's getInstallationDetail method the correct installation information should be returned"
 !!! success "_i.10.8_ After invoking the service's addFriendlyName method a promise containing the modified installation should be returned"
 !!! success "_i.10.9_ After invoking the service's addFriendlyName and the removeFriendlyName methods for an installation without any friendly names the method should return a promise containing the installation without any friendly names"
+!!! failure "_i.10.10_ Invoking the method subscribedToAll() should return true if service is subscribed to all installations, false otherwise"
 
 ## Device service
 
@@ -97,4 +99,5 @@
 !!! success "_i.11.4.b_ After invoking the service's getDevicesUpdates with a specific installation ID the Observable should be next with all devices detected by that specific installation"
 !!! success "_i.11.5_ After invoking the service's getDeviceUpdates method the Observable should be next with the correct device"
 !!! success "_i.11.6_ After invoking the service's getDeviceDetail method the correct device information should be returned"
+!!! failure "_i.11.7_ Invoking the method subscribedToAll() should return true if service is subscribed to all installations, false otherwise"
 
