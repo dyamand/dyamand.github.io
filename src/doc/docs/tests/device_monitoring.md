@@ -74,6 +74,8 @@ type State {
 	allowedValues: [String!]
 	# Value of a state
 	value(unit: String): String
+	# Symbol of the unit
+	symbol: String
 }
 ```
 
