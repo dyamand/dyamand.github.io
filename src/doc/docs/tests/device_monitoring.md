@@ -86,7 +86,8 @@ type Unit {
 
 # Value of a state
 type Value {
-	unit: Unit
+	# Name of the value unit
+	unit: String
 	# Value of the unit
 	value: String
 }
