@@ -67,13 +67,29 @@ type State {
 	# Type of a state
 	type: String!
 	# Default unit of a state
-	defaultUnit: String
+	defaultUnit: Unit
 	# Supported units
-	supportedUnits: [String!]
+	supportedUnits: [Unit!]
 	# Allowed values of a state
 	allowedValues: [String!]
-	# Value of a state
-	value(unit: String): String
+	# Values of a state
+	values: [Value!]!
+}
+
+# Unit of a state
+type Unit {
+	# Name of the unit
+	name: String
+	# Symbol of the unit
+	symbol: String
+}
+
+# Value of a state
+type Value {
+	# Name of the value unit
+	unit: String
+	# Value of the unit
+	value: String
 }
 ```
 
