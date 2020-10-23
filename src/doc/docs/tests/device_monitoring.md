@@ -129,6 +129,10 @@ type Value {
 !!! success "_h.2.5_ When an installation puts online any number of random services, only offline devices should be present when it goes offline"
 !!! success "_h.2.6_ When an installation puts online only per-session services, no devices should be present when it goes offline and a 'device removed' event per device should have been sent"
 
+### Service information merging
+
+!!! success "_h.3.0_ When different services are discovered by a client on the same device, all states in all services should be present in the device as well (namespaced per service)"
+
 !!! failure "TODO: service merging (information can be different across installations, or even within the same installation, that can change over time)"
 
 ## Backend events
