@@ -28,7 +28,7 @@
 ```
 extend type Query {
 	# Query to return list of all profiles
-	profiles(): [Profile!]!
+	profiles: [Profile!]!
 	# Query to return a specific profile based on its ID
 	profile(id: ID!): Profile
 }
