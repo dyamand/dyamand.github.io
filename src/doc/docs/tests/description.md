@@ -44,7 +44,7 @@ Serialization (and in particular deserialization) becomes hard once particular c
 !!! success "_2.5.2_ Deserializing a known service prototype, should result in exactly the same object"
 !!! success "_2.5.3_ Deserializing a service based on a known service prototype, should result in an object that is content equal AND of the same type as the service prototype"
 
-When the state prototype is unknown or the value class of the state cannot be serialized, the states should not be included in services and state changes while serializing.
+When the state prototype is unknown or the value class of the state cannot be serialized, the states should not be included in services, devices and state changes while serializing.
 
 !!! success "_2.5.4_ After deserializing a service, it should only contain serializable states"
 !!! success "_2.5.5_ After deserializing a device, it should only contain serializable states"
