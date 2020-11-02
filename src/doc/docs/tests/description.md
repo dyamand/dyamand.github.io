@@ -47,5 +47,6 @@ Serialization (and in particular deserialization) becomes hard once particular c
 When the state prototype is unknown or the value class of the state cannot be serialized, the states should not be included in services and state changes while serializing.
 
 !!! success "_2.5.4_ After deserializing a service, it should only contain serializable states"
-!!! failure "_2.5.5_ After deserializing a state changes, it should only contain serializable states"
+!!! success "_2.5.5_ After deserializing a device, it should only contain serializable states"
+!!! failure "_2.5.6_ After deserializing a state changes, it should only contain serializable states"
 
