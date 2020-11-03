@@ -44,9 +44,21 @@ Serialization (and in particular deserialization) becomes hard once particular c
 !!! success "_2.5.2_ Deserializing a known service prototype, should result in exactly the same object"
 !!! success "_2.5.3_ Deserializing a service based on a known service prototype, should result in an object that is content equal AND of the same type as the service prototype"
 
-When the state prototype is unknown or the value class of the state cannot be serialized, the states should not be included in services, devices and state changes while serializing.
+When the state prototype is unknown or the value class of the state cannot be serialized, the states should not be included in services, devices and state changes while serializing. The use case for this is states that are used for local purposes and should not be included for management by the backend.
 
 !!! success "_2.5.4_ After deserializing a service, it should only contain serializable states"
 !!! success "_2.5.5_ After deserializing a device, it should only contain serializable states"
 !!! failure "_2.5.6_ After deserializing a state changes, it should only contain serializable states"
+
+When the state prototype was known during serialization and the value class of the state could be serialized at seriliazation time, but the state prototype is unknown during deserialization or the value class of the state cannot be serialized during deserialization, deserialization should not fail. This happens when a client has support for a particular state prototype while the backend does not. Although the backend will not know about that state prototype, other states should not be affected.
+
+!!! success "_2.5.7_ When deserializing a service after it was successfully serialized but prototypes are no longer available, deserialization should not fail"
+!!! success "_2.5.8_ When deserializing a device after it was successfully serialized but prototypes are no longer available, deserialization should not fail"
+!!! failure "_2.5.9_ When deserializing a state changes after it was successfully serialized but the state prototype is no longer available, deserialization should not fail"
+
+DISCLAIMER: Currently, it seems that it is very difficult to actually implement the tests below, since it means starting a framework that has access to the prototype and value classes, after which a framework has to be started that does not have such access. This fails in many ways, so implementation of these tests is put on hold for the time being.
+
+!!! failure "_2.5.10_ When deserializing a service after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
+!!! failure "_2.5.11_ When deserializing a device after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
+!!! failure "_2.5.12_ When deserializing a state changes after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
 
