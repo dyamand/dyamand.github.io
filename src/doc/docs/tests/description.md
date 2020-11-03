@@ -56,7 +56,9 @@ When the state prototype was known during serialization and the value class of t
 !!! success "_2.5.8_ When deserializing a device after it was successfully serialized but prototypes are no longer available, deserialization should not fail"
 !!! failure "_2.5.9_ When deserializing a state changes after it was successfully serialized but the state prototype is no longer available, deserialization should not fail"
 
-!!! success "_2.5.10_ When deserializing a service after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
-!!! success "_2.5.11_ When deserializing a device after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
+DISCLAIMER: Currently, it seems that it is very difficult to actually implement the tests below, since it means starting a framework that has access to the prototype and value classes, after which a framework has to be started that does not have such access. This fails in many ways, so implementation of these tests is put on hold for the time being.
+
+!!! failure "_2.5.10_ When deserializing a service after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
+!!! failure "_2.5.11_ When deserializing a device after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
 !!! failure "_2.5.12_ When deserializing a state changes after it was successfully serialized but prototype classes and value classes are no longer available, deserialization should not fail"
 
