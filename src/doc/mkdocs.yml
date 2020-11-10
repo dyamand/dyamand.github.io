@@ -68,24 +68,27 @@ nav:
       - Template for new technologies: technologies/template.md
   - Style guidelines:
       - Logging: styleguides/logging.md
-  - Tests:
+  - Developer information:
+      - Graphql:
+          - General: developer/graphql/general.md
+          - Subscriptions: developer/graphql/subscriptions.md
+          - Tests: developer/graphql/tests.md
       - 0. Tests for plugins: plugins/tests.md
-      - 1. Discovering new services: tests/discovery.md
-      - 2. Describing services: tests/description.md
-      - 3. Detecting state changes: tests/state_changes.md
-      - 4. Translating services and state changes: tests/translation.md
+      - 1. Discovering new services: developer/discovery.md
+      - 2. Describing services: developer/description.md
+      - 3. Detecting state changes: developer/state_changes.md
+      - 4. Translating services and state changes: developer/translation.md
       - Internal functionality:
-        - A. Task scheduling: tests/scheduling.md
-        - B. Eventing: tests/eventing.md
-        - C. Installation Monitoring: tests/installation_monitoring.md
-        - D. Backend Communication: tests/backend_communication.md
-        - E. GraphQL endpoint: tests/graphql_endpoint.md
-        - F. Interception: tests/interception.md
-        - G. Persistence: tests/persistence.md
-        - H. Device Monitoring: tests/device_monitoring.md
-        - I. Angular Services: tests/angular_services.md
-        - J. Serialization: tests/serialization.md
-        - K. Configuration: tests/configuration.md
-        - L. Authorization: tests/authorization.md
-        - M. Dashboard error visualization: tests/dashboard_error_visualization.md
-        - N. Profiles: tests/profiles.md
+        - A. Task scheduling: developer/scheduling.md
+        - B. Eventing: developer/eventing.md
+        - C. Installation Monitoring: developer/installation_monitoring.md
+        - D. Backend Communication: developer/backend_communication.md
+        - F. Interception: developer/interception.md
+        - G. Persistence: developer/persistence.md
+        - H. Device Monitoring: developer/device_monitoring.md
+        - I. Angular Services: developer/angular_services.md
+        - J. Serialization: developer/serialization.md
+        - K. Configuration: developer/configuration.md
+        - L. Authorization: developer/authorization.md
+        - M. Dashboard error visualization: developer/dashboard_error_visualization.md
+        - N. Profiles: developer/profiles.md
