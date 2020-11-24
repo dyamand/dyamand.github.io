@@ -30,6 +30,7 @@
 !!! success "_i.4.1.b_ If user is not logged in, calling updateTokenInformation should not return the parsed token"
 !!! success "_i.4.2_ If the user is not logged in, calling the loginOrLogout method and then getting the login status should return the correct login status"
 !!! success "_i.4.3.b_ If updateTokenInformation fails (due to session timeout), no token should be returned"
+!!! success "_i.4.4_ If getToken is called, returns the passed token"
 
 ## Message Service
 
