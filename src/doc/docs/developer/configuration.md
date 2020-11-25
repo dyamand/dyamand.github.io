@@ -22,6 +22,8 @@
 !!! success "_k.1.3_ If a file is added, the configuration should be adjusted"
 !!! success "_k.1.4_ If the contents of a file is modified, that configuration object should reflect the change"
 !!! success "_k.1.5_ If a multiline file is detected, each line should be considered a new entry in an array"
+!!! success "_k.1.6_ If configuration is put in a hidden file, the configuration should not be applied"
+!!! success "_k.1.7_ If configuration is put in a non-hidden file in a hidden directory, the configuration should not be applied"
 
 ## Configuration for loggers
 
