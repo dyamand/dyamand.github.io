@@ -24,6 +24,7 @@
 !!! success "_k.1.5_ If a multiline file is detected, each line should be considered a new entry in an array"
 !!! success "_k.1.6_ If configuration is put in a hidden file, the configuration should not be applied"
 !!! success "_k.1.7_ If configuration is put in a non-hidden file in a hidden directory, the configuration should not be applied"
+!!! success "_k.1.8_ If configuration is put in a hidden file that is linked to by a non-hidden symbolic link, the configuration should be applied even after changes in the hidden file"
 
 ## Configuration for loggers
 
