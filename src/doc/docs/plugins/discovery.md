@@ -50,14 +50,14 @@ Whenever a new service has been detected, the plugin should notify this using th
 ```java
 // Just discovered a new service with identifier id at address address
 this.protocol.newService(id).atAddress(address)
-	.build((AsyncResult<Service> addService) -> {
-	if (addService.succeeded()) {
-		// handle successfully adding the service
-		// save the ServiceProxy from addService.result() for future reference
-	} else {
-		// handle failure to add service
-	}
-});
+	.build()
+	.onSuccess((final ServiceProxy<BasicService> proxy)->{
+        // handle successfully adding the service
+        // save the ServiceProxy from addService.result() for future reference
+    })
+    .onFailure((final Throwable t)->{
+        // handle failure to add service
+    });
 ```
 
 As soon as the service is no longer online, the plugin should call ```dispose``` on the correct ```ServiceProxy``` instance. The correct ```ServiceProxy``` instance can either be saved when adding the service or it can be retrieved using the ```DiscoveryProtocolProxy#service(String)``` method.
