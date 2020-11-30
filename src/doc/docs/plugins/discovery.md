@@ -52,10 +52,11 @@ Whenever a new service has been detected, the plugin should notify this using th
 this.protocol.newService(id).atAddress(address)
 	.build()
 	.onSuccess((final ServiceProxy<BasicService> proxy)->{
-        //on success
+        // handle successfully adding the service
+        // save the ServiceProxy from addService.result() for future reference
     })
     .onFailure((final Throwable t)->{
-        //on failure
+        // handle failure to add service
     });
 ```
 
