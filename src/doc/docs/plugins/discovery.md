@@ -64,6 +64,6 @@ As soon as the service is no longer online, the plugin should call ```dispose```
 
 ```java
 // service with identifier id disappeared
-this.protocol.service(id).ifPresent(Service::dispose);
+this.protocol.service(id).onSuccess(AsyncDisposable::dispose);
 ```
 
