@@ -16,10 +16,11 @@ TODO adjust taking into account new architecture
 
 ### Remote event channel
 
-!!! failure "_d.2.0_ When subscribing to a topic N times, publishing an event on that topic should notify all N subscribers once"
-!!! failure "_d.2.1_ When subscribing to N topics, publishing an event on another topic should not notify any subscriber"
-!!! failure "_d.2.2_ When subscribing to a topic including a wildcard (*), publishing N different topics that matches with the subscribed topic, the subscriber should be notified N times"
-!!! failure "_d.2.3_ When subscribing and unsubscribing to a topic, publishing an event on that topic should not notify the subscriber"
+!!! success "_d.2.0_ When subscribing to a topic N times, publishing an event on that topic should notify all N subscribers once"
+!!! success "_d.2.1_ When subscribing to a topic, publishing N different events should result in the subscriber getting all of them in order"
+!!! success "_d.2.2_ When subscribing to N topics, publishing an event on another topic should not notify any subscriber"
+!!! success "_d.2.3_ When subscribing to a topic including a wildcard (*), publishing on N different topics that matches with the subscribed topic, the subscriber should be notified N times"
+!!! success "_d.2.4_ When subscribing and unsubscribing to a topic, publishing an event on that topic should not notify the subscriber"
 
 ### Key value store
 
