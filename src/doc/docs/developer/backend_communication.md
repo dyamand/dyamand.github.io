@@ -10,4 +10,19 @@
 
 ### Event Receiver
 
+TODO adjust taking into account new architecture
+
 !!! success "_d.1.1_ Any valid event received from the Gateway should be processed by the Event Receiver and published on the Event Channel"
+
+### Remote event channel
+
+!!! failure "_d.2.0_ When subscribing to a topic N times, publishing an event on that topic should notify all N subscribers once"
+!!! failure "_d.2.1_ When subscribing to N topics, publishing an event on another topic should not notify any subscriber"
+!!! failure "_d.2.2_ When subscribing to a topic including a wildcard (*), publishing N different topics that matches with the subscribed topic, the subscriber should be notified N times"
+!!! failure "_d.2.3_ When subscribing and unsubscribing to a topic, publishing an event on that topic should not notify the subscriber"
+
+### Key value store
+
+!!! success "_d.3.0_ When adding the same value N times to a random key, that key should contain 1 element and it should equal the value that has been added, additionally, only the first time adding the value can return true, the other times it should have returned false"
+!!! success "_d.3.1_ When adding N different values, adding the values should always return true and the key should contain N values, equal to all added values"
+!!! success "_d.3.2_ When adding and removing N different values, the set should be empty"
