@@ -69,7 +69,7 @@ nav:
   - Style guidelines:
       - Logging: styleguides/logging.md
   - Developer information:
-      - Graphql:
+      - GraphQL:
           - General: developer/graphql/general.md
           - Subscriptions: developer/graphql/subscriptions.md
           - Tests: developer/graphql/tests.md

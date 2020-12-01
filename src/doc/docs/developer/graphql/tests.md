@@ -34,16 +34,19 @@ In order to support subscriptions in a scalable way, the communication with the 
 
 <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/46e35fec-f7ba-43b4-975b-b5c720818391" id="SMUMrJcWB6p4"></iframe></div>
 
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/2c5b2b2c-40e1-4f73-a99b-9a357be790c3" id="Jj7Qd2R5XbAs"></iframe></div>
+
 !!! failure "_e.5.0_ If there are no schema in the GraphQL aggregator, all subscriptions should be answered with an error"
 !!! failure "_e.5.1_ If a GraphQL service with a random schema is online, every subscription adherent to that schema should succeed"
 !!! failure "_e.5.2_ If a GraphQL service is online and has a client subscribed to, if the service sends an event, the event should reach the client"
 
 ### Subscriptions endpoint
 
-!!! failure "_e.6.0_ When N clients all request a subscription ID, N different subscription IDs should be returned"
+!!! success "_e.6.0_ When N clients all request a subscription ID, N different subscription IDs should be returned"
 !!! failure "_e.6.1_ When a client requests a subscription ID, it should subsequently be able to setup an SSE connection"
-!!! failure "_e.6.2_ When a client sets up an SSE connection and a random message is sent on Redis on topic _subscriptionId_/_eventType_, an event should be sent on the SSE connection with event == eventType and data equal to the content of the message sent on Redis"
-!!! failure "_e.6.3_ When a client sets up an SSE connection and a random message is sent on Redis on topic _otherSubscriptionId_/_eventType_, no event should be received over the SSE connection"
+!!! failure "_e.6.2_ When a client sets up a subscription and closes the connection, the subscription ID should no longer be available and an event should have been sent on the *subscriptionStopped* topic containing the subscription ID"
+!!! failure "_e.6.3_ When a client sets up an SSE connection and a random message is sent on Redis on topic _subscriptionId_/_eventType_, an event should be sent on the SSE connection with event == eventType and data equal to the content of the message sent on Redis"
+!!! failure "_e.6.4_ When a client sets up an SSE connection and a random message is sent on Redis on topic _otherSubscriptionId_/_eventType_, no event should be received over the SSE connection"
 
 ### GraphQL endpoint
 
