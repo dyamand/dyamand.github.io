@@ -7,6 +7,7 @@
 !!! success "_4.0.4_ If a translator translates a state change into a new state change, that state should be added to the service and the value change should be present in the existing state changed event if the translator was registered before the state change happened"
 !!! success "_4.0.5_ If a translator translates a state change into a new state change, that state should be added to the service and the value change should be present in a new state changed event if the translator was registered after the state change happened"
 !!! failure "_4.0.6_ If a translator translates a state change into a new state change, the timestamp of the state change should not have been changed"
+!!! success "_4.0.7_ If a translator is registered for a particular state with a filter that always returns false, that translator should NOT be invoked whenever a state change happens"
 
 TODO what if translator gets unregistered
 
