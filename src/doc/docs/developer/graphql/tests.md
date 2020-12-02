@@ -45,8 +45,9 @@ In order to support subscriptions in a scalable way, the communication with the 
 !!! success "_e.6.0_ When N clients all request a subscription ID, N different subscription IDs should be returned"
 !!! success "_e.6.1_ When a client sets up a subscription and closes the connection, the subscription ID should no longer be available and an event should have been sent on the *graphql.subscriptionRemoved* topic containing the subscription ID"
 !!! success "_e.6.2_ When N clients setup a subscription and the subscription endpoint stops, no subscription IDs should be available and an event should have been sent on the *graphql.subscriptionRemoved* topic for all subscription IDs"
-!!! failure "_e.6.3_ When a client sets up an SSE connection and a random message is sent on Redis on topic _subscriptionId_/_eventType_, an event should be sent on the SSE connection with event == eventType and data equal to the content of the message sent on Redis"
-!!! failure "_e.6.4_ When a client sets up an SSE connection and a random message is sent on Redis on topic _otherSubscriptionId_/_eventType_, no event should be received over the SSE connection"
+!!! success "_e.6.3_ When N subscription endpoints are available, all using the same key value store and pubsub, starting M clients distributed over the different endpoints should result in M different IDs"
+!!! failure "_e.6.4_ When a client sets up an SSE connection and a random message is sent on Redis on topic _subscriptionId_/_eventType_, an event should be sent on the SSE connection with event == eventType and data equal to the content of the message sent on Redis"
+!!! failure "_e.6.5_ When a client sets up an SSE connection and a random message is sent on Redis on topic _otherSubscriptionId_/_eventType_, no event should be received over the SSE connection"
 
 ### GraphQL endpoint
 
