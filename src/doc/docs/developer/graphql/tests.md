@@ -43,7 +43,7 @@ In order to support subscriptions in a scalable way, the communication with the 
 ### Subscriptions endpoint
 
 !!! success "_e.6.0_ When N clients all set up a subscription, N different subscription IDs should be returned and those subscription IDs should be in the key value store"
-!!! success "_e.6.0.E.1_ When N client all request a subscription ID but do not set up an SSE connection, the subscription IDs should not be in the key value store anymore after the configured timeout"
+!!! success "_e.6.0.E.1_ When N clients all request a subscription ID but do not set up an SSE connection, the subscription IDs should not be in the key value store anymore after the configured timeout"
 !!! success "_e.6.0.E.2_ When a client tries to set up an SSE connection without creating a subscription ID, a 404 should be returned"
 !!! success "_e.6.1_ When a client sets up a subscription and closes the connection, the subscription ID should no longer be available and an event should have been sent on the *graphql.subscriptionRemoved* topic containing the subscription ID"
 !!! success "_e.6.2_ When N clients set up a subscription and the subscription endpoint stops, no subscription IDs should be available and an event should have been sent on the *graphql.subscriptionRemoved* topic for all subscription IDs"
