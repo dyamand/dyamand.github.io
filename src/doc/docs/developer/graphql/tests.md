@@ -50,7 +50,7 @@ In order to support subscriptions in a scalable way, the communication with the 
 !!! success "_e.6.3_ When N subscription endpoints are available, all using the same key value store and pubsub, starting M clients distributed over the different endpoints should result in M different IDs"
 !!! success "_e.6.4_ When a client sets up an SSE connection and a random message is sent on the pubsub on topic _subscriptionId_/_eventType_, an event should be sent on the SSE connection with event == eventType and data equal to the content of the message sent on the pubsub"
 !!! success "_e.6.5_ When a client sets up an SSE connection and a random message is sent on the pubsub on topic _otherSubscriptionId_/_eventType_, no event should be received over the SSE connection"
-!!! failure "_e.6.6_ When a client sets up an SSE connection and no messages are sent on the pubsub, there should be keep-alive message every keep-alive interval"
+!!! success "_e.6.6_ When a client sets up an SSE connection and no messages are sent on the pubsub, there should be keep-alive message every keep-alive interval"
 
 ### GraphQL endpoint
 
