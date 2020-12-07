@@ -1,2 +1,0 @@
-repository: ssh://git@gitlab.ilabt.imec.be/dyamand/dyamand-docs-deploy.git
-path: overlays/staging/
