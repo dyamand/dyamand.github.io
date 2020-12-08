@@ -7,15 +7,18 @@ Bluetooth is a short range wireless technology standard  using UHF radio waves i
 The DYAMAND Bluetooth plugin is capable of discovering Bluetooth (and BLE) devices. Data acquisition is done through the device's provided GATT attributes.
 A device may serve as a GATT server that hosts GATT attributes. GATT servers organize data in services, which hold characteristics. Some services have been standardized so the service determines which characteristics should be present. Standardized GATT profiles determine which services should be present.
 
-Attribute UUIDs determine whether the service / characteristic is standardized or not (note that the UUID determines WHAT the attribute is but does not serve as an ID for which attribute it is). Attributes have a 16 byte UUID. In case of standardized attributes this UUID takes the form of a 16 or 32 bit UUID which is extended by the default Bluetooth Base UUID. Speficically: 
+Attribute UUIDs determine whether the service / characteristic is standardized or not (note that the UUID determines WHAT the attribute is but does not serve as an ID for which attribute it is). Attributes have a 16 byte UUID. In case of standardized attributes this UUID takes the form of a 16 or 32 bit UUID which is extended by the default Bluetooth Base UUID. Specifically: 
 
 > xxxxxxxx-0000-1000-8000-00805F9B34FB
 
-Where the xxxxxxxx is replaced by the standardized 16 or 32 bit (including leading 0s) UUID. The full list of standardized 16 UUID numbers can be found here:  [here](https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf)
+Where the xxxxxxxx is replaced by the standardized 16 or 32 bit (including leading 0s) UUID. The full list of standardized 16 UUID numbers can be found [here](https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf)
 
 For instance the following UUID specifies a PLX Spot-Check Measurement:
+
 > 00002a5e-0000-1000-8000-00805F9B34FB
+
 This characteristic is part of the pulse oximeter service:
+
 > 00001822-0000-1000-8000-00805F9B34FB
 
 Services and characteristics are described in [xml format](https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.plx_spot_check_measurement.xml)
@@ -26,7 +29,7 @@ This plug-in uses BlueZ over DBus for all discovery and data access. DBus is an 
 
 ## Discovery
 
-GATT services and characteristics can be discovered when a device is connected. When starting from a 'clean slate' scenario (i.e. no devices, services or characteristics are known) an adapter needs to be powered on and a device needs to be discovered. Once discovered the plug-in needs to connect to it. It's services can then be resolved. A device has a flag (ServicesResolved) that indicates if the device's services have been resolved. This way it is possible to distinguish between a device with unresolved services and a device without services.
+GATT services and characteristics can be discovered when a device is connected. When starting from a 'clean slate' scenario (i.e. no devices, services or characteristics are known) an adapter needs to be powered on and a device needs to be discovered. Once discovered the plug-in needs to connect to it. Its services can then be resolved. A device has a flag (ServicesResolved) that indicates if the device's services have been resolved. This way it is possible to distinguish between a device with unresolved services and a device without services.
 
 The BlueZ ObjectManager keeps track of all found devices, services, characteristics etc and is used to do discovery of new devices, services and characteristics. It also knows when devices, services and characteristics are removed.
 
