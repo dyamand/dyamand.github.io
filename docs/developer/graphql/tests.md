@@ -60,7 +60,7 @@ In order to support subscriptions in a scalable way, the communication with the 
 !!! success "_e.7.0.E.1_ When a client executes a subscription without a stream ID, the subscription should fail with a 400 status code"
 !!! success "_e.7.0.E.2_ When a client executes a subscription with a stream ID and the stream ID is not registered, the subscription should fail with a 400 status code"
 !!! success "_e.7.1_ When a client executes a subscription with a valid stream ID, cancels it, and an event arrives, there should be no message on topic _streamId_/_operationName_"
-!!! failure "_e.7.2_ When a client executes a subscription with a valid stream ID and an event is received on the *graphql.streamRemoved* topic, all created subscriptions should be cancelled and as such, no new data on the publisher should trigger an event on the pubsub"
+!!! success "_e.7.2_ When a client executes a subscription with a valid stream ID and an event is received on the *graphql.streamRemoved* topic, all created subscriptions should be cancelled and as such, no new data on the publisher should trigger an event on the pubsub"
 
 ```
 # Query.
