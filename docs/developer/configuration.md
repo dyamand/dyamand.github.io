@@ -81,6 +81,8 @@ Examples:
     Providing the logger configuration in the configuration directory (root and non-root context) should be applied to the ConfigurationAdmin
 !!! success "k.2.2"
     When logger configuration is provided both in the bndrun and in the configuration directory but there are no conflicts, the applied configuration should be merged
+!!! success "k.2.2.E.1"
+    When logger configuration is provided both in the bndrun and in the configuration directory and the config file changes without the config changing, the configuration should not have been updated
 !!! success "k.2.3"
     When logger configuration is provided both in the bndrun and in the configuration directory and there are conflicts, the configuration in the configuration directory should override the configuration in the bndrun
 
