@@ -68,14 +68,25 @@ type Metric {
 
 ## System tests
 
-!!! success "_c.S.0_ When the backend is started, there should be 0 detected installations"
-!!! success "_c.S.1_ When a local installation is started, the amount of detected installations should be 1 and that installation should be online"
-!!! success "_c.S.2_ When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline"
-!!! success "_c.S.3_ As long as an installation is active and sending regular heartbeats (for example when running for 100 seconds), the status of the installation on the backend should still be online"
-!!! success "_c.S.4_ The online installation should contain at least 1 health check, 1 metric, 1 unique name and 1 machine generated friendly name"
-!!! success "_c.S.5_ When the local installations stops sending heartbeats and 2 heartbeats or more are missed (waiting at least 90 seconds), the amount of detected installations should still be 1 but the status should be lost communication, and the installation should still contain health checks and metrics"
-!!! success "_c.S.6_ When the backend is restarted, the installation detected in the previous tests, should still be present and equal to the previous installation"
-!!! success "_c.S.7_ When the backend is killed, it should revert to the latest snapshot it saved"
+!!! success "c.S.0"
+    When the backend is started, there should be 0 detected installations
+!!! success "c.S.1"
+    When a local installation is started, the amount of detected installations should be 1 and that installation should be online
+!!! success "c.S.2"
+    When the local installation sends an installation offline event, the amount of detected installations should still be 1 but the status should be offline
+!!! success "c.S.3"
+    As long as an installation is active and sending regular heartbeats (for example when running for 100 seconds), the status of the installation on the backend should still be online
+!!! success "c.S.4"
+    The online installation should contain at least 1 health check, 1 metric, 1 unique name and 1 machine generated friendly name
+!!! success "c.S.5"
+    When the local installations stops sending heartbeats and 2 heartbeats or more are missed (waiting at least 90 seconds), the amount of detected installations should still be 1 but the status should be lost communication, and the installation should still contain health checks and metrics
+!!! success "c.S.6"
+    When the local installation starts sending heartbeat again, the installation should reappear as online
+
+
+TODO: Re-implement these tests in a separate test (toxiproxy does not appear to like it when the containers it is proxying for are restarted)
+!!! failure "_c.S.6_ When the backend is restarted, the installation detected in the previous tests, should still be present and equal to the previous installation"
+!!! failure "_c.S.7_ When the backend is killed, it should revert to the latest snapshot it saved"
 
 ## Client
 
