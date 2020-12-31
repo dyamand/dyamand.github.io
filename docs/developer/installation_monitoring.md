@@ -139,93 +139,159 @@ TODO: Re-implement these tests in a separate test (toxiproxy does not appear to 
 
 ### Installation health checks
 
-!!! success "c.7.0_ Any defined health check should be executed whenever the health of the installation is checked
-!!! success "c.7.1_ A health check that is run successfully should have a result containing a corresponding status and clarifying message
-!!! success "c.7.2.a_ A health check that throws an exception should be put in the failed state and the message should contain the corresponding error information
-!!! success "c.7.2.b_ A health check that returns null should be put in the failed state and the message should be non-empty
-!!! success "c.7.3_ A health check that stalls for longer than 2 seconds should be put in the failed state and the message should clarify this
-!!! success "c.7.4_ When adding and removing N health checks, getting the installation health checks should return 0 results
-!!! success "c.7.5_ When no heart beat has been sent yet, all health checks should be included in the next heart beat
-!!! success "c.7.6_ If a health check has not changed since the last heart beat was sent, it should not be included in the next heart beat
-!!! success "c.7.7_ Any health check that has changed (different state and/or different message) since the last heart beat, should be included in the next heart beat
-!!! success "c.7.8_ If the blocking thread health check is executed without blocking threads, it should return a healthy result
-!!! success "c.7.9_ If the blocking thread health check is executed while there are blocking threads, it should return an error
-!!! success "c.7.10_ If the memory health check is executed while there are no memory usage thresholds, it should be healthy
-!!! success "c.7.11_ If the memory health check is executed while all memory usage thresholds are set to 1, it should return an error
+!!! success "c.7.0"
+    Any defined health check should be executed whenever the health of the installation is checked
+!!! success "c.7.1"
+    A health check that is run successfully should have a result containing a corresponding status and clarifying message
+!!! success "c.7.2.a"
+    A health check that throws an exception should be put in the failed state and the message should contain the corresponding error information
+!!! success "c.7.2.b"
+    A health check that returns null should be put in the failed state and the message should be non-empty
+!!! success "c.7.3"
+    A health check that stalls for longer than 2 seconds should be put in the failed state and the message should clarify this
+!!! success "c.7.4"
+    When adding and removing N health checks, getting the installation health checks should return 0 results
+!!! success "c.7.5"
+    When no heart beat has been sent yet, all health checks should be included in the next heart beat
+!!! success "c.7.6"
+    If a health check has not changed since the last heart beat was sent, it should not be included in the next heart beat
+!!! success "c.7.7"
+    Any health check that has changed (different state and/or different message) since the last heart beat, should be included in the next heart beat
+!!! success "c.7.8"
+    If the blocking thread health check is executed without blocking threads, it should return a healthy result
+!!! success "c.7.9"
+    If the blocking thread health check is executed while there are blocking threads, it should return an error
+!!! success "c.7.10"
+    If the memory health check is executed while there are no memory usage thresholds, it should be healthy
+!!! success "c.7.11"
+    If the memory health check is executed while all memory usage thresholds are set to 1, it should return an error
 
 ## Backend
 
 ### Installation identification
 
-!!! success "c.3.1_ Requesting an installation by any subset of its known names should return that installation
-!!! success "c.3.2_ For any installation with a certain collection of names, requesting an installation by any other name should not return that installation
-!!! success "c.3.3_ Requesting an installation by a collection of names that only partially overlaps should throw an exception
-!!! success "c.3.4_ Requesting an installation by a collection of names of which different names match different installations should throw an exception
-!!! success "c.3.5_ When an event arrives which matches multiple installations, the corresponding installations should be merged into a single installation
-!!! success "c.3.6_ When an event arrives which partially matches a single installation, the unmatched names should be added as names of that installation
-!!! success "c.3.7_ When an event arrives with the friendly names property (INSTALLATION_ALIVE), the machine-generated friendly names of the installation should equal that of the event
-!!! success "c.3.8_ When an event arrives without friendly names, the machine-generated friendly names of the installation should not change
-!!! success "c.3.9_ When an event arrives with friendly names for an installation that already contains friendly names, the friendly names should be overwritten
-!!! success "c.3.10_ When adding friendly names, all of them should be available through the retrieved installation object
-!!! success "c.3.11_ When removing all friendly names, no friendly names should be available anymore
-!!! success "c.3.12_ The user generated friendly names should still be available if a new event arrives
-!!! success "c.3.13_ No matter how many events arrive for a particular installation, its ID can never change
-!!! success "c.3.14_ No matter how many events arrive, the amount of different IDs should be exactly equal to the amount of detected installations
+!!! success "c.3.1"
+    Requesting an installation by any subset of its known names should return that installation
+!!! success "c.3.2"
+    For any installation with a certain collection of names, requesting an installation by any other name should not return that installation
+!!! success "c.3.3"
+    Requesting an installation by a collection of names that only partially overlaps should throw an exception
+!!! success "c.3.4"
+    Requesting an installation by a collection of names of which different names match different installations should throw an exception
+!!! success "c.3.5"
+    When an event arrives which matches multiple installations, the corresponding installations should be merged into a single installation
+!!! success "c.3.6"
+    When an event arrives which partially matches a single installation, the unmatched names should be added as names of that installation
+!!! success "c.3.7"
+    When an event arrives with the friendly names property (INSTALLATION"
+   ALIVE), the machine-generated friendly names of the installation should equal that of the event
+!!! success "c.3.8"
+    When an event arrives without friendly names, the machine-generated friendly names of the installation should not change
+!!! success "c.3.9"
+    When an event arrives with friendly names for an installation that already contains friendly names, the friendly names should be overwritten
+!!! success "c.3.10"
+    When adding friendly names, all of them should be available through the retrieved installation object
+!!! success "c.3.11"
+    When removing all friendly names, no friendly names should be available anymore
+!!! success "c.3.12"
+    The user generated friendly names should still be available if a new event arrives
+!!! success "c.3.13"
+    No matter how many events arrive for a particular installation, its ID can never change
+!!! success "c.3.14"
+    No matter how many events arrive, the amount of different IDs should be exactly equal to the amount of detected installations
 
 ### Status events
 
-!!! success "c.4.1_ If an event arrives at the installation monitor for an installation that is already known, the number of total installations should remain the same
-!!! success "c.4.2_ If an event for an installation that is not yet in the system arrives at the installation monitor, the number of total installations should increase by 1
-!!! success "c.4.3_ If an event that is not a stopping event arrives at the installation monitor and the corresponding installation is online, the number of online installations should remain the same and the corresponding installation's status should be online
-!!! success "c.4.4_ If an event that is not a stopping event arrives at the installation monitor and the corresponding installation is not in the system, the number of online installations should increase by 1 and the corresponding installation's status should be online
-!!! success "c.4.5_ If an event that is not a stopping event arrives at the installation monitor and the corresponding installation is offline, the number of online installations should increase by 1 and the corresponding installation's status should be online
-!!! success "c.4.6_ If a stopping event arrives at the installation monitor and the corresponding installation is online, the number of online installations should decrease by 1 and the status of the corresponding installation should be offline
-!!! success "c.4.7_ If a stopping event arrives at the installation monitor and the corresponding installation is offline, the number of online installations should remain the same and the status of the corresponding installation should be offline
-!!! success "c.4.8_ If there is an event that is not a stopping event for an installation that is not online, the installation monitor should send an 'installation online' event
-!!! success "c.4.9_ If there is an event for an installation that is not in the system, the installation monitor should send a 'new installation' event containing the installation information (currently only the unique names)
-!!! success "c.4.10_ If there is a stopping event for an online installation, the installation monitor should send an 'installation offline' event containing the installation information (currently only the unique names)
-!!! success "c.4.11_ If there is a stopping event for an installation that is not in the system, the installation monitor should send an 'installation offline' event containing the installation information (currently only the unique names)
-!!! success "c.4.12_ If there is an event that is not a stopping event for an installation that is not in the system, the installation monitor should send an 'installation online' event containing the installation information (currently only the unique names)
-!!! success "c.4.13_ If no new events are received for an installation that is currently online, the status should be changed to 'lost communication' and the installation monitor should send an 'installation lost communication' event containing the installation information (currently only the unique names)
-!!! success "c.4.14_ If any number of installations are discovered and subsequently removed, there should be no remaining installations and there should have been an 'installation removed' event for each installation
-!!! success "c.4.15_ If any number of installations are discovered and a listener for 'new installation' events is registered, it should received an event for all discovered installations
-!!! success "c.4.16_ When an event arrives from a known installation, an 'installation updated' event should be sent
+!!! success "c.4.1"
+    If an event arrives at the installation monitor for an installation that is already known, the number of total installations should remain the same
+!!! success "c.4.2"
+    If an event for an installation that is not yet in the system arrives at the installation monitor, the number of total installations should increase by 1
+!!! success "c.4.3"
+    If an event that is not a stopping event arrives at the installation monitor and the corresponding installation is online, the number of online installations should remain the same and the corresponding installation's status should be online
+!!! success "c.4.4"
+    If an event that is not a stopping event arrives at the installation monitor and the corresponding installation is not in the system, the number of online installations should increase by 1 and the corresponding installation's status should be online
+!!! success "c.4.5"
+    If an event that is not a stopping event arrives at the installation monitor and the corresponding installation is offline, the number of online installations should increase by 1 and the corresponding installation's status should be online
+!!! success "c.4.6"
+    If a stopping event arrives at the installation monitor and the corresponding installation is online, the number of online installations should decrease by 1 and the status of the corresponding installation should be offline
+!!! success "c.4.7"
+    If a stopping event arrives at the installation monitor and the corresponding installation is offline, the number of online installations should remain the same and the status of the corresponding installation should be offline
+!!! success "c.4.8"
+    If there is an event that is not a stopping event for an installation that is not online, the installation monitor should send an 'installation online' event
+!!! success "c.4.9"
+    If there is an event for an installation that is not in the system, the installation monitor should send a 'new installation' event containing the installation information (currently only the unique names)
+!!! success "c.4.10"
+    If there is a stopping event for an online installation, the installation monitor should send an 'installation offline' event containing the installation information (currently only the unique names)
+!!! success "c.4.11"
+    If there is a stopping event for an installation that is not in the system, the installation monitor should send an 'installation offline' event containing the installation information (currently only the unique names)
+!!! success "c.4.12"
+    If there is an event that is not a stopping event for an installation that is not in the system, the installation monitor should send an 'installation online' event containing the installation information (currently only the unique names)
+!!! success "c.4.13"
+    If no new events are received for an installation that is currently online, the status should be changed to 'lost communication' and the installation monitor should send an 'installation lost communication' event containing the installation information (currently only the unique names)
+!!! success "c.4.14"
+    If any number of installations are discovered and subsequently removed, there should be no remaining installations and there should have been an 'installation removed' event for each installation
+!!! success "c.4.15"
+    If any number of installations are discovered and a listener for 'new installation' events is registered, it should received an event for all discovered installations
+!!! success "c.4.16"
+    When an event arrives from a known installation, an 'installation updated' event should be sent
 
 ### Installation info
 
-!!! success "c.5.1_ The lastContact (at the installation monitor) should be equal to the most recent moment an event for that installation got received
-!!! success "c.5.2_ If an event arrives at the installation monitor, the lastContact field of the corresponding installation can't be earlier than the previous one
-!!! success "c.5.3_ If an event arrives, the lastTimestamp of the corresponding installation should match the timestamp of that event
-!!! success "c.5.4_ If the installation monitor receives an event which includes metrics or provides new information about known metrics, these metrics should be available in the installation monitor
-!!! success "c.5.5_ If the installation monitor receives an event which includes metrics, older, unchanged metrics should still be available in the installation monitor
-!!! success "c.5.6_ If the installation monitor receives an 'installation offline' event, the metrics of the corresponding installation should still be available
-!!! success "c.5.7_ If the installation monitor receives an installation alive event with snapshot set to true, the health checks and metrics should be set to the information in the event
+!!! success "c.5.1"
+    The lastContact (at the installation monitor) should be equal to the most recent moment an event for that installation got received
+!!! success "c.5.2"
+    If an event arrives at the installation monitor, the lastContact field of the corresponding installation can't be earlier than the previous one
+!!! success "c.5.3"
+    If an event arrives, the lastTimestamp of the corresponding installation should match the timestamp of that event
+!!! success "c.5.4"
+    If the installation monitor receives an event which includes metrics or provides new information about known metrics, these metrics should be available in the installation monitor
+!!! success "c.5.5"
+    If the installation monitor receives an event which includes metrics, older, unchanged metrics should still be available in the installation monitor
+!!! success "c.5.6"
+    If the installation monitor receives an 'installation offline' event, the metrics of the corresponding installation should still be available
+!!! success "c.5.7"
+    If the installation monitor receives an installation alive event with snapshot set to true, the health checks and metrics should be set to the information in the event
 
 ### Installation merging
 
-!!! success "c.6.1_ A merged installation should be known by any and all names of the installations that were merged together
-!!! success "c.6.2_ A merged installation's lastContact field should match the highest lastContact among merged installations or the event that triggered the merge
-!!! warning "c.6.3_ A merged installation's metrics should match the value stored in the installation that has the most recent lastContact field from the group of installations containing that particular metric
+!!! success "c.6.1"
+    A merged installation should be known by any and all names of the installations that were merged together
+!!! success "c.6.2"
+    A merged installation's lastContact field should match the highest lastContact among merged installations or the event that triggered the merge
+!!! warning "c.6.3"
+    A merged installation's metrics should match the value stored in the installation that has the most recent lastContact field from the group of installations containing that particular metric
 
 ### Installation health checks
 
-!!! success "c.8.1_ If the installation monitor receives an event which includes health checks or provides new information about known health checks, these health checks should be available in the installation monitor
-!!! success "c.8.2_ If the installation monitor receives an event which includes health checks, older, unchanged health checks should still be available in the installation monitor
-!!! success "c.8.3_ If the installation monitor gets the same health check information multiple times, the duplicates should be ignored
-!!! success "c.8.4_ If the installation monitor gets an 'installation offline' event, the health checks of the corresponding installation should still be available
+!!! success "c.8.1"
+    If the installation monitor receives an event which includes health checks or provides new information about known health checks, these health checks should be available in the installation monitor
+!!! success "c.8.2"
+    If the installation monitor receives an event which includes health checks, older, unchanged health checks should still be available in the installation monitor
+!!! success "c.8.3"
+    If the installation monitor gets the same health check information multiple times, the duplicates should be ignored
+!!! success "c.8.4"
+    If the installation monitor gets an 'installation offline' event, the health checks of the corresponding installation should still be available
 
 ## Dashboard
 
 ### Overview page
 
-!!! success "c.9.1_ Getting all installations updates from the service should display all returned n installations correctly
-!!! success "c.9.2_ If n installations get removed by the user and the removal was successful, no installations should be displayed anymore
-!!! success "c.9.3_ If n installations get removed by the user and the removal failed, n installations should still be displayed
+!!! success "c.9.1"
+    Getting all installations updates from the service should display all returned n installations correctly
+!!! success "c.9.2"
+    If n installations get removed by the user and the removal was successful, no installations should be displayed anymore
+!!! success "c.9.3"
+    If n installations get removed by the user and the removal failed, n installations should still be displayed
 
 ### Details page
 
-!!! success "c.10.1_ Getting an update for an installation should display the installation correctly
-!!! success "c.10.2_ If n user friendly names got added successfully by the user, the added user friendly names should be displayed correctly
-!!! success "c.10.3_ If n user friendly names got added by the user but adding the names failed, the added user friendly names should not be displayed
-!!! success "c.10.4_ If n user friendly names got added by the user and subsequently get removed again without any issues, these names should not be displayed anymore
-!!! success "c.10.5_ If n user friendly names got added by the user and subsequently get removed again but a failure occurred for removing the names, all added names should be displayed
+!!! success "c.10.1"
+    Getting an update for an installation should display the installation correctly
+!!! success "c.10.2"
+    If n user friendly names got added successfully by the user, the added user friendly names should be displayed correctly
+!!! success "c.10.3"
+    If n user friendly names got added by the user but adding the names failed, the added user friendly names should not be displayed
+!!! success "c.10.4"
+    If n user friendly names got added by the user and subsequently get removed again without any issues, these names should not be displayed anymore
+!!! success "c.10.5"
+    If n user friendly names got added by the user and subsequently get removed again but a failure occurred for removing the names, all added names should be displayed
