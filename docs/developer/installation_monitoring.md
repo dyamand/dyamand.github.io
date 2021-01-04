@@ -183,8 +183,7 @@ TODO: Re-implement these tests in a separate test (toxiproxy does not appear to 
 !!! success "c.3.6"
     When an event arrives which partially matches a single installation, the unmatched names should be added as names of that installation
 !!! success "c.3.7"
-    When an event arrives with the friendly names property (INSTALLATION"
-   ALIVE), the machine-generated friendly names of the installation should equal that of the event
+    When an event arrives with the friendly names property (INSTALLATION_ALIVE), the machine-generated friendly names of the installation should equal that of the event
 !!! success "c.3.8"
     When an event arrives without friendly names, the machine-generated friendly names of the installation should not change
 !!! success "c.3.9"
