@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyDevelopers-red)](https://www.repostatus.org/#suspended)
+
 ## Prototypes
 
 DYAMAND uses the ```Prototype``` design pattern to be able to describe services in a type-safe manner. Specifically, state prototypes and service prototypes are used to easily create services with particular capabilities. These prototypes are used together with the ```Builder``` design pattern to create whatever states or services need to be created.
