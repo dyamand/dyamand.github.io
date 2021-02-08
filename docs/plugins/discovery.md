@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyDevelopers-red)](https://www.repostatus.org/#suspended)
+
 ## Service discovery
 
 In the beginning, there was nothing. Discovery is the process of detecting new services in the environment and notifying applications of this fact.

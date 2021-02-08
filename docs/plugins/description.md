@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyDevelopers-red)](https://www.repostatus.org/#suspended)
+
 ## Service description
 
 Once a service has been discovered, it is time to describe its capabilities. Capabilities in DYAMAND are modeled by a concept called ```State```. A state describes a concept that the service provides data for or can control. A simple example of a state is a temperature, a device containing a temperature sensor can be modeled by a service containing a ```State``` of type Temperature. 

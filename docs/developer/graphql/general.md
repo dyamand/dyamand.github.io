@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForApplicationDevelopers-red)](https://www.repostatus.org/#suspended)
+
 External applications can get information about all DYAMAND concepts using the DYAMAND GraphQL API. This section will discuss the general mechanisms that are available for applications.
 
 ## Queries

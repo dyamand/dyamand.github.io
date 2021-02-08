@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForCoreDevelopers-red)](https://www.repostatus.org/#suspended)
+
 ## Schema aggregation
 
 !!! success "e.0.0"

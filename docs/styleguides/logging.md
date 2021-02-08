@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyAndCoreDevelopers-red)](https://www.repostatus.org/#suspended)
+
 ## Using loggers
 In DYAMAND plugins/components, the OSGi logger and loggerFactory interfaces are used.
 A logger for your component can be obtained through reference of the LoggerFactory, by using the following syntax in the constructor of the class:

@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithWhatIsDYAMAND-red)](https://www.repostatus.org/#suspended)
+
 # Extending DYAMAND using plugins
 
 DYAMAND uses a plugin architecture to support different technologies, types of devices and interfaces. Four types of plugins can be identified, depending on what extra functionality they add to DYAMAND. 

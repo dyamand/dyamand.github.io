@@ -1,3 +1,5 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForApplicationDevelopers-red)](https://www.repostatus.org/#suspended)
+
 # GraphQL subscriptions
 
 Subscriptions allow you to get changing information as soon as it is available. This makes for an important tool to create a responsive application. To keep this mechanism scalable, subscriptions work a bit different than queries and mutations. Apart from the DYAMAND GraphQL endpoint, you will need to use the DYAMAND Subscriptions endpoint to make use of subscriptions.

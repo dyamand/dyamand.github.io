@@ -1,3 +1,6 @@
+[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyDevelopers-red)](https://www.repostatus.org/#suspended)
+
+
 # How to structure technology support in DYAMAND
 
 Technology support is a multi-faceted problem. DYAMAND offers a structure to break down this support into manageable pieces. To be able to do this, some best practices should be taken into account. 
