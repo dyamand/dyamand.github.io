@@ -12,6 +12,6 @@ TODO
 - [ ] Management
     * [ ] Technologies
     * [ ] Configuration
-    * [ } Control
+    * [ ] Control
     * [ ] Applications
 
