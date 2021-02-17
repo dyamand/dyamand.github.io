@@ -61,7 +61,10 @@ markdown_extensions:
       clickable_checkbox: false
 
 nav:
-  - What is DYAMAND?: index.md
+  - What is DYAMAND?:
+      - Overview: index.md
+      - Device management: dyamand/device_management.md
+      - User management: dyamand/user_management.md
   - For end users: endusers.md
   - For application developers: applicationdevelopers.md
   - For core developers: coredevelopers.md

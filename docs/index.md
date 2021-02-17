@@ -1,14 +1,7 @@
 --8<-- "includes/abbreviations.md"
 [![Work in progress](https://img.shields.io/badge/status-wip-yellow)](https://www.repostatus.org/#wip)
 
-TODO
-
 - [ ] Add problem statement
-- [ ] Discuss different concepts that are relevant
-    * [ ] Installation
-    * [ ] Device
-    * [ ] State
-    * [ ] Profile
 - [ ] Discuss the different extension points DYAMAND offers
     * [ ] Types
     * [ ] Technologies
