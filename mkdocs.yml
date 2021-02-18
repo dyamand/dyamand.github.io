@@ -106,3 +106,4 @@ nav:
         - N. Profiles: developer/profiles.md
   - Technologies:
     - Bluetooth: technologies/bluetooth.md
+    - OCTA: technologies/octa.md
