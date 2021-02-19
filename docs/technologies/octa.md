@@ -12,3 +12,5 @@ OCTA Connect is a hardware platform for low-power and wireless projects. OCTA is
      Any valid OCTA message with payload should be parseable
 !!! success "octa.0.3"
      The value for all headers when serialized should be the same byte array as the generated one
+!!! success "octa.0.4"
+     The value for all payload types in the parsed message should have a value that when serialized is the same as one of the generated ones for that particular type
