@@ -99,3 +99,7 @@
 !!! success "_i.11.5_ After invoking the service's getDeviceUpdates method the Observable should be next with the correct device"
 !!! success "_i.11.6_ After invoking the service's getDeviceDetail method the correct device information should be returned"
 
+## Organization service
+
+!!! failure "_i.12.0_ Getting all organizations should return the correct organizations"
+!!! failure "_i.12.1_ After invoking the service's newOrganization method the created organization is being returned correctly"
