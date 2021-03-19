@@ -1,7 +1,0 @@
-!!! success "_j.0.0_ When a type adapter is registered for a particular type, that type adapter should be invoked when serializing AND deserializing"
-!!! success "_j.0.1_ When type adapter are registered and unregistered, (de)serializing that type should fail"
-!!! success "_j.0.2_ Deserializing a previously serialized object should create an object that is content equal to the original object (real objects, e.g. Event, HealthCheck, Installation, Service, etc.)"
-!!! success "_j.0.3_ Recording a type adapter for a type that already has a type adapter, should result in an IllegalStateException"
-!!! success "_j.0.4_ When serializing N objects "at the same time", they all should get serialized"
-!!! success "_j.0.5_ When deserializing N objects "at the same time", they all should get deserialized correctly"
-!!! success "_j.0.6_ When a transformation is registered for an adapter, that transformation method should be called whenever an object is deserialized"
