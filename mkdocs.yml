@@ -80,6 +80,8 @@ nav:
       - Template for new technologies: technologies/template.md
   - Style guidelines:
       - Logging: styleguides/logging.md
+  - Plugins:
+      - Tests: plugins/tests.md
   - Technologies:
     - Bluetooth: technologies/bluetooth.md
     - OCTA: technologies/octa.md
