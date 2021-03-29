@@ -77,21 +77,62 @@ The log level can also be set through the use of an environment variable. Set `D
 ## Audit logging
 Audit log statements are different from the other log levels in that their main purpose is not diagnosing, but tracking changes.
 To allow easy processing of audit statements, they should be logged in the form of a JSON-object containing key-value pairs.
-Mandatory fields:
-* `user`: JSON Object with nested key-values:
-  * `username`: String representing user
-  * `groups`: JSON Array with groups the user belonged to at moment of logging
-  In the case of a system generated action, username should be "system" and groups should be empty (or an appropriate list of groups if applicable)
-* `verb`: String indicating action taken on resource
-* `objectRef`: 
-  * `resource`: String indicating on what type of resource the action was performed
-  * `name`: name of the resource on which the action was taken
-* `annotations`: JSON object containing extra information about the action, e.g.
-  * `authorization.dyamand/decision: allow|deny` whether the action was allowed to go through or not
-  * `authorization.dyamand/reason: *` details about why the action was (dis)allowed
 
-NOTE: extra fields can be added as needed</br>
-NOTE: Fields might be added as our auditing system matures
+Recommended fields:
+
+* `user`: JSON Object with nested key-values:
+    * `username`: String representing user initiating action
+    * `groups`: JSON Array with groups the user belonged to at moment of logging
+       >In the case of a system generated action, username should be "system" and groups should be empty (or an appropriate list of groups if applicable)
+* `verb`: String indicating action to be taken on resource. This should be a simple keyword, e.g. get/list/add/delete/...
+* `objectRef`: 
+    * `resource`: String indicating on what type of resource the action was performed. This is a high level indicator, and should not refer to specific instances.
+    * `name`: name of the resource on which the action was taken
+* `annotations`: JSON object containing extra information about the action, e.g.
+    * `decision: allow|deny`: whether the action was allowed to go through or not
+    * `reason: *`: details about why the action was (dis)allowed
+
+> NOTE: while it is strongly recommended to provide as many of the recommended fields as possible, some components might be lacking information to completely fill out all fields. In such cases, multiple components should each logging their part of the audit statement. By following the audit log, one should still be able to obtain all required info.
+> NOTE: Extra fields may be added as needed. While care should be taken to follow the recommended field layout as much as possible, any extra available information should be logged through additional fields. E.g. in some cases, the object might also belong to specific groups. Or an object might not possess a unique name, but consist of unique subelements.
+
+
+### Implemented audit statements
+#### User permissions
+Permissions Manager (No initiator info)
+```json
+{
+    "verb":"add",
+    "objectRef":{
+        "resource":"permission",
+        "object":"system",
+        "subject":"user:testuser1@dyamand.be",
+        "permission":"CREATE_ORGANIZATION"
+    },
+    "annotations":{
+        "decision":"allow",
+        "result":"added"
+    }
+}
+```
+User Service (Has initatior info)
+```json
+{
+    "user":{
+        "username":"system",
+        "groups":[           
+        ]
+    },
+    "objectRef":{
+        "resource":"permission",
+        "object":"system",
+        "subject":"user:testuser1@dyamand.be",
+        "permission":"CREATE_ORGANIZATION"
+    },
+    "verb":"add",
+    "annotations":{
+    }
+}
+```
 
 #### DYAMAND audit statement proposals
 1. Detecting a new installation
