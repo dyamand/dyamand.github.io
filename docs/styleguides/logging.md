@@ -92,7 +92,7 @@ Recommended fields:
     * `decision: allow|deny`: whether the action was allowed to go through or not
     * `reason: *`: details about why the action was (dis)allowed
 
-> NOTE: while it is strongly recommended to provide as many of the recommended fields as possible, some components might be lacking information to completely fill out all fields. In such cases, multiple components should each logging their part of the audit statement. By following the audit log, one should still be able to obtain all required info.
+> NOTE: while it is strongly recommended to provide as many of the recommended fields as possible, some components might be lacking information to completely fill out all fields. In such cases, multiple components should each log their part of the audit statement. By following the audit log, one should still be able to obtain all required info.
 > NOTE: Extra fields may be added as needed. While care should be taken to follow the recommended field layout as much as possible, any extra available information should be logged through additional fields. E.g. in some cases, the object might also belong to specific groups. Or an object might not possess a unique name, but consist of unique subelements.
 
 
