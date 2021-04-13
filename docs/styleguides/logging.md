@@ -104,13 +104,29 @@ Permissions Manager (No initiator info)
     "verb":"add",
     "objectRef":{
         "resource":"permission",
-        "object":"system",
+        "name":"p",
         "subject":"user:testuser1@dyamand.be",
-        "permission":"CREATE_ORGANIZATION"
+        "object":"profile:testprofile1",
+        "permission":"PERMISSION_TEST"
     },
     "annotations":{
         "decision":"allow",
         "result":"added"
+    }
+}
+```
+```json
+{
+    "verb":"delete",
+    "objectRef":{
+        "resource":"grouping",
+        "name":"g3",
+        "child":"PERMISSION_TEST_01",
+        "parent":"PERMISSION_TEST_02"
+    },
+    "annotations":{
+        "decision":"allow",
+        "result":"not present"
     }
 }
 ```
