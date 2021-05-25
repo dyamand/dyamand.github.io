@@ -1,7 +1,7 @@
 site_name: DYAMAND
 
 # Meta tags (placed in header)
-site_description: 
+site_description:
 #site_author: Your Name
 #site_url: https://you.github.io/dyamand-integration
 
@@ -15,7 +15,7 @@ copyright: 'Copyright &copy; 2021 DYAMAND'
 
 # Material theme
 theme: 'material'
-extra_css: 
+extra_css:
   - extra.css
 #extra:
 # palette:
@@ -62,21 +62,24 @@ markdown_extensions:
 
 nav:
   - What is DYAMAND?: index.md
-  - For end users: endusers.md
+  - For plugin developers:
+      - Overview: plugindevelopers.md
+      - Adding new types: plugins/prototypes.md
+      - Discovering a device: plugins/discovery.md
+      - Describing a device: plugins/description.md
+      - Detecting state changes without translations: plugins/state_changes_without_translations.md
+      - Detecting state changes with translations: plugins/state_changes_with_translations.md
+      - Control without translations: plugins/control_without_translations.md
+      - Control with translations: plugins/control_with_translations.md
   - For application developers: applicationdevelopers.md
-  - For core developers: coredevelopers.md
+  - For end users: endusers.md
   - DYAMAND overview:
       - Generic model: dyamand/model.md
       - Plugins: dyamand/plugins.md
   - Writing an application:
       - Service lifecycle: applications/services.md
   - Add technology support:
-      - Overview: plugins/overview.md
-      - Adding new state and service prototypes: plugins/prototypes.md
       - Structure: plugins/structure.md
-      - Discovering a new service: plugins/discovery.md
-      - Describing a service: plugins/description.md
-      - Detecting state changes: plugins/state_changes.md
       - Template for new technologies: technologies/template.md
   - Style guidelines:
       - Logging: styleguides/logging.md
