@@ -1,8 +1,9 @@
-[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyDevelopers-red)](https://www.repostatus.org/#suspended)
+--8<-- "includes/abbreviations.md"
+[![Work in progress](https://img.shields.io/badge/status-wip-yellow)](https://www.repostatus.org/#wip)
 
 ## Prototypes
 
-DYAMAND uses the ```Prototype``` design pattern to be able to describe services in a type-safe manner. Specifically, state prototypes and service prototypes are used to easily create services with particular capabilities. These prototypes are used together with the ```Builder``` design pattern to create whatever states or services need to be created.
+DYAMAND uses the `Prototype` design pattern to be able to describe services in a type-safe manner. Specifically, state prototypes and service prototypes are used to easily create services with particular capabilities. These prototypes are used together with the `Builder` design pattern to create whatever states or services need to be created.
 
 ### State prototypes
 
@@ -14,9 +15,9 @@ State prototypes are blueprints for actual states in a service. Conceptually, th
 
 State prototypes are both being used by general applications (generic states) as by technology-specific plugins (specific states). Translation plugins are responsible to translate specific states to generic states (TODO add link).
 
-A state prototype is an instance of ```State```. _org.dyamand.description.api_ provides a number of abstract classes to help you in implementing new states.
+A state prototype is an instance of `State`. _org.dyamand.description.api_ provides a number of abstract classes to help you in implementing new states.
 
-Registering a state prototype can be done by getting a ```Description``` reference and registering it as in the example below.
+Registering a state prototype can be done by getting a `Description` reference and registering it as in the example below.
 ```java
 @Component(immediate = true)
 public final class ExampleTypePlugin {
@@ -26,7 +27,7 @@ public final class ExampleTypePlugin {
 	public ExampleTypePlugin(@Reference Description description) {
 		this.description = Objects.requireNonNull(description);
 	}
-	
+
 	@Activate
 	public void start() {
 		this.description.newStatePrototype(ExampleGenericState.class, (AsyncResult<AsyncDisposable> newState) -> {
@@ -42,7 +43,7 @@ public final class ExampleTypePlugin {
 
 ### Service prototypes
 
-Apart from being able to register prototypes for a particular state, service prototypes allow for prototyping a complete service. A service prototype defines which states a service of that type can and should contain. The important methods for a service prototype are ```states()``` and ```mandatoryStates()```.
+Apart from being able to register prototypes for a particular state, service prototypes allow for prototyping a complete service. A service prototype defines which states a service of that type can and should contain. The important methods for a service prototype are `states()` and `mandatoryStates()`.
 
 ```java
 public final class ExampleService implements Service<ExampleService> {
@@ -51,12 +52,12 @@ public final class ExampleService implements Service<ExampleService> {
 	public Class<ExampleService> type() {
 		return ExampleService.class;
 	}
-	
+
 	@Override
 	public Collection<State<?>> states() {
 		return Arrays.asList(exampleGenericStatePrototype, temperaturePrototype);
 	}
-	
+
 	@Override
 	public Collection<State<?>> mandatoryStates() {
 		return Collections.singleton(temperaturePrototype);
@@ -65,7 +66,7 @@ public final class ExampleService implements Service<ExampleService> {
 }
 ```
 
-Once such a service prototype is created, it can be registered similarly to how you register a state protoype. 
+Once such a service prototype is created, it can be registered similarly to how you register a state protoype.
 
 ```java
 @Component(immediate = true)
@@ -76,7 +77,7 @@ public final class ExampleTypePlugin {
 	public ExampleTypePlugin(@Reference Description description) {
 		this.description = Objects.requireNonNull(description);
 	}
-	
+
 	@Activate
 	public void start() {
 		this.description.newServicePrototype(ExampleService.class, (AsyncResult<AsyncDisposable> newService) -> {
@@ -90,4 +91,4 @@ public final class ExampleTypePlugin {
 }
 ```
 
-Once this has been done, SDP plugins can use these prototypes to describe the services they discover.
+Once this has been done, technology plugins can use these prototypes to describe the services they discover.

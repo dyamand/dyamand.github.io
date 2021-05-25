@@ -1,4 +1,5 @@
-[![Suspended](https://img.shields.io/badge/status-mergeWithForTechnologyDevelopers-red)](https://www.repostatus.org/#suspended)
+--8<-- "includes/abbreviations.md"
+[![Work in progress](https://img.shields.io/badge/status-wip-yellow)](https://www.repostatus.org/#wip)
 
 ## Service discovery
 
@@ -14,7 +15,7 @@ DYAMAND offers an abstraction towards applications that enables unified discover
 
 ### Protocol registration
 
-The very first thing to do as a plugin that can discover services, is registering the protocol the plugin is responsible for. This can be done using the ```org.dyamand.discovery.Discovery``` service.
+The very first thing to do as a plugin that can discover services, is registering the protocol the plugin is responsible for. This can be done using the `org.dyamand.discovery.Discovery` service.
 
 ```java
 @Component(immediate = true)
@@ -28,12 +29,12 @@ public final class NewProtocolPlugin {
 }
 ```
 
-Once you have acquired a reference to the ```Discovery``` service, you can build a ```org.dyamand.discovery.DiscoveryProtocolProxy``` like below. Be sure to save the ```DiscoveryProtocolProxy``` instance as it will be used to indicate to DYAMAND that you discovered a new service. The second argument of the _withProtocol_ method is an ```IdentificationScheme```. It is important to provide the correct identification scheme for a protocol since the generation of IDs is based on the identification scheme provided when building the ```DiscoveryProtocolProxy```. There are four different identification schemes:
+Once you have acquired a reference to the `Discovery` service, you can build a `org.dyamand.discovery.DiscoveryProtocolProxy` like below. Be sure to save the `DiscoveryProtocolProxy` instance as it will be used to indicate to DYAMAND that you discovered a new service. The second argument of the _withProtocol_ method is an `IdentificationScheme`. It is important to provide the correct identification scheme for a protocol since the generation of IDs is based on the identification scheme provided when building the `DiscoveryProtocolProxy`. There are four different identification schemes:
 
-- ```IdentificationScheme.GLOBAL``` indicates that the identifier provided by the protocol uniquely identifies the discovered service globally
-- ```IdentificationScheme.PROTOCOL``` indicates that the identifier provided by the protocol uniquely identifies the discovered service within the ecosystem of the protocol
-- ```IdentificationScheme.INSTALLATION``` indicates that the identifier provided by the protocol is only unique on the specific installation that discovered the service, i.e. a service that is discovered on a different installation by the same protocol and with the same identifier does not (necessarily) refer to the same service
-- ```IdentificationScheme.SESSION``` indicates that the identifier provided by the protocol is only unique for the current session, i.e. a service that is discovered later by the same protocol with the same identifier on the same installation does not (necessarily) refer to the same service
+- `IdentificationScheme.GLOBAL` indicates that the identifier provided by the protocol uniquely identifies the discovered service globally
+- `IdentificationScheme.PROTOCOL` indicates that the identifier provided by the protocol uniquely identifies the discovered service within the ecosystem of the protocol
+- `IdentificationScheme.INSTALLATION` indicates that the identifier provided by the protocol is only unique on the specific installation that discovered the service, i.e. a service that is discovered on a different installation by the same protocol and with the same identifier does not (necessarily) refer to the same service
+- `IdentificationScheme.SESSION` indicates that the identifier provided by the protocol is only unique for the current session, i.e. a service that is discovered later by the same protocol with the same identifier on the same installation does not (necessarily) refer to the same service
 
 ```java
 @Activate
@@ -47,7 +48,7 @@ public void start() {
 
 ### Service discovery
 
-Whenever a new service has been detected, the plugin should notify this using the ```DiscoveryProtocolProxy``` instance.
+Whenever a new service has been detected, the plugin should notify this using the `DiscoveryProtocolProxy` instance.
 
 ```java
 // Just discovered a new service with identifier id at address address
@@ -62,10 +63,9 @@ this.protocol.newService(id).atAddress(address)
     });
 ```
 
-As soon as the service is no longer online, the plugin should call ```dispose``` on the correct ```ServiceProxy``` instance. The correct ```ServiceProxy``` instance can either be saved when adding the service or it can be retrieved using the ```DiscoveryProtocolProxy#service(String)``` method.
+As soon as the service is no longer online, the plugin should call `dispose` on the correct `ServiceProxy` instance. The correct `ServiceProxy` instance can either be saved when adding the service or it can be retrieved using the `DiscoveryProtocolProxy#service(String)` method.
 
 ```java
 // service with identifier id disappeared
 this.protocol.service(id).onSuccess(AsyncDisposable::dispose);
 ```
-
