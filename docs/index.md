@@ -19,7 +19,7 @@ Devices can measure some aspect of the environment or control the environment ar
 
 ### Technologies
 
-Every application domain has a particular set of technologies that are dominant. Again, DYAMAND in and of itself is not aware of any technology out there, _Technology Plugins_ help DYAMAND in understanding the ins and outs of every technology out there. A _Technology Plugin_ is responsible to discover a device, extract technology-specific data out of the device and implement the mechanisms to control the device.
+Every application domain has a particular set of technologies that are dominant. Again, DYAMAND in and of itself is not aware of any technology out there, _Technology Plugins_ help DYAMAND in understanding the ins and outs of every technology out there. A _Technology Plugin_ is responsible for device discovery, extracting technology-specific data out of the device and implementing the mechanisms to control the device.
 
 ### Abstraction
 
