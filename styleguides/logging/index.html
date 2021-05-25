@@ -1,0 +1,1259 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>Logging - DYAMAND</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-loggers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DYAMAND" class="md-header__button md-logo" aria-label="DYAMAND" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DYAMAND
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Logging
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DYAMAND" class="md-nav__button md-logo" aria-label="DYAMAND" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    DYAMAND
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        What is DYAMAND?
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        For plugin developers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="For plugin developers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          For plugin developers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugindevelopers/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/prototypes/" class="md-nav__link">
+        Adding new types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/discovery/" class="md-nav__link">
+        Discovering a device
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/description/" class="md-nav__link">
+        Describing a device
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/state_changes_without_translations/" class="md-nav__link">
+        Detecting state changes without translations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/state_changes_with_translations/" class="md-nav__link">
+        Detecting state changes with translations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/control_without_translations/" class="md-nav__link">
+        Control without translations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/control_with_translations/" class="md-nav__link">
+        Control with translations
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applicationdevelopers/" class="md-nav__link">
+        For application developers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../endusers/" class="md-nav__link">
+        For end users
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        DYAMAND overview
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="DYAMAND overview" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          DYAMAND overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dyamand/model/" class="md-nav__link">
+        Generic model
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dyamand/plugins/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Writing an application
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Writing an application" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Writing an application
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/services/" class="md-nav__link">
+        Service lifecycle
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Add technology support
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Add technology support" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Add technology support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/structure/" class="md-nav__link">
+        Structure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technologies/template/" class="md-nav__link">
+        Template for new technologies
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Style guidelines
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Style guidelines" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Style guidelines
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Logging
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Logging
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-loggers" class="md-nav__link">
+    Using loggers
+  </a>
+  
+    <nav class="md-nav" aria-label="Using loggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-log-level" class="md-nav__link">
+    Changing the log level
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-log-levels" class="md-nav__link">
+    Supported log levels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-logging" class="md-nav__link">
+    Audit logging
+  </a>
+  
+    <nav class="md-nav" aria-label="Audit logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implemented-audit-statements" class="md-nav__link">
+    Implemented audit statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Implemented audit statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-permissions" class="md-nav__link">
+    User permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dyamand-audit-statement-proposals" class="md-nav__link">
+    DYAMAND audit statement proposals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Plugins
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Plugins" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/tests/" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Technologies
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Technologies" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Technologies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technologies/bluetooth/" class="md-nav__link">
+        Bluetooth
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technologies/octa/" class="md-nav__link">
+        OCTA
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-loggers" class="md-nav__link">
+    Using loggers
+  </a>
+  
+    <nav class="md-nav" aria-label="Using loggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-log-level" class="md-nav__link">
+    Changing the log level
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-log-levels" class="md-nav__link">
+    Supported log levels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-logging" class="md-nav__link">
+    Audit logging
+  </a>
+  
+    <nav class="md-nav" aria-label="Audit logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implemented-audit-statements" class="md-nav__link">
+    Implemented audit statements
+  </a>
+  
+    <nav class="md-nav" aria-label="Implemented audit statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-permissions" class="md-nav__link">
+    User permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dyamand-audit-statement-proposals" class="md-nav__link">
+    DYAMAND audit statement proposals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Logging</h1>
+                
+                <p><a href="https://www.repostatus.org/#suspended"><img alt="Suspended" src="https://img.shields.io/badge/status-mergeWithForTechnologyAndCoreDevelopers-red" /></a></p>
+<h2 id="using-loggers">Using loggers<a class="headerlink" href="#using-loggers" title="Permanent link">&para;</a></h2>
+<p>In DYAMAND plugins/components, the OSGi logger and loggerFactory interfaces are used.
+A logger for your component can be obtained through reference of the LoggerFactory, by using the following syntax in the constructor of the class:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">foo</span>
+  <span class="nd">@Activate</span>
+  <span class="kd">public</span> <span class="nf">foo</span><span class="p">(</span><span class="nd">@Reference</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">){</span>
+    <span class="c1">// ...</span>
+    <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Foo started!&quot;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+The obtained logger will use the component's PID in its log statements, therefore it is advised to let each component obtain its own logger.</p>
+<p>The OGSi Logger interface provides 2 main ways to log messages:
+1. Log message directly:<br>
+  <code>logger.info("The statement will always be evaluated");</code></p>
+<ol>
+<li>Log message with lambda:<br>
+  <code>logger.info((Logger l) -&gt; l.info("This statement will only be evaluated if the log level is set at or below 'INFO'"));</code></li>
+</ol>
+<p>The second approach is generally recommended, as it is beneficial for performance on higher log levels.
+For simple log statements, the first approach can still be used.</p>
+<p>To add information to your log statements, use curly braces. Pairs of curly braces will be replaced, in order, by the additional parameters you hand to the log statement.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Use {} if you want to put information in your {}.&quot;</span><span class="p">,</span> <span class="s">&quot;curly braces&quot;</span><span class="p">,</span> <span class="s">&quot;log statements&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>toString() is automatically called on objects you pass through to the logger.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">someMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;Content of someMap: {}&quot;</span><span class="p">,</span> <span class="n">someMap</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>If you are handling exceptions, you can add stacktraces of throwables to your log statements by adding the throwable as the last parameter.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">try</span> <span class="p">{</span>
+  <span class="c1">// Throw something</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="p">){</span>
+  <span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;That did not go as expected&quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+You can combine this functionality with the use of curly braces.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Object</span> <span class="n">someObject</span><span class="p">;</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="c1">// Throw something</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Throwable</span> <span class="n">t</span><span class="p">){</span>
+  <span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;Failed to process {} correctly&quot;</span><span class="p">,</span> <span class="n">someObject</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+Your log statement should have the following parameters, in order:
+* the message itself
+* a number of objects or function calls equal to the number of curly brace pairs in your message
+* (optional) a Throwable in case you want to append its stacktrace</p>
+<h3 id="changing-the-log-level">Changing the log level<a class="headerlink" href="#changing-the-log-level" title="Permanent link">&para;</a></h3>
+<p>If you are using the gogo shell, you can change the global log level with the command <code>logconfig [LEVEL]</code>.
+To change the log level of a specific logger, mention the PID: <code>logconfig some.random.pid [LEVEL]</code></p>
+<p>The log level can also be set through the use of an environment variable. Set <code>DYAMAND_DEFAULT_LOG_LEVEL</code> to any supported log level to change the default configuration. Note that using gogo's logconfig command will override this setting.</p>
+<h2 id="supported-log-levels">Supported log levels<a class="headerlink" href="#supported-log-levels" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Usage</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TRACE</code></td>
+<td>Display most minute details about operations and data going through the system.</td>
+<td><ul><li>Full content of data structures</li><li>Step-by-step data flow through function</li></ul></td>
+</tr>
+<tr>
+<td><code>DEBUG</code></td>
+<td>Provide detailed information about data and actions being taken, to make it easier to detect what is going wrong.</td>
+<td><ul><li>Important fields from used data structures (possible abbreviated or filtered)</li><li>Reporting of data flow through function</li></ul></td>
+</tr>
+<tr>
+<td><code>INFO</code></td>
+<td>Give a coarse-grained indication of what the system is doing.</td>
+<td><ul><li>Start and stop of services</li><li>Important functions get called</li></ul></td>
+</tr>
+<tr>
+<td><code>WARN</code></td>
+<td>Log information about actions that differ from the expected procedure.</td>
+<td><ul><li>Missing expected but non-critical data</li><li>Abnormal values indicating unusual behaviour</li><li>Semi-expected invalid values which map to valid values, e.g. integer sent as string<li>Iffy connections that have to be restarted in the middle of an operation</li></ul></td>
+</tr>
+<tr>
+<td><code>ERROR</code></td>
+<td>Log information about actions that could not be handled at all, or could only be partially completed</td>
+<td><ul><li>Missing critical data</li><li>Unexpected values</li><li>Missing required connection</li></ul></td>
+</tr>
+<tr>
+<td><code>AUDIT</code></td>
+<td>Audit statements will always be printed, regardless of configured log level. Use audit statements to track important user activities and to detect unauthorized access. See <a href="#auditing">the auditing subsection</a> for more info.</td>
+<td><ul><li>User login attempt</li><li>Change of important data value</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="audit-logging">Audit logging<a class="headerlink" href="#audit-logging" title="Permanent link">&para;</a></h2>
+<p>Audit log statements are different from the other log levels in that their main purpose is not diagnosing, but tracking changes.
+To allow easy processing of audit statements, they should be logged in the form of a JSON-object containing key-value pairs.</p>
+<p>Recommended fields:</p>
+<ul>
+<li><code>user</code>: JSON Object with nested key-values:<ul>
+<li><code>username</code>: String representing user initiating action</li>
+<li><code>groups</code>: JSON Array with groups the user belonged to at moment of logging<blockquote>
+<p>In the case of a system generated action, username should be "system" and groups should be empty (or an appropriate list of groups if applicable)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><code>verb</code>: String indicating action to be taken on resource. This should be a simple keyword, e.g. get/list/add/delete/...</li>
+<li><code>objectRef</code>: <ul>
+<li><code>resource</code>: String indicating on what type of resource the action was performed. This is a high level indicator, and should not refer to specific instances.</li>
+<li><code>name</code>: name of the resource on which the action was taken</li>
+</ul>
+</li>
+<li><code>annotations</code>: JSON object containing extra information about the action, e.g.<ul>
+<li><code>decision: allow|deny</code>: whether the action was allowed to go through or not</li>
+<li><code>reason: *</code>: details about why the action was (dis)allowed</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>NOTE: while it is strongly recommended to provide as many of the recommended fields as possible, some components might be lacking information to completely fill out all fields. In such cases, multiple components should each log their part of the audit statement. By following the audit log, one should still be able to obtain all required info.
+NOTE: Extra fields may be added as needed. While care should be taken to follow the recommended field layout as much as possible, any extra available information should be logged through additional fields. E.g. in some cases, the object might also belong to specific groups. Or an object might not possess a unique name, but consist of unique subelements.</p>
+</blockquote>
+<h3 id="implemented-audit-statements">Implemented audit statements<a class="headerlink" href="#implemented-audit-statements" title="Permanent link">&para;</a></h3>
+<h4 id="user-permissions">User permissions<a class="headerlink" href="#user-permissions" title="Permanent link">&para;</a></h4>
+<p>Permissions Manager (No initiator info)
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;verb&quot;</span><span class="p">:</span><span class="s2">&quot;add&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;objectRef&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="s2">&quot;permission&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;p&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="s2">&quot;user:testuser1@dyamand.be&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;profile:testprofile1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;permission&quot;</span><span class="p">:</span><span class="s2">&quot;PERMISSION_TEST&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;annotations&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;decision&quot;</span><span class="p">:</span><span class="s2">&quot;allow&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="s2">&quot;added&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;verb&quot;</span><span class="p">:</span><span class="s2">&quot;delete&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;objectRef&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="s2">&quot;grouping&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;g3&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;child&quot;</span><span class="p">:</span><span class="s2">&quot;PERMISSION_TEST_01&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="s2">&quot;PERMISSION_TEST_02&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;annotations&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;decision&quot;</span><span class="p">:</span><span class="s2">&quot;allow&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;result&quot;</span><span class="p">:</span><span class="s2">&quot;not present&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+User Service (Has initatior info)
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;user&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;groups&quot;</span><span class="p">:[</span>           
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;objectRef&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="s2">&quot;permission&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;object&quot;</span><span class="p">:</span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="s2">&quot;user:testuser1@dyamand.be&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;permission&quot;</span><span class="p">:</span><span class="s2">&quot;CREATE_ORGANIZATION&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;verb&quot;</span><span class="p">:</span><span class="s2">&quot;add&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;annotations&quot;</span><span class="p">:{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h4 id="dyamand-audit-statement-proposals">DYAMAND audit statement proposals<a class="headerlink" href="#dyamand-audit-statement-proposals" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Detecting a new installation</li>
+</ol>
+<p>The DYAMAND backend receives an installation event from a new installation. As the system is allowed to perform all actions, no decision annotation is added.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;system&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;groups&quot;</span><span class="p">:[]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;objectRef&quot;</span><span class="p">:</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="s2">&quot;installation&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;COT-GW-001&quot;</span>
+    <span class="p">},</span>
+  <span class="nt">&quot;verb&quot;</span><span class="p">:</span><span class="s2">&quot;add&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;annotations&quot;</span><span class="p">:{}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<ol>
+<li>Removing an installation from a project</li>
+</ol>
+<p>User is assigned to project, therefore removing an installation from the project is allowed.
+The installation itself is still present in the system and is potentially linked to other projects.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;john-doe&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;groups&quot;</span><span class="p">:[</span><span class="s2">&quot;cot:internet-of-water&quot;</span><span class="p">,</span><span class="s2">&quot;system:authenticated&quot;</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span><span class="nt">&quot;objectRef&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="s2">&quot;installationRef&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;COT-GW-001&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;project&quot;</span><span class="p">:</span><span class="s2">&quot;cot:internet-of-water&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;verb&quot;</span><span class="p">:</span><span class="s2">&quot;delete&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;annotations&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;authorization.dyamand/decision&quot;</span><span class="p">:</span><span class="s2">&quot;allow&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<ol>
+<li>Removing an installation from the system completely</li>
+</ol>
+<p>A user attempts to remove an installation from the system, as this user is not a DYAMAND admin, the action is denied. The user is only able to configure project specific settings of the installation.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;john-doe&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;groups&quot;</span><span class="p">:[</span><span class="s2">&quot;cot:internet-of-water&quot;</span><span class="p">,</span><span class="s2">&quot;system:authenticated&quot;</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span><span class="nt">&quot;objectRef&quot;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;resource&quot;</span><span class="p">:</span><span class="s2">&quot;installation&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;COT-GW-001&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;verb&quot;</span><span class="p">:</span><span class="s2">&quot;delete&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;annotations&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;authorization.dyamand/decision&quot;</span><span class="p">:</span><span class="s2">&quot;deny&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../../technologies/template/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Template for new technologies
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../plugins/tests/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tests
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 DYAMAND
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>
